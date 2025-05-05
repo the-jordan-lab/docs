@@ -1,0 +1,77 @@
+# Sensitive files
+setup-gitstack.sh
+*.key
+*.pem
+*.env
+.env*
+*.ssh
+.ssh/
+drop3
+*_rsa
+*_dsa
+*_ed25519
+*_ecdsa
+secrets/
+
+# Credentials
+*password*
+*PASSWORD*
+*secret*
+*SECRET*
+*credential*
+*CREDENTIAL*
+*token*
+*TOKEN*
+
+# Logs and temp files
+*.log
+*.tmp
+tmp/
+logs/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+.ipynb_checkpoints
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock 
