@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="edge" attr.name="pdb_file" attr.type="string"/>
+<key id="d5" for="edge" attr.name="interaction" attr.type="string"/>
+<key id="d4" for="node" attr.name="residue_number" attr.type="long"/>
+<key id="d3" for="node" attr.name="residue_name" attr.type="string"/>
+<key id="d2" for="node" attr.name="label" attr.type="string"/>
+<key id="d1" for="node" attr.name="chain" attr.type="string"/>
+<key id="d0" for="node" attr.name="file" attr.type="string"/>
+<graph edgedefault="undirected"><node id="UQCRFS1_Q9CR68|A|H141">
+  <data key="d0">UQCRFS1_Q9CR68_MACROD1_Q922B1_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">UQCRFS1_Q9CR68</data>
+  <data key="d3">H</data>
+  <data key="d4">141</data>
+</node>
+<node id="YARS2_Q8BYL4|B|F5">
+  <data key="d0">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">YARS2_Q8BYL4</data>
+  <data key="d3">F</data>
+  <data key="d4">5</data>
+</node>
+<node id="YARS2_Q8BYL4|B|F6">
+  <data key="d0">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">YARS2_Q8BYL4</data>
+  <data key="d3">F</data>
+  <data key="d4">6</data>
+</node>
+<node id="UQCRFS1_Q9CR68|A|H161">
+  <data key="d0">UQCRFS1_Q9CR68_MACROD1_Q922B1_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">UQCRFS1_Q9CR68</data>
+  <data key="d3">H</data>
+  <data key="d4">161</data>
+</node>
+<node id="UQCRFS1_Q9CR68|A|H164">
+  <data key="d0">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">UQCRFS1_Q9CR68</data>
+  <data key="d3">H</data>
+  <data key="d4">164</data>
+</node>
+<node id="YARS2_Q8BYL4|B|R156">
+  <data key="d0">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">YARS2_Q8BYL4</data>
+  <data key="d3">R</data>
+  <data key="d4">156</data>
+</node>
+<node id="COX8A_Q64445|A|H36">
+  <data key="d0">COX8A_Q64445_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX8A_Q64445</data>
+  <data key="d3">H</data>
+  <data key="d4">36</data>
+</node>
+<node id="MRPS15_Q9DC71|B|K155">
+  <data key="d0">COX8A_Q64445_MRPS15_Q9DC71_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MRPS15_Q9DC71</data>
+  <data key="d3">K</data>
+  <data key="d4">155</data>
+</node>
+<node id="UQCRFS1_Q9CR68|A|R118">
+  <data key="d0">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">UQCRFS1_Q9CR68</data>
+  <data key="d3">R</data>
+  <data key="d4">118</data>
+</node>
+<node id="CBR4_Q91VT4|B|H192">
+  <data key="d0">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">CBR4_Q91VT4</data>
+  <data key="d3">H</data>
+  <data key="d4">192</data>
+</node>
+<node id="CBR4_Q91VT4|B|F193">
+  <data key="d0">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">CBR4_Q91VT4</data>
+  <data key="d3">F</data>
+  <data key="d4">193</data>
+</node>
+<node id="UQCRFS1_Q9CR68|A|R172">
+  <data key="d0">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">UQCRFS1_Q9CR68</data>
+  <data key="d3">R</data>
+  <data key="d4">172</data>
+</node>
+<node id="UQCRFS1_Q9CR68|A|K173">
+  <data key="d0">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">UQCRFS1_Q9CR68</data>
+  <data key="d3">K</data>
+  <data key="d4">173</data>
+</node>
+<node id="NDUFS6_P52503|A|H68">
+  <data key="d0">NDUFS6_P52503_DBT_P53395_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS6_P52503</data>
+  <data key="d3">H</data>
+  <data key="d4">68</data>
+</node>
+<node id="PDHA1_P35486|B|R205">
+  <data key="d0">NDUFS6_P52503_PDHA1_P35486_unrelaxed_rank_001_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">PDHA1_P35486</data>
+  <data key="d3">R</data>
+  <data key="d4">205</data>
+</node>
+<node id="COX4I1_P19783|A|H109">
+  <data key="d0">COX4I1_P19783_MRPS9_Q9D7N3_unrelaxed_rank_010_alphafold2_multimer_v3_model_1_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX4I1_P19783</data>
+  <data key="d3">H</data>
+  <data key="d4">109</data>
+</node>
+<node id="MRPL44_Q9CY73|B|Y240">
+  <data key="d0">COX4I1_P19783_MRPL44_Q9CY73_unrelaxed_rank_001_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MRPL44_Q9CY73</data>
+  <data key="d3">Y</data>
+  <data key="d4">240</data>
+</node>
+<node id="MACROD1_Q922B1|B|F304">
+  <data key="d0">UQCRFS1_Q9CR68_MACROD1_Q922B1_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MACROD1_Q922B1</data>
+  <data key="d3">F</data>
+  <data key="d4">304</data>
+</node>
+<node id="MRPS9_Q9D7N3|B|K344">
+  <data key="d0">COX4I1_P19783_MRPS9_Q9D7N3_unrelaxed_rank_010_alphafold2_multimer_v3_model_1_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MRPS9_Q9D7N3</data>
+  <data key="d3">K</data>
+  <data key="d4">344</data>
+</node>
+<node id="DBT_P53395|B|R409">
+  <data key="d0">NDUFS6_P52503_DBT_P53395_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">DBT_P53395</data>
+  <data key="d3">R</data>
+  <data key="d4">409</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|Y149">
+  <data key="d0">NDUFS7_Q9DC70_BCKDK_O55028_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">Y</data>
+  <data key="d4">149</data>
+</node>
+<node id="BCKDK_O55028|B|H74">
+  <data key="d0">NDUFS7_Q9DC70_BCKDK_O55028_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">BCKDK_O55028</data>
+  <data key="d3">H</data>
+  <data key="d4">74</data>
+</node>
+<node id="CCDC90B_Q8C3X2|A|Y9">
+  <data key="d0">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">CCDC90B_Q8C3X2</data>
+  <data key="d3">Y</data>
+  <data key="d4">9</data>
+</node>
+<node id="CLPX_Q9JHS4|B|H75">
+  <data key="d0">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">CLPX_Q9JHS4</data>
+  <data key="d3">H</data>
+  <data key="d4">75</data>
+</node>
+<node id="CCDC90B_Q8C3X2|A|H83">
+  <data key="d0">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">CCDC90B_Q8C3X2</data>
+  <data key="d3">H</data>
+  <data key="d4">83</data>
+</node>
+<node id="CLPX_Q9JHS4|B|K69">
+  <data key="d0">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">CLPX_Q9JHS4</data>
+  <data key="d3">K</data>
+  <data key="d4">69</data>
+</node>
+<node id="CLPX_Q9JHS4|B|K72">
+  <data key="d0">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">CLPX_Q9JHS4</data>
+  <data key="d3">K</data>
+  <data key="d4">72</data>
+</node>
+<node id="CLPX_Q9JHS4|B|F76">
+  <data key="d0">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">CLPX_Q9JHS4</data>
+  <data key="d3">F</data>
+  <data key="d4">76</data>
+</node>
+<node id="COX8A_Q64445|A|H2">
+  <data key="d0">COX8A_Q64445_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX8A_Q64445</data>
+  <data key="d3">H</data>
+  <data key="d4">2</data>
+</node>
+<node id="GFM1_Q8K0D5|B|H42">
+  <data key="d0">COX8A_Q64445_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">GFM1_Q8K0D5</data>
+  <data key="d3">H</data>
+  <data key="d4">42</data>
+</node>
+<node id="GFM1_Q8K0D5|B|K429">
+  <data key="d0">COX8A_Q64445_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">GFM1_Q8K0D5</data>
+  <data key="d3">K</data>
+  <data key="d4">429</data>
+</node>
+<node id="ACAD9_Q8JZN5|A|H452">
+  <data key="d0">ACAD9_Q8JZN5_MDH2_P08249_unrelaxed_rank_006_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">ACAD9_Q8JZN5</data>
+  <data key="d3">H</data>
+  <data key="d4">452</data>
+</node>
+<node id="MDH2_P08249|B|K245">
+  <data key="d0">ACAD9_Q8JZN5_MDH2_P08249_unrelaxed_rank_006_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MDH2_P08249</data>
+  <data key="d3">K</data>
+  <data key="d4">245</data>
+</node>
+<node id="ACAD9_Q8JZN5|A|H522">
+  <data key="d0">ACAD9_Q8JZN5_GFM1_Q8K0D5_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">ACAD9_Q8JZN5</data>
+  <data key="d3">H</data>
+  <data key="d4">522</data>
+</node>
+<node id="MDH2_P08249|B|R167">
+  <data key="d0">ACAD9_Q8JZN5_MDH2_P08249_unrelaxed_rank_006_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MDH2_P08249</data>
+  <data key="d3">R</data>
+  <data key="d4">167</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|H146">
+  <data key="d0">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">H</data>
+  <data key="d4">146</data>
+</node>
+<node id="ACSF3_Q3URE1|B|R296">
+  <data key="d0">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">ACSF3_Q3URE1</data>
+  <data key="d3">R</data>
+  <data key="d4">296</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|Y164">
+  <data key="d0">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">Y</data>
+  <data key="d4">164</data>
+</node>
+<node id="ACSF3_Q3URE1|B|H284">
+  <data key="d0">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">ACSF3_Q3URE1</data>
+  <data key="d3">H</data>
+  <data key="d4">284</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|Y177">
+  <data key="d0">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">Y</data>
+  <data key="d4">177</data>
+</node>
+<node id="COX4I1_P19783|A|K7">
+  <data key="d0">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX4I1_P19783</data>
+  <data key="d3">K</data>
+  <data key="d4">7</data>
+</node>
+<node id="MTIF2_Q91YJ5|B|H474">
+  <data key="d0">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MTIF2_Q91YJ5</data>
+  <data key="d3">H</data>
+  <data key="d4">474</data>
+</node>
+<node id="COX4I1_P19783|A|Y11">
+  <data key="d0">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX4I1_P19783</data>
+  <data key="d3">Y</data>
+  <data key="d4">11</data>
+</node>
+<node id="COX4I1_P19783|A|F13">
+  <data key="d0">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX4I1_P19783</data>
+  <data key="d3">F</data>
+  <data key="d4">13</data>
+</node>
+<node id="MTIF2_Q91YJ5|B|H470">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MTIF2_Q91YJ5</data>
+  <data key="d3">H</data>
+  <data key="d4">470</data>
+</node>
+<node id="COX4I1_P19783|A|H29">
+  <data key="d0">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">COX4I1_P19783</data>
+  <data key="d3">H</data>
+  <data key="d4">29</data>
+</node>
+<node id="MTIF2_Q91YJ5|B|R478">
+  <data key="d0">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MTIF2_Q91YJ5</data>
+  <data key="d3">R</data>
+  <data key="d4">478</data>
+</node>
+<node id="TUFM_Q8BFR5|B|H324">
+  <data key="d0">ACAD9_Q8JZN5_TUFM_Q8BFR5_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">TUFM_Q8BFR5</data>
+  <data key="d3">H</data>
+  <data key="d4">324</data>
+</node>
+<node id="TUFM_Q8BFR5|B|K325">
+  <data key="d0">ACAD9_Q8JZN5_TUFM_Q8BFR5_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">TUFM_Q8BFR5</data>
+  <data key="d3">K</data>
+  <data key="d4">325</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|Y147">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">Y</data>
+  <data key="d4">147</data>
+</node>
+<node id="MTIF2_Q91YJ5|B|H550">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MTIF2_Q91YJ5</data>
+  <data key="d3">H</data>
+  <data key="d4">550</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|R153">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">R</data>
+  <data key="d4">153</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|K185">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">K</data>
+  <data key="d4">185</data>
+</node>
+<node id="NDUFS7_Q9DC70|A|Y196">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS7_Q9DC70</data>
+  <data key="d3">Y</data>
+  <data key="d4">196</data>
+</node>
+<node id="MTIF2_Q91YJ5|B|H485">
+  <data key="d0">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">MTIF2_Q91YJ5</data>
+  <data key="d3">H</data>
+  <data key="d4">485</data>
+</node>
+<node id="GFM1_Q8K0D5|B|R683">
+  <data key="d0">ACAD9_Q8JZN5_GFM1_Q8K0D5_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">GFM1_Q8K0D5</data>
+  <data key="d3">R</data>
+  <data key="d4">683</data>
+</node>
+<node id="ACAD9_Q8JZN5|A|H524">
+  <data key="d0">ACAD9_Q8JZN5_GFM1_Q8K0D5_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">ACAD9_Q8JZN5</data>
+  <data key="d3">H</data>
+  <data key="d4">524</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|F157">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">F</data>
+  <data key="d4">157</data>
+</node>
+<node id="GFM1_Q8K0D5|B|H580">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">GFM1_Q8K0D5</data>
+  <data key="d3">H</data>
+  <data key="d4">580</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|F162">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">F</data>
+  <data key="d4">162</data>
+</node>
+<node id="GFM1_Q8K0D5|B|H581">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">GFM1_Q8K0D5</data>
+  <data key="d3">H</data>
+  <data key="d4">581</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|R163">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">R</data>
+  <data key="d4">163</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|K164">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">K</data>
+  <data key="d4">164</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|F166">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">F</data>
+  <data key="d4">166</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|Y171">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">Y</data>
+  <data key="d4">171</data>
+</node>
+<node id="NDUFS3_Q9DCT2|A|F194">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">A</data>
+  <data key="d2">NDUFS3_Q9DCT2</data>
+  <data key="d3">F</data>
+  <data key="d4">194</data>
+</node>
+<node id="GFM1_Q8K0D5|B|H503">
+  <data key="d0">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+  <data key="d1">B</data>
+  <data key="d2">GFM1_Q8K0D5</data>
+  <data key="d3">H</data>
+  <data key="d4">503</data>
+</node>
+<edge source="UQCRFS1_Q9CR68|A|H141" target="YARS2_Q8BYL4|B|F5">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+</edge>
+<edge source="UQCRFS1_Q9CR68|A|H141" target="YARS2_Q8BYL4|B|F6">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+</edge>
+<edge source="UQCRFS1_Q9CR68|A|H141" target="MACROD1_Q922B1|B|F304">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_MACROD1_Q922B1_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="YARS2_Q8BYL4|B|F5" target="UQCRFS1_Q9CR68|A|H161">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+</edge>
+<edge source="YARS2_Q8BYL4|B|F6" target="UQCRFS1_Q9CR68|A|H161">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+</edge>
+<edge source="UQCRFS1_Q9CR68|A|H161" target="CBR4_Q91VT4|B|F193">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+</edge>
+<edge source="UQCRFS1_Q9CR68|A|H161" target="MACROD1_Q922B1|B|F304">
+  <data key="d5">pp</data>
+  <data key="d6">UQCRFS1_Q9CR68_MACROD1_Q922B1_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="UQCRFS1_Q9CR68|A|H164" target="YARS2_Q8BYL4|B|R156">
+  <data key="d5">cp</data>
+  <data key="d6">UQCRFS1_Q9CR68_YARS2_Q8BYL4_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_001.pdb</data>
+</edge>
+<edge source="COX8A_Q64445|A|H36" target="MRPS15_Q9DC71|B|K155">
+  <data key="d5">cp</data>
+  <data key="d6">COX8A_Q64445_MRPS15_Q9DC71_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="COX8A_Q64445|A|H36" target="GFM1_Q8K0D5|B|K429">
+  <data key="d5">cp</data>
+  <data key="d6">COX8A_Q64445_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+</edge>
+<edge source="UQCRFS1_Q9CR68|A|R118" target="CBR4_Q91VT4|B|H192">
+  <data key="d5">cp</data>
+  <data key="d6">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+</edge>
+<edge source="CBR4_Q91VT4|B|H192" target="UQCRFS1_Q9CR68|A|R172">
+  <data key="d5">cp</data>
+  <data key="d6">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+</edge>
+<edge source="CBR4_Q91VT4|B|H192" target="UQCRFS1_Q9CR68|A|K173">
+  <data key="d5">cp</data>
+  <data key="d6">UQCRFS1_Q9CR68_CBR4_Q91VT4_unrelaxed_rank_001_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+</edge>
+<edge source="NDUFS6_P52503|A|H68" target="PDHA1_P35486|B|R205">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS6_P52503_PDHA1_P35486_unrelaxed_rank_001_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+</edge>
+<edge source="NDUFS6_P52503|A|H68" target="DBT_P53395|B|R409">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS6_P52503_DBT_P53395_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="COX4I1_P19783|A|H109" target="MRPL44_Q9CY73|B|Y240">
+  <data key="d5">pp</data>
+  <data key="d6">COX4I1_P19783_MRPL44_Q9CY73_unrelaxed_rank_001_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+</edge>
+<edge source="COX4I1_P19783|A|H109" target="MRPS9_Q9D7N3|B|K344">
+  <data key="d5">cp</data>
+  <data key="d6">COX4I1_P19783_MRPS9_Q9D7N3_unrelaxed_rank_010_alphafold2_multimer_v3_model_1_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS7_Q9DC70|A|Y149" target="BCKDK_O55028|B|H74">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS7_Q9DC70_BCKDK_O55028_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+</edge>
+<edge source="CCDC90B_Q8C3X2|A|Y9" target="CLPX_Q9JHS4|B|H75">
+  <data key="d5">pp</data>
+  <data key="d6">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="CCDC90B_Q8C3X2|A|H83" target="CLPX_Q9JHS4|B|K69">
+  <data key="d5">cp</data>
+  <data key="d6">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="CCDC90B_Q8C3X2|A|H83" target="CLPX_Q9JHS4|B|K72">
+  <data key="d5">cp</data>
+  <data key="d6">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="CCDC90B_Q8C3X2|A|H83" target="CLPX_Q9JHS4|B|F76">
+  <data key="d5">pp</data>
+  <data key="d6">CCDC90B_Q8C3X2_CLPX_Q9JHS4_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="COX8A_Q64445|A|H2" target="GFM1_Q8K0D5|B|H42">
+  <data key="d5">pp</data>
+  <data key="d6">COX8A_Q64445_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_001.pdb</data>
+</edge>
+<edge source="ACAD9_Q8JZN5|A|H452" target="MDH2_P08249|B|K245">
+  <data key="d5">cp</data>
+  <data key="d6">ACAD9_Q8JZN5_MDH2_P08249_unrelaxed_rank_006_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+</edge>
+<edge source="ACAD9_Q8JZN5|A|H522" target="MDH2_P08249|B|R167">
+  <data key="d5">cp</data>
+  <data key="d6">ACAD9_Q8JZN5_MDH2_P08249_unrelaxed_rank_006_alphafold2_multimer_v3_model_2_seed_001.pdb</data>
+</edge>
+<edge source="ACAD9_Q8JZN5|A|H522" target="TUFM_Q8BFR5|B|H324">
+  <data key="d5">pp</data>
+  <data key="d6">ACAD9_Q8JZN5_TUFM_Q8BFR5_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+</edge>
+<edge source="ACAD9_Q8JZN5|A|H522" target="TUFM_Q8BFR5|B|K325">
+  <data key="d5">cp</data>
+  <data key="d6">ACAD9_Q8JZN5_TUFM_Q8BFR5_unrelaxed_rank_003_alphafold2_multimer_v3_model_2_seed_000.pdb</data>
+</edge>
+<edge source="ACAD9_Q8JZN5|A|H522" target="GFM1_Q8K0D5|B|R683">
+  <data key="d5">cp</data>
+  <data key="d6">ACAD9_Q8JZN5_GFM1_Q8K0D5_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS7_Q9DC70|A|H146" target="ACSF3_Q3URE1|B|R296">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS7_Q9DC70|A|Y164" target="ACSF3_Q3URE1|B|H284">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="ACSF3_Q3URE1|B|H284" target="NDUFS7_Q9DC70|A|Y177">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS7_Q9DC70_ACSF3_Q3URE1_unrelaxed_rank_001_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="COX4I1_P19783|A|K7" target="MTIF2_Q91YJ5|B|H474">
+  <data key="d5">cp</data>
+  <data key="d6">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="MTIF2_Q91YJ5|B|H474" target="COX4I1_P19783|A|Y11">
+  <data key="d5">pp</data>
+  <data key="d6">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="MTIF2_Q91YJ5|B|H474" target="COX4I1_P19783|A|F13">
+  <data key="d5">pp</data>
+  <data key="d6">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="COX4I1_P19783|A|F13" target="MTIF2_Q91YJ5|B|H470">
+  <data key="d5">pp</data>
+  <data key="d6">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="MTIF2_Q91YJ5|B|H470" target="NDUFS7_Q9DC70|A|K185">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="COX4I1_P19783|A|H29" target="MTIF2_Q91YJ5|B|R478">
+  <data key="d5">cp</data>
+  <data key="d6">COX4I1_P19783_MTIF2_Q91YJ5_unrelaxed_rank_003_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS7_Q9DC70|A|Y147" target="MTIF2_Q91YJ5|B|H550">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="MTIF2_Q91YJ5|B|H550" target="NDUFS7_Q9DC70|A|R153">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS7_Q9DC70|A|Y196" target="MTIF2_Q91YJ5|B|H485">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS7_Q9DC70_MTIF2_Q91YJ5_unrelaxed_rank_002_alphafold2_multimer_v3_model_3_seed_000.pdb</data>
+</edge>
+<edge source="GFM1_Q8K0D5|B|R683" target="ACAD9_Q8JZN5|A|H524">
+  <data key="d5">cp</data>
+  <data key="d6">ACAD9_Q8JZN5_GFM1_Q8K0D5_unrelaxed_rank_002_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS3_Q9DCT2|A|F157" target="GFM1_Q8K0D5|B|H580">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="GFM1_Q8K0D5|B|H580" target="NDUFS3_Q9DCT2|A|F166">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="GFM1_Q8K0D5|B|H580" target="NDUFS3_Q9DCT2|A|Y171">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS3_Q9DCT2|A|F162" target="GFM1_Q8K0D5|B|H581">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="GFM1_Q8K0D5|B|H581" target="NDUFS3_Q9DCT2|A|R163">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="GFM1_Q8K0D5|B|H581" target="NDUFS3_Q9DCT2|A|K164">
+  <data key="d5">cp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="GFM1_Q8K0D5|B|H581" target="NDUFS3_Q9DCT2|A|F166">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+<edge source="NDUFS3_Q9DCT2|A|F194" target="GFM1_Q8K0D5|B|H503">
+  <data key="d5">pp</data>
+  <data key="d6">NDUFS3_Q9DCT2_GFM1_Q8K0D5_unrelaxed_rank_006_alphafold2_multimer_v3_model_4_seed_000.pdb</data>
+</edge>
+</graph></graphml>
