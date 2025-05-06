@@ -1,0 +1,301 @@
+import json
+
+notebook = {
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# Histidine Interface Visualization\n",
+                "\n",
+                "This notebook visualizes histidine-mediated cation-π and π-π interactions in protein structures."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Import required packages\n",
+                "import py3Dmol\n",
+                "import os\n",
+                "import tempfile\n",
+                "from Bio import PDB\n",
+                "from IPython.display import HTML, display\n",
+                "import glob"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Constants for visualization\n",
+                "CHAIN_A_SURFACE = '#4e79a7'  # Darker blue\n",
+                "CHAIN_A_STICK = '#85b0d5'   # Lighter blue\n",
+                "CHAIN_A_LABEL = '#2c4e6f'   # Dark blue for label text\n",
+                "\n",
+                "CHAIN_B_SURFACE = '#f2be2b'  # Gold\n",
+                "CHAIN_B_STICK = '#f2be2b'    # Same as surface\n",
+                "CHAIN_B_LABEL = '#8B4513'    # Dark brown\n",
+                "\n",
+                "# Amino acid mapping\n",
+                "ONE_LETTER_MAP = {\n",
+                "    'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',\n",
+                "    'CYS': 'C', 'GLN': 'Q', 'GLU': 'E', 'GLY': 'G',\n",
+                "    'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',\n",
+                "    'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',\n",
+                "    'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'\n",
+                "}\n",
+                "\n",
+                "# Residue type definitions\n",
+                "CATION_RES = {'ARG', 'LYS', 'HIS'}\n",
+                "AROMATIC_RES = {'PHE', 'TYR', 'TRP', 'HIS'}"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "def convert_cif_to_pdb(cif_file):\n",
+                "    \"\"\"Convert a CIF file to PDB format using BioPython.\"\"\"\n",
+                "    try:\n",
+                "        fd, temp_pdb = tempfile.mkstemp(suffix=\".pdb\")\n",
+                "        os.close(fd)\n",
+                "        parser = PDB.MMCIFParser(QUIET=True)\n",
+                "        structure = parser.get_structure(\"structure\", cif_file)\n",
+                "        io = PDB.PDBIO()\n",
+                "        io.set_structure(structure)\n",
+                "        io.save(temp_pdb)\n",
+                "        return temp_pdb\n",
+                "    except Exception as e:\n",
+                "        print(f\"Error converting {cif_file} to PDB: {e}\")\n",
+                "        return None"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "def get_sidechain_top_atom(residue):\n",
+                "    \"\"\"Get the top atom of a residue's sidechain for visualization.\"\"\"\n",
+                "    if residue.get_resname() == 'HIS':\n",
+                "        return residue['CE1']\n",
+                "    elif residue.get_resname() in {'PHE', 'TYR'}:\n",
+                "        return residue['CZ']\n",
+                "    elif residue.get_resname() == 'TRP':\n",
+                "        return residue['CH2']\n",
+                "    elif residue.get_resname() == 'ARG':\n",
+                "        return residue['CZ']\n",
+                "    elif residue.get_resname() == 'LYS':\n",
+                "        return residue['NZ']\n",
+                "    return None"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "def find_histidine_pairs(chain_a, chain_b, distance_cutoff=5.0):\n",
+                "    \"\"\"Identify cation–π or π–π interactions with at least one HIS residue.\"\"\"\n",
+                "    pairs = []\n",
+                "    for residue_a in chain_a:\n",
+                "        resn_a = residue_a.get_resname()\n",
+                "        for residue_b in chain_b:\n",
+                "            resn_b = residue_b.get_resname()\n",
+                "            is_a_HIS = (resn_a == 'HIS')\n",
+                "            is_b_HIS = (resn_b == 'HIS')\n",
+                "            is_a_cation_or_aromatic = (resn_a in CATION_RES or resn_a in AROMATIC_RES)\n",
+                "            is_b_cation_or_aromatic = (resn_b in CATION_RES or resn_b in AROMATIC_RES)\n",
+                "\n",
+                "            if (is_a_HIS and is_b_cation_or_aromatic) or (is_b_HIS and is_a_cation_or_aromatic):\n",
+                "                for atom_a in residue_a:\n",
+                "                    for atom_b in residue_b:\n",
+                "                        try:\n",
+                "                            if (atom_a - atom_b) < distance_cutoff:\n",
+                "                                if (is_a_HIS and resn_b in CATION_RES) or (is_b_HIS and resn_a in CATION_RES):\n",
+                "                                    itype = '+:π'  # cation–π\n",
+                "                                else:\n",
+                "                                    itype = 'π:π'  # π–π\n",
+                "                                pairs.append((residue_a, residue_b, itype))\n",
+                "                                break\n",
+                "                        except Exception:\n",
+                "                            continue\n",
+                "                    else:\n",
+                "                        continue\n",
+                "                    break\n",
+                "    return pairs"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "def create_viewer(pdb_data, viewer_type='ribbon', histidine_pairs=None):\n",
+                "    \"\"\"Create a py3Dmol viewer with the specified visualization type.\"\"\"\n",
+                "    viewer = py3Dmol.view(width=800, height=600)\n",
+                "    viewer.addModel(pdb_data, \"pdb\")\n",
+                "    \n",
+                "    # Add surfaces\n",
+                "    viewer.addSurface(py3Dmol.SAS, {'opacity': 0.6, 'color': CHAIN_A_SURFACE}, {'chain': 'A'})\n",
+                "    viewer.addSurface(py3Dmol.SAS, {'opacity': 0.6, 'color': CHAIN_B_SURFACE}, {'chain': 'B'})\n",
+                "    \n",
+                "    if viewer_type == 'ribbon':\n",
+                "        # Add ribbon view\n",
+                "        viewer.setStyle({'chain': 'A'}, {'cartoon': {'color': CHAIN_A_SURFACE, 'opacity': 1.0}})\n",
+                "        viewer.setStyle({'chain': 'B'}, {'cartoon': {'color': CHAIN_B_SURFACE, 'opacity': 1.0}})\n",
+                "    else:\n",
+                "        # Hide cartoon and show sticks for interacting residues\n",
+                "        viewer.setStyle({'model': -1}, {'cartoon': {'hidden': True}})\n",
+                "        \n",
+                "        if histidine_pairs:\n",
+                "            for resA, resB, itype in histidine_pairs:\n",
+                "                chainA_id = resA.get_parent().id\n",
+                "                chainB_id = resB.get_parent().id\n",
+                "                resA_id = resA.get_id()[1]\n",
+                "                resB_id = resB.get_id()[1]\n",
+                "                \n",
+                "                colorA = CHAIN_A_STICK if chainA_id == 'A' else CHAIN_B_STICK\n",
+                "                colorB = CHAIN_A_STICK if chainB_id == 'A' else CHAIN_B_STICK\n",
+                "                \n",
+                "                viewer.setStyle({'chain': chainA_id, 'resi': resA_id}, \n",
+                "                               {'stick': {'color': colorA, 'radius': 0.3}})\n",
+                "                viewer.setStyle({'chain': chainB_id, 'resi': resB_id}, \n",
+                "                               {'stick': {'color': colorB, 'radius': 0.3}})\n",
+                "                \n",
+                "                # Add dotted line between interacting residues\n",
+                "                topA = get_sidechain_top_atom(resA)\n",
+                "                topB = get_sidechain_top_atom(resB)\n",
+                "                if topA and topB:\n",
+                "                    x1, y1, z1 = topA.coord\n",
+                "                    x2, y2, z2 = topB.coord\n",
+                "                    viewer.addLine({\n",
+                "                        'start': {'x': float(x1), 'y': float(y1), 'z': float(z1)},\n",
+                "                        'end': {'x': float(x2), 'y': float(y2), 'z': float(z2)},\n",
+                "                        'color': 'blue',\n",
+                "                        'linewidth': 4,\n",
+                "                        'dashed': True,\n",
+                "                        'dashLength': 0.4,\n",
+                "                        'gapLength': 0.2\n",
+                "                    })\n",
+                "    \n",
+                "    viewer.zoomTo()\n",
+                "    return viewer"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "def visualize_structure(file_path):\n",
+                "    \"\"\"Visualize a structure with both ribbon and labeled views.\"\"\"\n",
+                "    # Handle CIF files\n",
+                "    if file_path.lower().endswith('.cif'):\n",
+                "        temp_pdb = convert_cif_to_pdb(file_path)\n",
+                "        if not temp_pdb:\n",
+                "            print(f\"Could not process CIF file: {file_path}\")\n",
+                "            return\n",
+                "        file_path = temp_pdb\n",
+                "    \n",
+                "    # Parse structure\n",
+                "    parser = PDB.PDBParser(QUIET=True)\n",
+                "    structure = parser.get_structure('model', file_path)\n",
+                "    \n",
+                "    try:\n",
+                "        chain_a = structure[0]['A']\n",
+                "        chain_b = structure[0]['B']\n",
+                "    except KeyError:\n",
+                "        print(f\"Could not find chain A or B in: {file_path}\")\n",
+                "        return\n",
+                "    \n",
+                "    # Find histidine pairs\n",
+                "    histidine_pairs = find_histidine_pairs(chain_a, chain_b, distance_cutoff=5.0)\n",
+                "    \n",
+                "    # Read PDB data\n",
+                "    with open(file_path, 'r') as fh:\n",
+                "        pdb_data = fh.read()\n",
+                "    \n",
+                "    # Create viewers\n",
+                "    ribbon_viewer = create_viewer(pdb_data, 'ribbon')\n",
+                "    label_viewer = create_viewer(pdb_data, 'label', histidine_pairs)\n",
+                "    \n",
+                "    # Display viewers side by side\n",
+                "    display(HTML(f\"<div style='display: flex; justify-content: space-between;'>\"))\n",
+                "    display(HTML(\"<div style='width: 48%;'>\"))\n",
+                "    ribbon_viewer.show()\n",
+                "    display(HTML(\"</div>\"))\n",
+                "    display(HTML(\"<div style='width: 48%;'>\"))\n",
+                "    label_viewer.show()\n",
+                "    display(HTML(\"</div>\"))\n",
+                "    display(HTML(\"</div>\"))\n",
+                "    \n",
+                "    # Clean up temporary file if it was a CIF\n",
+                "    if file_path.lower().endswith('.cif') and os.path.exists(temp_pdb):\n",
+                "        os.remove(temp_pdb)"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# List available PDB/CIF files\n",
+                "model_files = glob.glob('ndufs-7-acot-9-mm-af2-models/*.pdb') + \\\n",
+                "              glob.glob('ndufs-7-acot-9-mm-af2-models/*.cif')\n",
+                "print(f\"Found {len(model_files)} model files:\")\n",
+                "for i, file in enumerate(model_files):\n",
+                "    print(f\"{i+1}. {os.path.basename(file)}\")"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Visualize each model\n",
+                "for i, file_path in enumerate(model_files):\n",
+                "    print(f\"\\nProcessing model {i+1}: {os.path.basename(file_path)}\")\n",
+                "    visualize_structure(file_path)"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 3
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython3",
+            "version": "3.8.0"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 4
+}
+
+# Write the notebook to a file
+with open('histidine_interface_visualization.ipynb', 'w') as f:
+    json.dump(notebook, f, indent=1) 
