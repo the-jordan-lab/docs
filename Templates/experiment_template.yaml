@@ -1,0 +1,17 @@
+experiment_id: EXP-XXXX
+project: Example Project Name
+title: Example Experiment Title
+date: YYYY-MM-DD
+researcher: Your Name
+protocol: Example Protocol Name (v1.0)
+materials:
+  Material: Example Material (lot #)
+parameters:
+  Parameter1: value
+  Parameter2: value
+results:
+  images: ["Data/Images/example_image1.png"]
+  observations: "Example observations."
+status: planned
+notes: |
+  Additional notes or deviations from protocol. 

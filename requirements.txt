@@ -1,0 +1,9 @@
+openai
+langchain
+faiss-cpu
+chromadb
+pyyaml
+gitpython
+ghapi
+biopython
+requests 

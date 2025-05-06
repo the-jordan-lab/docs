@@ -1,0 +1,17 @@
+{
+  "name": "Lab Management Codespace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker",
+    "redhat.vscode-yaml"
+  ],
+  "forwardPorts": [],
+  "remoteUser": "vscode"
+} 

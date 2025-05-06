@@ -1,0 +1,13 @@
+name: Sample Protocol
+id: PROT-1234
+version: '1.0'
+description: A sample protocol for demonstration.
+author: Demo User
+created: '2025-05-05'
+materials:
+- Material: Buffer A (10 mL)
+- Material: Reagent X (5 mg)
+steps:
+- Mix Buffer A and Reagent X.
+- Incubate for 10 minutes.
+notes: This is a demo protocol.

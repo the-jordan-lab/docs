@@ -1,0 +1,13 @@
+name: Example Protocol Name
+id: PROT-XXXX
+version: 1.0
+description: Protocol description goes here
+author: Your Name
+created: YYYY-MM-DD
+materials:
+  - Material: Example Material (amount)
+steps:
+  - "Step 1: ..."
+  - "Step 2: ..."
+notes: |
+  Additional notes or references. 

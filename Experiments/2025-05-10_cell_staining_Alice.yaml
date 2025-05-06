@@ -1,0 +1,16 @@
+experiment_id: EXP-0002
+project: Tumor Growth Study 2025
+title: Staining Tumor Cells with Anti-XYZ
+date: 2025-05-10
+researcher: Alice Smith
+protocol: Cell Staining Protocol (v1.0)
+materials:
+  Antibody: Anti-XYZ (lot #12345)
+  Cell line: HeLa
+parameters:
+  Cell_count: 1e5
+  Incubation_time: 60  # minutes
+results:
+  images: ["Data/Images/exp0002_image1.png", "Data/Images/exp0002_image2.png"]
+  observations: "Strong fluorescence observed in nucleus."
+status: completed 

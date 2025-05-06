@@ -1,0 +1,14 @@
+title: Example Project Title
+description: Brief description of the project
+date_started: YYYY-MM-DD
+lead: Project Lead Name
+team_members:
+  - Member 1
+  - Member 2
+associated_protocols:
+  - Example Protocol Name (v1.0)
+experiments:
+  - EXP-XXXX
+  - EXP-YYYY
+notes: |
+  Additional project notes. 

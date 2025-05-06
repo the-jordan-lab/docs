@@ -1,0 +1,29 @@
+experiment_id: EXP-0100
+project: RNAi Knockdown Screen
+title: 24-well Plate siRNA Transfection (4 siRNAs, RNAiMAX)
+date: 2024-06-08
+researcher: Lab Agent
+protocol: 24-well Plate siRNA Transfection (RNAiMAX) v1.0
+materials:
+  siRNA#1: 10 nM final
+  siRNA#2: 10 nM final
+  siRNA#3: 10 nM final
+  siNC: 10 nM final (negative control)
+  Lipofectamine RNAiMAX: 1.5 µL/well
+  Opti-MEM: 100 µL/well (for complexing)
+  Cells: 5x10^4/well in 24-well plate
+parameters:
+  plate_type: 24-well
+  total_wells: 24
+  siRNA_per_well: 10 pmol
+  rnaimax_per_well: 1.5 µL
+  opti_mem_per_well: 100 µL
+  incubation_time: 24-72 hours
+results:
+  images: []
+  observations: "TBD"
+status: planned
+notes: |
+  - siNC is a non-targeting negative control siRNA.
+  - Each siRNA transfected in separate wells, following standard RNAiMAX protocol.
+  - See protocol PROT-0020 for detailed steps and solution preparation. 
