@@ -6,4 +6,13 @@ pyyaml
 gitpython
 ghapi
 biopython
-requests 
+requests
+
+# Jupyter and dashboard dependencies
+jupyter
+notebook
+jupyterlab
+pandas
+matplotlib
+plotly
+ipywidgets

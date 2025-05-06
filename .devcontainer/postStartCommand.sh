@@ -25,12 +25,48 @@ if [ -z "$OPENAI_API_KEY" ]; then
     echo "    Set it in your Codespace secrets or run 'export OPENAI_API_KEY=your-key'."
 fi
 
+# Check Jupyter installation and dashboard dependencies
+echo "🔬 Setting up Jupyter environment and Protocol Dashboard..."
+pip install -q jupyter notebook jupyterlab pandas matplotlib plotly pyyaml ipywidgets
+
+# Create the welcome message for Jupyter
+mkdir -p /workspaces/docs/Analysis
+cat > /workspaces/docs/README.ipynb << EOL
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 🧪 Welcome to the Lab Documentation System! 🧬\\n\\n",
+    "## Quick Start\\n\\n",
+    "This system provides interactive protocol dashboards to help manage your lab protocols.\\n\\n",
+    "### Available Dashboards:\\n\\n",
+    "- [**Protocol Dashboard**](/workspaces/docs/Analysis/protocol_dashboard.ipynb) - Browse and filter all protocols\\n\\n",
+    "Click on any of the links above to get started!\\n\\n",
+    "*No installation required - everything is pre-configured for you.*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
+EOL
+
 # Display welcome message
 echo ""
 echo "🧪 LAB AGENT ENVIRONMENT READY 🧪"
 echo "Start using the lab agent by typing in the VS Code Chat window."
 echo "For a health check, run: python Agent/test_environment.py"
+echo "To view the Protocol Dashboard, open Analysis/protocol_dashboard.ipynb"
 echo ""
 
 # Exit with success
-exit 0 
+exit 0
