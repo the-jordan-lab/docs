@@ -489,10 +489,33 @@ _Note: Burst 4 created Agent/agent_runner.py (scaffolded with class/function stu
 _Note: Burst 5 implemented Smart-Fill using ChromaDB and OpenAI embeddings to suggest metadata fields for protocols and experiments based on repository content. Next, GitHub integration (commit, push, issues, PRs) will be developed._
 
 ## Burst 6: GitHub Integration
-- [ ] Implement commit and push logic
-- [ ] Implement GitHub issue creation
+- [x] Implement commit and push logic
+- [x] Implement GitHub issue creation with short hash identifiers
 - [ ] Implement draft pull request creation
 - [ ] Add structured commit messages and PR descriptions
+- [ ] Begin repository structure reorganization
+
+_Note: Burst 6 implemented basic GitHub integration including commit/push functionality and issue creation with unique hash identifiers for better traceability. Work has begun on converting projects to aims and subprojects to projects for better GitHub issue organization._
+
+## Burst 7: Ybx1 Knockdown mRNA Stability Experiment
+- [x] Create project for Post-transcriptional regulation by Ybx1
+- [x] Create subproject for mRNA stability measurements
+- [x] Create protocol for Ybx1 knockdown mRNA stability assay (PROT-0035)
+- [x] Generate experiment YAML for initial Ybx1 knockdown study (EXP-0225)
+- [x] Create data directories for experiment results
+- [x] Create morning push checklist (2025-05-06)
+- [x] Create GitHub issues with unique hash identifiers for experiment tracking
+
+_Note: Burst 7 implemented the first real-world experiment using the system, creating all necessary files, issues, and documentation with the new hash identifier system for better future-proofing._
+
+## Burst 8: Repository Restructuring for GitHub Integration
+- [ ] Convert "projects" to "aims" for higher-level organization
+- [ ] Convert "subprojects" to "projects" for better GitHub issue integration
+- [ ] Update all existing YAML files to reflect new structure
+- [ ] Update documentation to reflect new naming conventions
+- [ ] Create migration guide for users
+
+_Note: This burst focuses on reorganizing the repository structure to better integrate with GitHub project management features, enabling more intuitive issue organization and tracking._
 
 ## Burst 9: Experiment Update, Validation, and Logging
 - [x] Implement experiment update logic (handle_update_experiment)

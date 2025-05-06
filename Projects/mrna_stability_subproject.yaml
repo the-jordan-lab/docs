@@ -1,0 +1,26 @@
+title: mRNA stability measurement after Ybx1 knockdown
+description: Investigation of mRNA stability changes in selected genes after Ybx1 knockdown, using siRNA and actinomycin D to assess post-transcriptional regulation
+date_started: 2025-05-06
+lead: Dr. Jim Jordan
+team_members:
+  - Dr. Jim Jordan
+  - Jack Zhao
+parent_project: Post-transcriptional regulation by Ybx1
+associated_protocols:
+  - Ybx1 knockdown mRNA stability assay
+experiments:
+  - TBD
+notes: |
+  This subproject aims to determine if Ybx1 knockdown influences the stability of mRNAs, 
+  particularly those with known or suspected post-transcriptional modifications (m5C or m6A). 
+  
+  Specific aims:
+  1. Establish efficient Ybx1 knockdown using siRNA
+  2. Measure half-lives of selected target mRNAs in control vs. Ybx1 knockdown conditions
+  3. Identify genes most affected by Ybx1 depletion
+  4. Correlate mRNA stability changes with RNA modifications if possible
+  
+  Initial target genes include Myc, p53, and other transcripts with known post-transcriptional regulation.
+  
+  This experiment will employ actinomycin D to block transcription, followed by time-course 
+  sampling and RT-qPCR to measure the decay rates of specific mRNAs. 
