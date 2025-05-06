@@ -1,0 +1,17 @@
+title: Post-transcriptional regulation by Ybx1
+description: Project to understand how Ybx1 influences post-transcriptional regulation of gene expression, with emphasis on mRNA stability
+date_started: 2025-05-06
+lead: Dr. Jim Jordan
+team_members:
+  - Dr. Jim Jordan
+  - Jack Zhao
+associated_protocols:
+  - siRNA transfection protocol
+  - Actinomycin D mRNA stability protocol
+experiments:
+  - TBD
+notes: |
+  This project will investigate the role of Ybx1 in regulating mRNA stability, 
+  with particular focus on genes involved in cellular processes. Ybx1 has been 
+  shown to interact with m5C and m6A modifications on mRNAs, suggesting a role 
+  in post-transcriptional gene regulation. 
