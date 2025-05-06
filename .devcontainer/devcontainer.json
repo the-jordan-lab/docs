@@ -7,6 +7,7 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "postCreateCommand": "pip install -r requirements.txt",
+  "postStartCommand": "bash .devcontainer/postStartCommand.sh",
   "extensions": [
     "ms-python.python",
     "ms-azuretools.vscode-docker",
