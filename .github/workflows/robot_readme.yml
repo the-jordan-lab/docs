@@ -1,0 +1,42 @@
+name: Update Robot README
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'ROBOT_README.md'
+
+jobs:
+  update-robot-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run update_robot_readme.py
+        run: python Agent/tools/update_robot_readme.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet ROBOT_README.md || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit changes if any
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ROBOT_README.md
+          git commit -m "Auto-update ROBOT_README.md [skip ci]"
+          git push 

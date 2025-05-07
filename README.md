@@ -2,6 +2,51 @@
 
 ---
 
+# Lab Workspace Quick-Start
+
+Welcome to the Lab Codespace! This environment is pre-configured for you. Just follow these steps:
+
+## 🚀 1. Open the Codespace
+- Click "Code" > "Codespaces" > "Create codespace on main" (or your assigned branch).
+
+## ⏳ 2. Wait for Setup
+- The environment will build automatically. This takes ~1-2 minutes the first time.
+- All dependencies, the Lab Agent, and required secrets (like the OpenAI API key) are pre-loaded.
+
+## 💬 3. Start Chatting
+- Open the **Cursor** or **Copilot Chat** tab in VS Code.
+- Type your request (e.g., "Create a new experiment using the cell staining protocol tomorrow at 10 AM").
+- The Lab Agent will handle the rest!
+
+---
+
+### FAQ
+- **Do I need to set up any API keys or secrets?**
+  - _No!_ All required secrets are injected automatically. You cannot see them, but the Agent can use them.
+- **What if I see a warning about missing tools?**
+  - Try rebuilding the container (F1 > "Rebuild Container"). If issues persist, contact @james-m-jordan.
+- **Where do my files and issues go?**
+  - Protocols, experiments, and projects are saved in their respective folders. Issues you create are logged and visible in the repo (see below).
+
+---
+
+### For Maintainers
+- **OpenAI API Key**: Add it as a Codespaces secret at the repo level (`OPENAI_API_KEY`).
+- **GitHub CLI Authentication**: The CLI is pre-installed, but requires one-time auth per user:
+  ```bash
+  gh auth login
+  # Choose GitHub.com → HTTPS → Paste a token with 'repo' scope
+  ```
+- **Auto-Issue Tracking**: Issues are automatically added to `TASKS.md` and `ISSUES_LOG.md` via hooks.
+- **Robot Context**: `ROBOT_README.md` contains repository structure information for AI assistants.
+- For more advanced setup or troubleshooting, see `ENVIRONMENT_SETUP.md` and `LAB_AGENT_GUIDE.md`.
+
+---
+
+Enjoy your streamlined lab experience!
+
+---
+
 ## 🚀 Quick Start (for Researchers)
 
 1. **Open in GitHub Codespaces** (or locally with Dev Containers)

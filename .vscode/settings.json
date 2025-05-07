@@ -1,0 +1,9 @@
+{
+  // Enable GitLens Issues integration and pin the lab repo issues view
+  "gitlens.views.repositories.issues.enabled": true,
+  "gitlens.views.issues.location": "workbench",
+  "gitlens.views.issues.repositories": [
+    "github.com/james-m-jordan/lab-doc-repo"
+  ],
+  "gitlens.views.issues.pinned": true
+} 

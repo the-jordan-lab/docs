@@ -1,3 +1,9 @@
+# Lab Task List
+
+This file tracks all ongoing lab and dev tasks. Issues created via GitHub and the Lab Agent are appended automatically below.
+
+---
+
 # TASKS
 
 _Note: This file is now automatically updated by the agent/task-runner. Tasks are marked done when experiments are completed, and new tasks may be added as needed._
@@ -29,4 +35,11 @@ _Note: This file is now automatically updated by the agent/task-runner. Tasks ar
 - [ ] Update documentation to reflect new naming conventions
 - [ ] Evaluate need for TASKS.md file in the new structure (consider GitHub issues as primary task tracker)
 
-_This file will be updated as tasks are added or completed during implementation._ 
+_This file will be updated as tasks are added or completed during implementation._ - [ ] [#9](https://github.com/the-jordan-lab/docs/issues/9) Pre-build Dev Container for instant Agent boot  _(added 2025-05-07 10:37)_
+- [ ] [#10](https://github.com/the-jordan-lab/docs/issues/10) Add repo-level OPENAI_API_KEY secret & document  _(added 2025-05-07 10:37)_
+- [ ] [#11](https://github.com/the-jordan-lab/docs/issues/11) Rewrite README Quick-Start for students  _(added 2025-05-07 10:37)_
+- [ ] [#12](https://github.com/the-jordan-lab/docs/issues/12) Implement automated ISSUE → TASKS.md hook  _(added 2025-05-07 10:37)_
+- [ ] [#13](https://github.com/the-jordan-lab/docs/issues/13) Add GitLens default issue view configuration  _(added 2025-05-07 10:37)_
+- [ ] [#14](https://github.com/the-jordan-lab/docs/issues/14) CI: Codespace headless smoke test  _(added 2025-05-07 10:37)_
+- [ ] [#15](https://github.com/the-jordan-lab/docs/issues/15) [Wet-Lab] Complete HEK293T thaw & viability check  _(added 2025-05-07 10:37)_
+- [ ] [#16](https://github.com/the-jordan-lab/docs/issues/16) [Wet-Lab] Prepare Ybx1 & control siRNA mixes  _(added 2025-05-07 10:37)_

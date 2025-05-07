@@ -39,5 +39,6 @@
         "windsurf.authTokenPath": "~/.windsurf/auth.json"
       }
     }
-  }
+  },
+  "updateContentCommand": "pip install -r requirements.txt && python Agent/agent_runner.py --build-embeddings || true"
 }

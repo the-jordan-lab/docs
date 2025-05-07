@@ -137,4 +137,15 @@ You can always skim these files (or GitHub commit history) to catch up after a b
 
 ---
 
+## 10. Automated Issue Logging (NEW)
+Whenever you create a GitHub issue (e.g., with `gh issue create`), you can call the hook script:
+
+```bash
+python Agent/hooks/post_issue.py <issue_number> <issue_title> <issue_url>
+```
+
+This will append the issue to both `TASKS.md` and `ISSUES_LOG.md` for easy tracking inside the repo. (You can automate this in your workflow or call it manually after each issue is created.)
+
+---
+
 Made with ☕ and 🤖.  Enjoy streamlined, reproducible record-keeping! 
