@@ -1,0 +1,84 @@
+---
+# Protocol metadata
+id: PROT-0013
+name: BSA-OAPA and Insulin Combined Treatment Protocol
+version: 1.0
+description: Protocol for treating cells with BSA-conjugated oleic/palmitic acids and insulin
+author: JJ
+created: 2025-04-30
+last_updated: 2025-05-07
+category: cell-treatment
+
+# Treatment details
+treatment:
+  primary:
+    type: fatty-acid
+    ratio: "1:1 (OA:PA)"
+    total_concentration: 0.5 mM
+    duration: 24 hours
+  secondary:
+    type: hormone
+    name: Insulin
+    concentration: 100 nM
+    duration: 24 hours
+  control: 
+    - BSA-only treatment
+    - Vehicle (no insulin)
+
+# Materials required
+materials:
+  - name: Oleic acid (OA)
+    concentration: 0.25 mM
+    preparation: BSA-conjugated
+  - name: Palmitic acid (PA)
+    concentration: 0.25 mM
+    preparation: BSA-conjugated
+  - name: Insulin solution
+    concentration: 100 nM
+    preparation: Diluted in appropriate buffer
+  - name: Complete culture medium
+    notes: Use media appropriate for cell type
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare BSA-conjugated OA and PA mixture"
+    details: "Final concentration: 0.25 mM OA, 0.25 mM PA (0.5 mM total, 1:1 ratio)"
+  - step: 2
+    action: "Prepare insulin working solution"
+    details: "Dilute stock insulin to 100 nM final concentration"
+  - step: 3
+    action: "Treat cells with OAPA and insulin simultaneously"
+    details: "Add both treatments to culture medium before applying to cells"
+  - step: 4
+    action: "Incubate for 24h with combined treatment"
+    details: "Maintain standard culture conditions during incubation"
+  - step: 5
+    action: "Set up appropriate controls"
+    details: "Include BSA-only control, insulin-only control, and untreated control"
+
+# Experimental context
+experimental_notes:
+  - condition: "Combined fatty acid and insulin stimulation"
+  - condition: "Medium dose OAPA (0.5 mM total)"
+  - condition: "Standard insulin dose (100 nM)"
+  - note: "This protocol tests the interaction between fatty acid loading and insulin signaling"
+  
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves and eye protection required"
+  hazards: "Avoid direct contact with concentrated fatty acids"
+
+# Data collection
+data_collection:
+  timepoints: [0h, 6h, 12h, 24h]
+  measurements:
+    - "Insulin signaling pathway activation (Western blot)"
+    - "Lipid accumulation (Oil Red O staining)"
+    - "Gene expression changes (qPCR)"
+
+# References
+references:
+  - "Internal protocol based on standard BSA-fatty acid conjugation methods"
+  - "Liu Y, et al. (2022) Effects of insulin and fatty acids on metabolic signaling. J Cell Biol 35(2):122-134"
+---

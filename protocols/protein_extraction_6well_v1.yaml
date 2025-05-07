@@ -1,0 +1,148 @@
+---
+# Protocol metadata
+id: PROT-0027
+name: Protein Extraction Protocol for 6-Well Plates
+version: 1.0
+description: Protocol for extracting protein from cells grown in 6-well plates
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: protein-analysis
+
+# Materials required
+materials:
+  - name: RIPA buffer
+    preparation: With freshly added protease/phosphatase inhibitors
+    storage: 4°C
+  - name: PBS
+    concentration: 1X, sterile
+    temperature: Ice-cold
+  - name: Cell scraper or pipet tip
+    type: Sterile
+  - name: Microcentrifuge tubes (1.5-mL)
+    preparation: Pre-labeled, pre-chilled
+  - name: PCR tube strips (0.2-mL)
+    use: For BCA assay aliquots
+  - name: Ice
+    amount: Sufficient to fill a tray
+
+# Equipment required
+equipment:
+  - name: ThermoMixer
+    settings: 4°C, 500 rpm
+  - name: Refrigerated centrifuge
+    settings: Maximum speed (≥13,000g), 4°C
+  - name: Ice tray
+    size: Sufficient to hold samples
+  - name: Aspiration system
+    type: Vacuum or manual
+  - name: -80°C freezer
+    use: Sample storage
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare protein extraction buffer"
+    details: "Add protease/phosphatase inhibitors to RIPA buffer immediately before use"
+  - step: 2
+    action: "Prepare ice tray"
+    details: "Fill a tray with ice from the ice machine in the autoclave room"
+  - step: 3
+    action: "Retrieve cell culture plate"
+    details: "Remove the plate from the incubator and bring it to the lab workstation"
+  - step: 4
+    action: "Aspirate media"
+    details: "Carefully remove all culture media from each well"
+  - step: 5
+    action: "Wash cells"
+    details: "Add 1 mL of ice-cold 1X PBS to each well, swirl gently, then aspirate completely"
+  - step: 6
+    action: "Add extraction buffer"
+    details: "Add 100 μL of ice-cold protein extraction buffer to each well while keeping the plate on ice"
+  - step: 7
+    action: "Incubate with buffer"
+    details: "Allow cells to sit in extraction buffer for 10 minutes, agitating the plate every 1-2 minutes"
+  - step: 8
+    action: "Collect lysate"
+    details: "Tilt the plate to pool the extraction buffer and suspended cells in the bottom corner"
+  - step: 9
+    action: "Scrape cells if necessary"
+    details: "If cells remain attached, scrape them into the extraction buffer with a cell scraper or pipet tip"
+  - step: 10
+    action: "Transfer lysate"
+    details: "Transfer the cell suspension to a chilled, pre-labeled 1.5-mL tube"
+  - step: 11
+    action: "Agitate lysate"
+    details: "Incubate the lysate in the ThermoMixer at 4°C/500 rpm for 4 hours to overnight"
+  - step: 12
+    action: "Centrifuge lysate"
+    details: "Centrifuge at maximum speed for 25 minutes at 4°C to pellet cell debris"
+  - step: 13
+    action: "Collect protein supernatant"
+    details: "Carefully transfer 90 μL of supernatant to a fresh, chilled 1.5-mL tube (avoiding the pellet)"
+  - step: 14
+    action: "Prepare BCA assay aliquot"
+    details: "Transfer remaining 10 μL to 0.2-mL PCR tube strips for protein quantification"
+  - step: 15
+    action: "Store samples"
+    details: "Place tubes in a -80°C box and note box address/location"
+  - step: 16
+    action: "Document samples"
+    details: "Submit your sample to the inventory/archive by filling out the -80°C Sample Submission form"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Temperature"
+    details: "Maintain samples on ice throughout extraction to prevent protein degradation and preserve phosphorylation states"
+  - parameter: "Inhibitors"
+    details: "Add protease/phosphatase inhibitors immediately before use; they degrade quickly in solution"
+  - parameter: "PBS removal"
+    details: "Remove PBS completely before adding extraction buffer to prevent dilution"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Low protein yield"
+    solution: "Increase extraction buffer volume, extend lysis time, or use more stringent lysis buffer"
+  - problem: "High debris or viscosity"
+    solution: "Sonicate lysate briefly, add DNase I, or extend centrifugation time"
+  - problem: "Protein degradation"
+    solution: "Ensure fresh inhibitors, maintain cold temperatures, and process samples promptly"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "RIPA buffer contains detergents that can cause eye/skin irritation"
+
+# Quality control
+quality_control:
+  - check: "BCA protein assay"
+    criteria: "Protein concentration should be 0.5-5 μg/μL depending on cell type and density"
+  - check: "Western blot quality"
+    criteria: "Distinct bands without smearing or degradation products"
+
+# Downstream applications
+downstream_applications:
+  - name: "Western blotting"
+    preparation: "Dilute samples to equal concentration, add loading buffer, and heat at 95°C for 5 minutes"
+  - name: "Mass spectrometry"
+    preparation: "May require additional cleanup steps to remove detergents"
+  - name: "ELISA"
+    preparation: "Verify buffer compatibility with assay; may require dialysis"
+
+# References
+references:
+  - "Cold Spring Harbor Protocols. (2017) Extraction of Proteins from Mammalian Cells. CSH Protocols."
+  - "Bass JJ, et al. (2017) An overview of technical considerations for Western blotting applications to physiological research. Scand J Med Sci Sports. 27(1):4-25."
+
+# Notes
+notes: |
+  - This protocol is optimized for 6-well plates
+  - Keep samples cold throughout the process to prevent protein degradation
+  - Different lysis buffers may be used depending on the target proteins:
+    - RIPA buffer (used here): Good for most cytoplasmic, membrane, and nuclear proteins
+    - NP-40 buffer: Milder, preserves protein-protein interactions
+    - Laemmli buffer: Direct lysis for SDS-PAGE without separate extraction step
+  - For phosphoprotein analysis, always use fresh phosphatase inhibitors
+  - Expected yields: 100-300 μg total protein per well (depending on cell type and confluence)
+  - Consider snap-freezing cell pellets in liquid nitrogen if extraction must be delayed
+---

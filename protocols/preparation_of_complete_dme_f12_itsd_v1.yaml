@@ -1,0 +1,157 @@
+---
+# Protocol metadata
+id: PROT-0032
+name: Preparation of Complete DME/F-12 ITSD Protocol
+version: 1.0
+description: Protocol for preparing complete DME/F-12 with ITS and dexamethasone supplements
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: reagent-preparation
+
+# Materials required
+materials:
+  - name: DME/F-12 medium
+    amount: 500 mL bottle
+    storage: 4°C
+    supplier: Recommended supplier
+  - name: Fetal Bovine Serum (FBS)
+    amount: 50 mL (10% final)
+    storage: -20°C (stock), thawed before use
+    supplier: Recommended supplier, heat-inactivated
+  - name: Insulin-Transferrin-Selenium (ITS)
+    amount: 5 mL (1% final)
+    storage: -20°C
+    supplier: Commercial 100X solution
+  - name: Dexamethasone
+    amount: 5 μL of 10 mM stock (1 nM final)
+    storage: -20°C
+    preparation: Stock in ethanol or DMSO
+  - name: Penicillin-Streptomycin (PS)
+    amount: 5 mL (1% final)
+    storage: -20°C
+    supplier: Recommended supplier, 100X concentration
+  - name: Sterile 50-mL tube
+    type: Conical, polypropylene
+    preparation: Sterile
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: Water bath or incubator
+    temperature: 37°C
+    use: For thawing frozen supplements
+  - name: Pipette aid
+    range: For 5-50 mL volumes
+  - name: Micropipettes
+    range: For small volumes (dexamethasone)
+  - name: Serological pipettes
+    range: Various sizes
+  - name: Refrigerator
+    temperature: 4°C
+    use: For media storage
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare materials"
+    details: "Allow media to warm to room temperature; thaw FBS, ITS, and PS at 37°C"
+  - step: 2
+    action: "Set up biosafety cabinet"
+    details: "Turn on biosafety cabinet 15 minutes before use; clean with 70% ethanol"
+  - step: 3
+    action: "Aliquot plain media"
+    details: "Transfer ~55 mL of DME/F-12 media into a sterile 50-mL tube and label as 'PLAIN DME/F-12'"
+  - step: 4
+    action: "Add FBS"
+    details: "To the remaining 445 mL of media in the original bottle, add 50 mL Fetal Bovine Serum (FBS)"
+  - step: 5
+    action: "Add ITS supplement"
+    details: "Add 5 mL Insulin-Transferrin-Selenium (ITS) solution to the main bottle"
+  - step: 6
+    action: "Add dexamethasone"
+    details: "Add 5 μL of 10 mM dexamethasone stock solution (final concentration 1 nM)"
+  - step: 7
+    action: "Add antibiotics"
+    details: "Add 5 mL Penicillin-Streptomycin (PS) solution to the main bottle"
+  - step: 8
+    action: "Mix gently"
+    details: "Invert bottle several times to mix thoroughly, avoiding bubble formation"
+  - step: 9
+    action: "Label media"
+    details: "Label bottle with 'Complete DME/F-12 ITS-D', date of preparation, and expiration date (2-3 weeks from preparation)"
+  - step: 10
+    action: "Store media"
+    details: "Store both complete and plain media at 4°C; protect from light if possible"
+
+# Final composition
+final_composition:
+  - component: "DME/F-12 basal medium"
+    percentage: "88%"
+    function: "Provides essential nutrients and buffering"
+  - component: "Fetal Bovine Serum"
+    percentage: "10%"
+    function: "Provides growth factors and proteins for cell growth"
+  - component: "Insulin-Transferrin-Selenium"
+    percentage: "1%"
+    function: "Insulin: promotes glucose uptake; Transferrin: iron carrier; Selenium: antioxidant"
+  - component: "Dexamethasone"
+    concentration: "1 nM"
+    function: "Glucocorticoid that promotes cell differentiation in certain cell types"
+  - component: "Penicillin-Streptomycin"
+    percentage: "1%"
+    function: "Prevents bacterial contamination"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Sterility"
+    details: "All components must be handled aseptically in a biosafety cabinet"
+  - parameter: "Dexamethasone concentration"
+    details: "Accurate pipetting of small volume (5 μL) is critical; consider using serial dilutions"
+  - parameter: "Expiration"
+    details: "Media with ITS may have shorter shelf life (2-3 weeks) compared to standard media"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Precipitate formation"
+    solution: "May occur with ITS; warm to room temperature and mix gently; filtration may be required"
+  - problem: "Cell differentiation issues"
+    solution: "Verify dexamethasone concentration; prepare fresh medium; check ITS potency"
+  - problem: "Media color change"
+    solution: "If phenol red indicator turns yellow, pH is too acidic; discard media"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves required"
+  hazards: "Minimal hazards; follow standard laboratory safety practices"
+  dexamethasone: "Potent steroid hormone; avoid skin contact"
+
+# Quality control
+quality_control:
+  - check: "pH indicator"
+    criteria: "Phenol red should appear pink-red (not yellow or purple)"
+  - check: "Sterility test"
+    criteria: "Incubate a sample at 37°C for 72 hours to verify no contamination"
+  - check: "Functional test"
+    criteria: "Test with appropriate cell differentiation model if possible"
+
+# References
+references:
+  - "ATCC. Guidelines for Media Preparation and Methods. www.atcc.org"
+  - "Freshney, R.I. Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 7th Edition"
+  - "Barnes D, Sato G. (1980) Methods for growth of cultured cells in serum-free medium. Analytical Biochemistry 102(2):255-270"
+
+# Notes
+notes: |
+  - This specialized medium contains additional supplements:
+    - 10% FBS
+    - 1% ITS
+    - 1 nM dexamethasone
+    - 1% Penicillin-Streptomycin
+  - ITS supplement is typically used to reduce serum requirements or enhance differentiation
+  - Dexamethasone concentration (1 nM) is suitable for differentiation of certain cell types
+  - For more potent glucocorticoid effects, concentration can be increased to 10-100 nM
+  - For long-term studies, consider preparing smaller volumes of media more frequently
+  - Some cell types may require adaptation period when switching to ITS-supplemented media
+---

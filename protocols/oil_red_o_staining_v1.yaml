@@ -1,0 +1,157 @@
+---
+# Protocol metadata
+id: PROT-0015
+name: Oil Red O Staining Protocol for Adherent Cells
+version: 1.0
+description: Protocol for staining and quantifying lipid droplets in adherent hepatocyte-like cells
+author: J. Jordan
+created: 2025-02-09
+last_updated: 2025-05-07
+category: histology
+
+# Materials required
+materials:
+  - name: Oil Red O powder
+    storage: Room temperature, protected from light
+  - name: 100% isopropanol (2-propanol)
+    purity: Analytical grade
+    storage: Room temperature, flammable cabinet
+  - name: 4% paraformaldehyde (PFA)
+    storage: 4°C
+    preparation: Freshly prepared or commercially available
+  - name: PBS
+    concentration: 1X
+    storage: Room temperature
+  - name: Distilled water
+    purity: Ultra-pure preferred
+  - name: 0.2-micron syringe filter
+    type: PVDF or nylon
+  - name: 96-well culture plate
+    type: Clear bottom
+
+# Equipment required
+equipment:
+  - name: Echo Revolution inverted microscope
+    settings: Brightfield, 10x and 20x objectives
+  - name: Spectrophotometer
+    settings: 492 nm absorbance measurement
+  - name: Syringe (5-10 mL)
+    use: For filtration of ORO solution
+  - name: Multichannel pipette
+    range: 20-200 μL
+  - name: Shaker/rocker
+    settings: Low to medium speed
+
+# Solutions preparation
+solutions:
+  - name: Oil Red O stock solution
+    preparation: "Dissolve 0.175 g ORO powder in 50 mL 100% 2-propanol"
+    storage: "Room temperature, stable for up to 1 month"
+  - name: Oil Red O working solution
+    preparation: "Add 3 parts ORO stock solution to 2 parts distilled water and vortex immediately"
+    storage: "Filter before use, prepare fresh"
+    stability: "Use within 2 hours"
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare Oil Red O working solution"
+    details: "Dilute ORO stock solution in distilled water (Add 3 parts ORO solution to 2 parts dH2O) and vortex immediately"
+  - step: 2
+    action: "Filter diluted ORO solution"
+    details: "Use a syringe with a 0.2-micron filter (critical step)"
+  - step: 3
+    action: "Fix cells"
+    details: "Add 75 μL cold 4% PFA to each well and incubate for 20-30 min at room temperature"
+  - step: 4
+    action: "Wash cells"
+    details: "Aspirate PFA and wash cells twice with 100 μL PBS"
+  - step: 5
+    action: "Dry cells"
+    details: "Aspirate last PBS wash thoroughly until cells are very dry"
+  - step: 6
+    action: "Stain with Oil Red O"
+    details: "Add 75 μL freshly prepared ORO working solution to each well and stain for 30 min at room temperature"
+  - step: 7
+    action: "Wash off excess stain"
+    details: "Wash twice with 150 μL distilled water"
+  - step: 8
+    action: "Prepare for imaging"
+    details: "Add 100 μL PBS to wells if imaging, or proceed directly to extraction"
+  - step: 9
+    action: "Image stained cells"
+    details: "Capture brightfield images using Echo Revolution microscope with consistent imaging parameters"
+  - step: 10
+    action: "Document images"
+    details: "Transfer images to Teams lab notebook data folder with image index"
+  - step: 11
+    action: "Extract Oil Red O"
+    details: "Add 75 μL of 100% isopropanol to each well and agitate for 5 minutes"
+  - step: 12
+    action: "Transfer extract"
+    details: "Transfer 60 μL isopropanol extraction to 96-well assay plate"
+  - step: 13
+    action: "Prepare blank wells"
+    details: "Add 60 μL pure isopropanol to at least 3 wells for background"
+  - step: 14
+    action: "Measure absorbance"
+    details: "Ensure plate reader is set to 492-nm protocol and measure absorbance"
+  - step: 15
+    action: "Export data"
+    details: "Export data to USB drive or laboratory database"
+
+# Data analysis
+data_analysis:
+  - step: 1
+    action: "Calculate net absorbance"
+    details: "Subtract average blank (isopropanol only) reading from each sample reading"
+  - step: 2
+    action: "Normalize data (optional)"
+    details: "Normalize to cell number, protein content, or DNA content if needed"
+  - step: 3
+    action: "Statistical analysis"
+    details: "Compare experimental groups using appropriate statistical tests"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Solution filtration"
+    details: "Filtration of ORO working solution is critical to prevent particulate artifacts"
+  - parameter: "Drying before staining"
+    details: "Complete drying after PBS wash ensures optimal stain uptake"
+  - parameter: "Timing of isopropanol extraction"
+    details: "Standardize agitation time (5 minutes) for reproducible extraction"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "High background staining"
+    solution: "Ensure complete washing steps; check quality of ORO solutions"
+  - problem: "Weak or uneven staining"
+    solution: "Check ORO solution freshness; ensure cells were completely dry before staining"
+  - problem: "Precipitates in staining solution"
+    solution: "Filter ORO solution thoroughly; prepare fresh working solution"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "PFA is toxic; isopropanol is flammable; dispose of waste according to institutional guidelines"
+
+# Quality control
+quality_control:
+  - check: "Include positive control"
+    criteria: "Cell line known to accumulate lipid droplets (e.g., differentiated 3T3-L1 cells)"
+  - check: "Include negative control"
+    criteria: "Untreated cells or cells with minimal lipid accumulation"
+
+# References
+references:
+  - "Mehlem A, et al. (2013) Imaging of neutral lipids by oil red O for analyzing the metabolic status in health and disease. Nat Protoc. 8(6):1149-54"
+
+# Notes
+notes: |
+  - Optimized for hepatocyte-like cells (HepG2, Huh7, AML12)
+  - Filtration of ORO solution is critical for good results
+  - Volume specifications are for 96-well plates - adjust for other formats
+  - For automated image analysis, consider using ImageJ/CellProfiler for quantification
+  - ORO stains neutral lipids (primarily triglycerides) red
+  - Semi-quantitative absorbance measurements correlate with total neutral lipid content
+---

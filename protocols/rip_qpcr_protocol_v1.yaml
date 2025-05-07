@@ -1,0 +1,252 @@
+---
+# Protocol metadata
+id: PROT-0014
+name: RNA Immunoprecipitation qPCR Protocol
+version: 1.0
+description: Protocol for RNA immunoprecipitation followed by RT-qPCR to detect RNA-protein interactions
+author: Jordan Lab
+created: 2025-05-06
+last_updated: 2025-05-07
+category: molecular-biology
+
+# Materials required
+materials:
+  - name: Cell culture dishes
+    type: 10-cm or 15-cm dishes
+    notes: Depending on protein/RNA abundance
+  - name: PBS (cold)
+    temperature: 4°C
+    storage: Room temperature
+  - name: UV crosslinker
+    wavelength: 254 nm
+    alternative: Formaldehyde crosslinking
+  - name: Lysis buffer
+    components: "Non-denaturing buffer with RNase inhibitors"
+    storage: Prepare fresh or store at -20°C
+  - name: Protein A/G beads
+    preparation: Pre-blocked with BSA and tRNA
+    storage: 4°C
+  - name: Antibodies for target protein
+    dilution: As recommended for IP
+    storage: -20°C
+  - name: IgG control antibody
+    use: Negative control
+    storage: -20°C
+  - name: Glycine solution
+    concentration: 2.5 M (for formaldehyde quenching)
+    storage: Room temperature
+  - name: RNA isolation reagents
+    type: TRIzol or column-based kit
+    storage: According to manufacturer's instructions
+  - name: RT-qPCR reagents
+    components: "Reverse transcription kit, qPCR master mix, primers"
+    storage: -20°C
+
+# Equipment required
+equipment:
+  - name: UV crosslinker
+    settings: 150-300 mJ/cm²
+    alternative: Formaldehyde crosslinking setup
+  - name: Refrigerated centrifuge
+    settings: Various speeds, 4°C
+  - name: Rotating mixer
+    temperature: 4°C
+  - name: Thermocycler
+    use: RT-qPCR and crosslink reversal
+  - name: qPCR instrument
+    use: Target RNA detection
+
+# Protocol steps - General workflow
+steps:
+  - step: 1
+    action: "Grow cells to desired confluency"
+    details: "80-90% confluency recommended for optimal yield"
+  - step: 2
+    action: "Perform crosslinking"
+    details: "Choose between UV or formaldehyde crosslinking methods (see detailed workflows below)"
+  - step: 3
+    action: "Harvest and lyse cells"
+    details: "Use buffer with RNase inhibitors; keep samples cold"
+  - step: 4
+    action: "Pre-clear lysates"
+    details: "Incubate with protein A/G beads alone for 1 hour at 4°C to reduce nonspecific binding"
+  - step: 5
+    action: "Perform immunoprecipitation"
+    details: "Add specific antibody, incubate, then add protein A/G beads"
+  - step: 6
+    action: "Wash beads"
+    details: "Multiple washes with increasing stringency to remove non-specific binding"
+  - step: 7
+    action: "Reverse crosslinks if needed"
+    details: "UV: proteinase K digestion; formaldehyde: heat treatment (65°C)"
+  - step: 8
+    action: "Isolate RNA"
+    details: "Extract RNA from immunoprecipitated complex using TRIzol or column-based kit"
+  - step: 9
+    action: "Perform RT-qPCR"
+    details: "Reverse transcribe RNA and quantify target RNA enrichment"
+
+# UV crosslinking workflow
+uv_crosslinking_workflow:
+  - step: 1
+    action: "Grow cells to desired confluency in culture dishes"
+    details: "Use 10-15 cm dishes for sufficient material"
+  - step: 2
+    action: "Wash cells with cold PBS"
+    details: "Remove media and serum proteins; keep cells on ice to minimize RNase activity"
+  - step: 3
+    action: "Add fresh cold PBS"
+    details: "Add enough to cover the cells but minimize UV light absorption"
+  - step: 4
+    action: "Perform UV crosslinking"
+    details: "Use UV 254 nm at 150-300 mJ/cm²; optimize for your protein of interest"
+  - step: 5
+    action: "Harvest cells"
+    details: "Scrape or gently trypsinize cells and collect by centrifugation"
+  - step: 6
+    action: "Lyse cells"
+    details: "Use mild conditions suitable for maintaining RNP complexes"
+  - step: 7
+    action: "Pre-clear lysates"
+    details: "Incubate with protein A/G beads alone to reduce nonspecific binding"
+  - step: 8
+    action: "Perform immunoprecipitation"
+    details: "Add the specific antibody, followed by protein A/G beads"
+  - step: 9
+    action: "Wash beads"
+    details: "Multiple washes with increasing stringency"
+  - step: 10
+    action: "Digest and extract RNA"
+    details: "Treat with proteinase K and extract RNA"
+  - step: 11
+    action: "Perform RT-qPCR"
+    details: "Reverse transcribe and perform qPCR to detect target RNAs"
+
+# Formaldehyde crosslinking workflow
+formaldehyde_crosslinking_workflow:
+  - step: 1
+    action: "Grow cells to desired confluency"
+    details: "Use 10-15 cm dishes for sufficient material"
+  - step: 2
+    action: "Prepare formaldehyde solution"
+    details: "Prepare fresh formaldehyde at working concentration (often 1% final in culture medium)"
+  - step: 3
+    action: "Crosslink cells"
+    details: "Add formaldehyde directly to cells and incubate for 5–10 minutes at RT or 37°C"
+  - step: 4
+    action: "Quench reaction"
+    details: "Add glycine (125 mM final) for 5–10 minutes to quench formaldehyde"
+  - step: 5
+    action: "Wash cells"
+    details: "Wash thoroughly with cold PBS to remove formaldehyde"
+  - step: 6
+    action: "Harvest cells"
+    details: "Scrape cells carefully and collect by centrifugation"
+  - step: 7
+    action: "Lyse cells"
+    details: "Use conditions that preserve protein-RNA complexes"
+  - step: 8
+    action: "Perform immunoprecipitation"
+    details: "Use specific antibody against protein of interest"
+  - step: 9
+    action: "Wash beads"
+    details: "Multiple washes to remove nonspecific material"
+  - step: 10
+    action: "Reverse crosslink"
+    details: "Heat at 65°C for several hours with SDS/high salt"
+  - step: 11
+    action: "Isolate RNA"
+    details: "Extract RNA from immunoprecipitated sample"
+  - step: 12
+    action: "Perform RT-qPCR"
+    details: "Reverse transcribe and quantify targets by qPCR"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Crosslinking method selection"
+    details: "UV is more specific for direct interactions; formaldehyde captures larger complexes"
+  - parameter: "Antibody specificity"
+    details: "Validate antibody IP efficiency by Western blot before RIP"
+  - parameter: "RNase control"
+    details: "Use RNase inhibitors in all buffers and work quickly at 4°C"
+  - parameter: "Wash stringency"
+    details: "Balance between removing background and maintaining specific interactions"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Poor RNA yield"
+    solution: "Increase starting material; optimize crosslinking conditions; check for RNase contamination"
+  - problem: "High background in control IPs"
+    solution: "Increase wash stringency; pre-block beads with BSA/tRNA; use more specific antibody"
+  - problem: "No enrichment of target RNA"
+    solution: "Verify protein-RNA interaction using alternative approach; check crosslinking efficiency; try different antibody"
+
+# Method comparisons
+considerations:
+  uv_crosslinking:
+    - advantage: "Standardize irradiation distance/energy for reproducibility"
+    - advantage: "More specific crosslinks between directly interacting residues"
+    - advantage: "Better for pinpointing precise binding sites"
+    - disadvantage: "Requires specialized equipment (UV crosslinker)"
+    - disadvantage: "May damage RNA integrity at high doses"
+    - note: "More common in CLIP-based methods for precise interaction mapping"
+  formaldehyde_crosslinking:
+    - advantage: "Straightforward chemical method without specialized equipment"
+    - advantage: "Captures indirect interactions within larger complexes"
+    - advantage: "Often higher yield"
+    - disadvantage: "Higher background from nonspecific crosslinks"
+    - disadvantage: "Reversal requires potentially harsh conditions (heating, high salt)"
+    - note: "Better for detecting weak or transient interactions"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "UV radiation: avoid direct exposure; Formaldehyde: toxic and carcinogenic, use in fume hood"
+  waste: "Dispose of crosslinking reagents according to institutional guidelines"
+
+# Quality control
+quality_control:
+  - check: "Include IgG control IP"
+    criteria: "Should show minimal enrichment of target RNAs"
+  - check: "Include input RNA sample"
+    criteria: "For normalization and calculating percent input"
+  - check: "Test known RNA-protein interaction"
+    criteria: "Should show significant enrichment over IgG control"
+
+# Data analysis
+data_analysis:
+  - step: 1
+    action: "Calculate fold enrichment"
+    details: "Compare target RNA in specific IP vs. IgG control IP"
+  - step: 2
+    action: "Calculate percent input"
+    details: "Compare RNA abundance in IP vs. a defined percentage of input material"
+  - step: 3
+    action: "Statistical analysis"
+    details: "Perform appropriate statistical tests on biological replicates"
+
+# Best practices
+best_practices:
+  - "Run pilot experiments to optimize crosslinking conditions for specificity vs. yield"
+  - "Test different crosslinking strengths and confirm with a known positive RNA target"
+  - "Include IgG control or nonspecific antibody to measure background binding"
+  - "Use input RNA to normalize or calculate percentage of input in qPCR"
+  - "If possible, use a known RNA-protein interaction as positive control"
+  - "Incorporate RNase inhibitors in all buffers and keep samples cold"
+  - "For many RIP-qPCR experiments, mild UV crosslinking at 254 nm is preferred"
+
+# References
+references:
+  - "Peritz T, et al. (2006) Immunoprecipitation of mRNA-protein complexes. Nat Protoc. 1(2):577-580"
+  - "Keene JD, et al. (2006) RIP-Chip: the isolation and identification of mRNAs, microRNAs and protein components of ribonucleoprotein complexes from cell extracts. Nat Protoc. 1(1):302-307"
+  - "Niranjanakumari S, et al. (2002) Reversible cross-linking combined with immunoprecipitation to study RNA-protein interactions in vivo. Methods. 26(2):182-190"
+
+# Notes
+notes: |
+  - Two crosslinking methods are described: UV (254 nm) and formaldehyde
+  - UV crosslinking is more specific but requires specialized equipment
+  - Formaldehyde crosslinking is simpler but may have higher background
+  - Always include appropriate controls (IgG, input RNA)
+  - Consider CLIP-based methods for more precise mapping of binding sites
+  - For studying RNA binding proteins that interact with many targets, consider combining with RNA-seq (RIP-seq)
+---

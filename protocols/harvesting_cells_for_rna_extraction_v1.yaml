@@ -1,0 +1,164 @@
+---
+# Protocol metadata
+id: PROT-0022
+name: Harvesting Cells for RNA Extraction Protocol
+version: 1.0
+description: Protocol for harvesting cultured cells for RNA extraction using TRI reagent
+author: Lab Staff
+created: 2025-05-06
+last_updated: 2025-05-07
+category: molecular-biology
+
+# Materials required
+materials:
+  - name: PBS
+    preparation: Sterile, calcium and magnesium-free
+    temperature: Room temperature
+    storage: 4°C
+  - name: TRI reagent (or TRIzol)
+    temperature: Room temperature
+    storage: 4°C, protected from light
+    hazards: Contains phenol and guanidinium thiocyanate
+  - name: 1.5-mL microcentrifuge tubes
+    type: RNase-free
+    preparation: Pre-labeled with sample information
+  - name: Sample storage box
+    type: For -80°C storage
+    preparation: Labeled with experiment details and date
+
+# Equipment required
+equipment:
+  - name: Laminar flow hood
+    type: Class II biosafety cabinet
+  - name: Fume hood
+    use: For handling TRI reagent
+  - name: Multi-channel pipette
+    range: 20-200 μL
+  - name: Single-channel pipettes
+    range: Various sizes
+  - name: -80°C freezer
+    use: For sample storage
+  - name: Personal protective equipment
+    type: Lab coat, gloves, safety glasses
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare collection tubes"
+    details: "Label 1.5-mL microcentrifuge tubes with sample information, date, and experiment"
+  - step: 2
+    action: "Prepare storage box"
+    details: "Label sample storage box for -80°C with experiment name, date, and researcher name"
+  - step: 3
+    action: "Retrieve cell cultures"
+    details: "Remove cells from incubator and transfer to laminar flow hood"
+  - step: 4
+    action: "Remove media"
+    details: "Aspirate media from cells carefully without disturbing cell layer"
+  - step: 5
+    action: "Wash cells"
+    details: "Add 200 μL (96-well) or 1 mL (24-well) PBS per well to wash cells"
+  - step: 6
+    action: "Remove PBS"
+    details: "Aspirate PBS completely until wells are dry"
+  - step: 7
+    action: "Move to fume hood"
+    details: "Transfer culture plate to fume hood for TRI reagent handling"
+  - step: 8
+    action: "Add TRI reagent"
+    details: "Add 100 μL (96-well) or 300 μL (24-well) TRI reagent to each well"
+  - step: 9
+    action: "Lyse cells"
+    details: "Incubate at room temperature for 5 minutes to ensure complete cell lysis"
+  - step: 10
+    action: "Collect lysate"
+    details: "Tilt plate back slightly to pool TRI reagent and lysed cells in the corner of each well"
+  - step: 11
+    action: "Transfer to tubes"
+    details: "Pipet all solution into prelabeled microcentrifuge tubes"
+  - step: 12
+    action: "Organize samples"
+    details: "Place tubes in labeled storage box in orderly arrangement"
+  - step: 13
+    action: "Record sample information"
+    details: "Record sample positions in laboratory notebook or digital record"
+  - step: 14
+    action: "Store samples"
+    details: "Freeze tubes at -80°C and submit a -80°C Sample Submission form"
+
+# Volume guidelines
+volume_guidelines:
+  - plate_format: "96-well plate"
+    wash_volume: "200 μL PBS per well"
+    tri_reagent_volume: "100 μL per well"
+    expected_yield: "0.5-2 μg RNA per well (cell type dependent)"
+  - plate_format: "24-well plate"
+    wash_volume: "1 mL PBS per well"
+    tri_reagent_volume: "300 μL per well"
+    expected_yield: "3-8 μg RNA per well (cell type dependent)"
+  - plate_format: "12-well plate"
+    wash_volume: "1.5 mL PBS per well"
+    tri_reagent_volume: "500 μL per well"
+    expected_yield: "5-15 μg RNA per well (cell type dependent)"
+  - plate_format: "6-well plate"
+    wash_volume: "2 mL PBS per well"
+    tri_reagent_volume: "1 mL per well"
+    expected_yield: "10-30 μg RNA per well (cell type dependent)"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "RNase-free environment"
+    details: "Work quickly and use RNase-free materials to prevent RNA degradation"
+  - parameter: "Complete cell lysis"
+    details: "Ensure TRI reagent fully covers cells and allow sufficient lysis time"
+  - parameter: "Sample traceability"
+    details: "Maintain clear labeling and documentation of samples"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Low RNA yield"
+    solution: "Ensure complete cell lysis; adjust TRI reagent volume for cell density; avoid over-washing"
+  - problem: "RNA degradation"
+    solution: "Work quickly; use RNase-free materials; ensure proper sample storage"
+  - problem: "DNA contamination"
+    solution: "Consider DNase treatment during RNA purification steps"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, nitrile gloves, and safety glasses required"
+  hazards: "TRI reagent contains phenol and guanidinium thiocyanate; work in fume hood only"
+  disposal: "Collect TRI reagent waste in appropriate waste container; do not dispose down drain"
+  precautions: "Avoid skin contact; if contact occurs, wash immediately with copious water"
+
+# Quality control
+quality_control:
+  - check: "Sample labeling"
+    criteria: "Verify all tubes are clearly labeled before freezing"
+  - check: "Sample logging"
+    criteria: "All samples must be logged in freezer inventory system"
+
+# Downstream applications
+downstream_applications:
+  - application: "RNA extraction"
+    protocol: "RNA MiniPrep with DirectZol kit protocol"
+  - application: "RNA-Seq"
+    protocol: "Submit to sequencing facility after quality control"
+  - application: "qPCR"
+    protocol: "cDNA synthesis followed by RT-qPCR"
+
+# References
+references:
+  - "Chomczynski P, Sacchi N. (2006) The single-step method of RNA isolation by acid guanidinium thiocyanate-phenol-chloroform extraction: twenty-something years on. Nature Protocols 1(2):581-585"
+  - "Rio DC, et al. (2010) Purification of RNA Using TRIzol (TRI Reagent). Cold Spring Harbor Protocols 2010(6)"
+
+# Notes
+notes: |
+  - If proceeding directly to extraction, see RNA MiniPrep with DirectZol kit protocol
+  - Volumes should be adjusted based on well size (96-well or 24-well format)
+  - Always work in the fume hood when handling TRI reagent/TRIzol
+  - RNA can be stored at -80°C for months to years without significant degradation
+  - For cells growing in suspension, centrifuge cells first before adding TRI reagent
+  - For highly confluent wells, increase the volume of TRI reagent accordingly
+  - Homogenize samples by pipetting up and down if cell clumps are visible
+  - For long-term storage, consider using RNA stabilization reagents like RNAlater
+---

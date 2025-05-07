@@ -1,0 +1,126 @@
+---
+# Protocol metadata
+id: PROT-0020
+name: 24-well Plate siRNA Transfection (RNAiMAX)
+version: 1.0
+description: Protocol for transfecting 4 siRNAs (including siNC) into cells in a 24-well plate using Lipofectamine RNAiMAX
+author: Lab Agent
+created: 2024-06-08
+last_updated: 2025-05-07
+category: cell-culture
+
+# Materials required
+materials:
+  - name: siRNA#1
+    concentration: 10 nM final
+    storage: -20°C or -80°C
+  - name: siRNA#2
+    concentration: 10 nM final
+    storage: -20°C or -80°C
+  - name: siRNA#3
+    concentration: 10 nM final
+    storage: -20°C or -80°C
+  - name: siNC (negative control)
+    concentration: 10 nM final
+    storage: -20°C or -80°C
+  - name: Lipofectamine RNAiMAX
+    amount: 1.5 µL per well
+    storage: 4°C
+  - name: Opti-MEM Reduced Serum Medium
+    storage: 4°C
+  - name: Complete growth medium
+    notes: Appropriate for your cell line, without antibiotics during transfection
+
+# Equipment required
+equipment:
+  - name: 24-well tissue culture plate
+    type: Cell culture grade
+  - name: Pipettes and sterile tips
+    range: 0.5-1000 µL
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: Centrifuge
+    type: Benchtop (if needed for cell preparation)
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Seed cells in 24-well plate"
+    details: "Seed 5x10^4 cells/well 24 hours prior to transfection to achieve 60-80% confluence at time of transfection"
+  - step: 2
+    action: "Prepare siRNA dilutions"
+    details: "For each siRNA, dilute 10 pmol siRNA in 50 µL Opti-MEM per well"
+  - step: 3
+    action: "Prepare RNAiMAX dilution"
+    details: "In a separate tube, dilute 1.5 µL RNAiMAX in 50 µL Opti-MEM per well"
+  - step: 4
+    action: "Create transfection complexes"
+    details: "Combine diluted siRNA and RNAiMAX solutions, mix gently, and incubate for 10-20 min at room temperature"
+  - step: 5
+    action: "Add complexes to cells"
+    details: "Add 100 µL siRNA-RNAiMAX complex dropwise to each well containing cells in 400 µL growth medium"
+  - step: 6
+    action: "Incubate cells"
+    details: "Incubate cells at 37°C, 5% CO2 for 24-72 hours before assessing knockdown efficiency"
+  - step: 7
+    action: "Change medium (optional)"
+    details: "After 4-6 hours, replace transfection medium with fresh complete medium if needed for sensitive cells"
+
+# Experimental design
+experimental_design:
+  - layout: |
+      Typical 24-well plate layout:
+      | 1-siNC  | 2-siNC  | 3-siNC  | 4-empty |
+      | 1-siRNA1| 2-siRNA1| 3-siRNA1| 4-empty |
+      | 1-siRNA2| 2-siRNA2| 3-siRNA2| 4-empty |
+      | 1-siRNA3| 2-siRNA3| 3-siRNA3| 4-empty |
+      | 5-empty | 6-empty |etc.
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Cell density"
+    details: "60-80% confluence at time of transfection is optimal"
+  - parameter: "siRNA concentration"
+    details: "10 nM is standard but may need optimization (5-50 nM range)"
+  - parameter: "RNAiMAX:siRNA ratio"
+    details: "May need adjustment for different cell lines"
+  - parameter: "Incubation time"
+    details: "10-20 minutes for complex formation; overly long incubation may reduce efficiency"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Low transfection efficiency"
+    solution: "Optimize cell density, increase RNAiMAX amount, extend transfection time"
+  - problem: "High cytotoxicity"
+    solution: "Reduce siRNA/RNAiMAX concentrations, change medium 4-6h post-transfection"
+  - problem: "Poor knockdown"
+    solution: "Verify siRNA design, extend incubation time post-transfection, consider alternative delivery method"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "RNAiMAX may cause irritation; handle with care"
+
+# Quality control
+quality_control:
+  - check: "Include siNC (non-targeting control) in every experiment"
+    criteria: "Should show no target gene knockdown"
+  - check: "Verify knockdown efficiency"
+    criteria: "Typically by qPCR or Western blot 24-72h post-transfection"
+
+# References
+references:
+  - "Lipofectamine RNAiMAX manufacturer's protocol"
+  - "Dorsett Y, Tuschl T. (2004) siRNAs: applications in functional genomics and potential as therapeutics. Nat Rev Drug Discov. 3(4):318-329"
+
+# Notes
+notes: |
+  - siNC is a non-targeting negative control siRNA
+  - Adjust cell number and reagent volumes as needed for specific cell lines
+  - For sensitive cells, transfect in antibiotic-free medium
+  - Assay for knockdown 24-72 hours post-transfection depending on target protein half-life
+  - Consider optimizing siRNA concentration (5-50 nM range) for your specific cell line
+  - Perform reverse transfection as an alternative by adding complexes to wells before adding cells
+---

@@ -1,0 +1,143 @@
+---
+# Protocol metadata
+id: PROT-0035
+name: SpectraMax Plate Reader Protocol
+version: 1.0
+description: Protocol for using the SpectraMax plate reader for absorbance measurements
+author: JJ
+created: 2025-03-22
+last_updated: 2025-05-07
+category: equipment-usage
+
+# Materials required
+materials:
+  - name: 96-well plate with samples
+    type: Clear bottom preferred
+    preparation: Bubble-free samples with adequate volume
+  - name: SpectraMax plate reader
+    model: Specify model (e.g., M5, i3x)
+    location: Core facility
+  - name: USB drive
+    use: For data export
+    size: Any capacity (files are small)
+
+# Equipment required
+equipment:
+  - name: Computer with SpectraMax software
+    version: Latest SoftMax Pro software
+    location: Connected to the plate reader
+  - name: Plate reader cover
+    use: To prevent light interference during reading
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Start the software"
+    details: "Open the SpectraMax software on the computer"
+  - step: 2
+    action: "Create a new experiment"
+    details: "Click Protocol > New Experiment"
+  - step: 3
+    action: "Configure settings"
+    details: "Click the gear icon above the plate grid to adjust settings"
+  - step: 4
+    action: "Set reading parameters"
+    details: "For BCA assay, select:
+              - Absorbance mode
+              - Wavelength = 562 nm
+              - 96-well, clear bottom plate type
+              - No shaking
+              - Fast Read option is fine"
+  - step: 5
+    action: "Select wells to read"
+    details: "Paint (select) the wells you want to measure in the grid"
+  - step: 6
+    action: "Open the plate drawer"
+    details: "Click the open/close plate reader button in the software"
+  - step: 7
+    action: "Insert plate"
+    details: "Insert your plate with well H1 positioned in the bottom-left corner"
+  - step: 8
+    action: "Start measurement"
+    details: "Press Read button in the software"
+  - step: 9
+    action: "Export data"
+    details: "Copy paste the results grid to Excel or export directly to file"
+  - step: 10
+    action: "Save data"
+    details: "Save Excel file to a USB drive or to the hard drive and transfer it off the core facility computer"
+  - step: 11
+    action: "Clean up"
+    details: "Close the software, remove your plate, and log out of the system if required"
+
+# Common assay settings
+common_assays:
+  - assay: "BCA protein assay"
+    wavelength: 562 nm
+    plate_type: "96-well, clear bottom"
+    mode: "Absorbance"
+  - assay: "Bradford assay"
+    wavelength: 595 nm
+    plate_type: "96-well, clear bottom"
+    mode: "Absorbance"
+  - assay: "ELISA (TMB substrate)"
+    wavelength: 450 nm
+    reference: 630 nm
+    plate_type: "96-well, clear bottom"
+    mode: "Absorbance"
+  - assay: "Fluorescence assay"
+    excitation: "Depends on fluorophore"
+    emission: "Depends on fluorophore"
+    plate_type: "96-well, black or clear bottom"
+    mode: "Fluorescence"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Plate orientation"
+    details: "Always insert plate with well H1 in bottom-left corner to match software layout"
+  - parameter: "Bubbles in wells"
+    details: "Remove bubbles as they can interfere with readings"
+  - parameter: "Blank wells"
+    details: "Include blank wells for background subtraction"
+  - parameter: "Wavelength selection"
+    details: "Match wavelength to assay requirements"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Abnormally high readings"
+    solution: "Check for bubbles; ensure proper blank subtraction; verify wavelength setting"
+  - problem: "Low or no signal"
+    solution: "Verify wavelength; check sample preparation; ensure plate orientation is correct"
+  - problem: "Inconsistent readings"
+    solution: "Mix wells before reading; check for condensation on plate lid; avoid edge effects"
+  - problem: "Software errors"
+    solution: "Restart software; contact core facility manager if issues persist"
+
+# Safety considerations
+safety:
+  ppe: "Follow standard laboratory safety procedures"
+  hazards: "Low risk; handle plates containing potentially hazardous materials appropriately"
+
+# Data analysis tips
+data_analysis:
+  - tip: "Always subtract blank well readings"
+    details: "Average multiple blank wells for more accurate background correction"
+  - tip: "Standard curves"
+    details: "Use appropriate curve fitting (linear, 4-parameter, etc.) based on assay type"
+  - tip: "Technical replicates"
+    details: "Calculate mean and standard deviation across replicate wells"
+
+# References
+references:
+  - "SpectraMax user manual (available at core facility)"
+  - "Assay-specific references based on experiment type"
+
+# Notes
+notes: |
+  - Settings may need to be adjusted depending on the specific assay
+  - Always ensure the plate is properly oriented when loading (H1 position at bottom-left)
+  - Remember to transfer your data before leaving the facility
+  - For specialized readings (kinetic, spectral scans, etc.), consult the core facility manager
+  - Some assays may benefit from plate shaking prior to reading
+  - If using a plate with a lid, remove it before measurement unless protocol specifically indicates otherwise
+---

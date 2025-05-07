@@ -1,0 +1,130 @@
+---
+# Protocol metadata
+id: PROT-0025
+name: Preparation of Complete RPMI Protocol
+version: 1.0
+description: Protocol for preparing complete RPMI culture medium with FBS and antibiotics
+author: Lab Staff
+created: 2025-05-06
+last_updated: 2025-05-07
+category: reagent-preparation
+
+# Materials required
+materials:
+  - name: RPMI-1640 medium
+    amount: 500 mL bottle
+    storage: 4°C
+    supplier: Recommended supplier
+  - name: Fetal Bovine Serum (FBS)
+    amount: 50 mL (10% final)
+    storage: -20°C (stock), thawed before use
+    supplier: Recommended supplier, heat-inactivated
+  - name: Penicillin-Streptomycin (PS)
+    amount: 5 mL (1% final)
+    storage: -20°C
+    supplier: Recommended supplier, 100X concentration
+  - name: Sterile 50-mL tube
+    type: Conical, polypropylene
+    preparation: Sterile
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: Water bath or incubator
+    temperature: 37°C
+    use: For thawing FBS
+  - name: Pipette aid
+    range: For 5-50 mL volumes
+  - name: Pipettes
+    range: Serological, various sizes
+  - name: Refrigerator
+    temperature: 4°C
+    use: For media storage
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare materials"
+    details: "Allow media to warm to room temperature; thaw FBS and PS at 37°C"
+  - step: 2
+    action: "Set up biosafety cabinet"
+    details: "Turn on biosafety cabinet 15 minutes before use; clean with 70% ethanol"
+  - step: 3
+    action: "Aliquot plain media"
+    details: "Transfer ~51 mL of RPMI media into a sterile 50-mL tube and label as 'PLAIN RPMI'"
+  - step: 4
+    action: "Add FBS"
+    details: "To the remaining 449 mL of media in the original bottle, add 50 mL Fetal Bovine Serum (FBS)"
+  - step: 5
+    action: "Add antibiotics"
+    details: "Add 5 mL Penicillin-Streptomycin (PS) solution to the main bottle"
+  - step: 6
+    action: "Mix gently"
+    details: "Invert bottle several times to mix thoroughly, avoiding bubble formation"
+  - step: 7
+    action: "Label media"
+    details: "Label bottle with 'Complete RPMI', date of preparation, and expiration date (1 month from preparation)"
+  - step: 8
+    action: "Store media"
+    details: "Store both complete and plain media at 4°C"
+
+# Final composition
+final_composition:
+  - component: "RPMI-1640 basal medium"
+    percentage: "89%"
+    function: "Provides essential nutrients and buffering"
+  - component: "Fetal Bovine Serum"
+    percentage: "10%"
+    function: "Provides growth factors and proteins for cell growth"
+  - component: "Penicillin-Streptomycin"
+    percentage: "1%"
+    function: "Prevents bacterial contamination"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Sterility"
+    details: "All components must be handled aseptically in a biosafety cabinet"
+  - parameter: "FBS quality"
+    details: "FBS should be heat-inactivated and from a validated lot known to support growth of target cells"
+  - parameter: "Expiration"
+    details: "Complete medium should be used within 1 month of preparation"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Media color change"
+    solution: "If phenol red indicator turns yellow, pH is too acidic; discard media"
+  - problem: "Precipitation in media"
+    solution: "Check for contamination; sometimes precipitates from FBS can be removed by filtration"
+  - problem: "Cell growth issues"
+    solution: "Test alternative FBS lots; verify proper storage conditions"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves required"
+  hazards: "Minimal hazards; follow standard laboratory safety practices"
+
+# Quality control
+quality_control:
+  - check: "pH indicator"
+    criteria: "Phenol red should appear pink-red (not yellow or purple)"
+  - check: "Sterility test"
+    criteria: "Incubate a sample at 37°C for 72 hours to verify no contamination"
+  - check: "Cell growth test"
+    criteria: "Test with standard cell line to verify growth support"
+
+# References
+references:
+  - "ATCC. Guidelines for Media Preparation and Methods. www.atcc.org"
+  - "Freshney, R.I. Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 7th Edition"
+
+# Notes
+notes: |
+  - This protocol creates both complete RPMI (with FBS and antibiotics) and plain RPMI
+  - Complete medium contains 10% FBS and 1% Penicillin-Streptomycin
+  - RPMI-1640 is particularly suited for lymphoid cells, including suspension cultures
+  - Some specialized cell lines may require RPMI with additional supplements
+  - For immune cell work, consider adding 2-mercaptoethanol (55 μM final) to the media
+  - If preparing larger or smaller volumes, adjust component volumes proportionally
+  - For long-term storage, complete media can be aliquoted into working volumes
+---

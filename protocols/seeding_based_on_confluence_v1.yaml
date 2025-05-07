@@ -1,0 +1,149 @@
+---
+# Protocol metadata
+id: PROT-0028
+name: Seeding Based on Confluence Protocol
+version: 1.0
+description: Protocol for seeding cells based on confluence rather than direct cell counting
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: cell-culture
+
+# Materials required
+materials:
+  - name: Cell culture flask
+    type: T-25 (25 cm²)
+    condition: 90-100% confluent cells
+  - name: Sterile PBS
+    temperature: Room temperature
+    storage: Room temperature
+  - name: Trypsin-EDTA
+    concentration: 0.25% or 0.05% (cell line dependent)
+    temperature: 37°C (pre-warmed)
+    storage: -20°C (stock), 4°C (working solution)
+  - name: Complete media
+    composition: Base media with 10% FBS + 1% Penicillin/Streptomycin
+    temperature: 37°C (pre-warmed)
+    storage: 4°C
+  - name: Culture plates
+    type: 6-well or 24-well
+    preparation: Sterile
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+  - name: Microscope
+    type: Inverted, phase contrast
+  - name: Pipettes and sterile tips
+    range: Various sizes for cell culture
+  - name: Aspiration system
+    type: Vacuum or manual
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare materials"
+    details: "Pre-warm media and trypsin; gather plates and other supplies in biosafety cabinet"
+  - step: 2
+    action: "Examine source flask"
+    details: "Confirm flask is 90–100% confluent using inverted microscope"
+  - step: 3
+    action: "Wash cells"
+    details: "Aspirate media from flask and wash with 10 mL sterile PBS to remove serum"
+  - step: 4
+    action: "Add trypsin"
+    details: "Add 1 mL trypsin, ensure all cells are covered, and incubate for ~5 minutes at 37°C"
+  - step: 5
+    action: "Check cell detachment"
+    details: "Observe under microscope to confirm cells have rounded up and detached"
+  - step: 6
+    action: "Neutralize trypsin"
+    details: "Add 9 mL complete media (10% FBS + 1% PS) to neutralize trypsin"
+  - step: 7
+    action: "Mix cell suspension"
+    details: "Gently pipette up and down to create uniform cell suspension"
+  - step: 8
+    action: "Seed 6-well plates"
+    details: "Pipet 350 μL cell suspension into each well of a 6-well plate"
+  - step: 9
+    action: "Add media to 6-well plates"
+    details: "Add 1600 μL complete media to each well (total volume 1950 μL per well)"
+  - step: 10
+    action: "Seed 24-well plates"
+    details: "For 24-well plates, pipet 200 μL cell suspension into each well"
+  - step: 11
+    action: "Add media to 24-well plates"
+    details: "Add 800 μL complete media to each well (total volume 1000 μL per well)"
+  - step: 12
+    action: "Distribute cells"
+    details: "Gently rock/swirl plate to ensure even distribution of cells"
+  - step: 13
+    action: "Incubate plates"
+    details: "Place in incubator at 37°C, 5% CO2 for 24–48 hours before further manipulation"
+  - step: 14
+    action: "Monitor confluence"
+    details: "Check confluence after 24 hours to determine if enough time has passed for experiments"
+
+# Common dilution ratios
+dilution_ratios:
+  - plate_format: "6-well"
+    ratio: "1:29 (350 μL cells : 1600 μL media)"
+    expected_confluence: "30-40% after 24h; 60-70% after 48h"
+  - plate_format: "24-well"
+    ratio: "1:5 (200 μL cells : 800 μL media)"
+    expected_confluence: "30-40% after 24h; 60-70% after 48h"
+  - plate_format: "12-well"
+    ratio: "1:10 (250 μL cells : 1000 μL media)"
+    expected_confluence: "Similar to 24-well"
+  - plate_format: "96-well"
+    ratio: "1:20 (10 μL cells : 190 μL media)"
+    expected_confluence: "May need optimization for specific cell lines"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Source flask confluence"
+    details: "Starting flask should be 90-100% confluent; lower confluence may yield inconsistent results"
+  - parameter: "Cell suspension homogeneity"
+    details: "Ensure thorough but gentle mixing to achieve uniform cell suspension"
+  - parameter: "Incubation timing"
+    details: "Fast-growing cells may need less than 24h before treatment/transfection"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Uneven cell distribution"
+    solution: "Ensure thorough mixing of cell suspension; gently rock plates after seeding"
+  - problem: "Low attachment"
+    solution: "Check trypsin activity; ensure adequate neutralization; verify plate surface is suitable for cell type"
+  - problem: "Inconsistent confluence between wells"
+    solution: "Mix cell suspension more frequently while dispensing; consider cell counter for future experiments"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "Follow appropriate biosafety procedures for cell line being used"
+
+# Quality control
+quality_control:
+  - check: "Confluence check at 24h"
+    criteria: "Wells should show consistent cell density across all wells"
+  - check: "Cell morphology"
+    criteria: "Cells should display normal morphology for the cell type"
+
+# References
+references:
+  - "Freshney RI. (2016) Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 7th Edition."
+  - "Davis JM. (2011) Animal Cell Culture: Essential Methods. Wiley-Blackwell."
+
+# Notes
+notes: |
+  - This protocol uses a fixed dilution from a confluent flask rather than direct cell counting
+  - Adjust volumes proportionally for different plate formats
+  - Incubation time may vary depending on cell type and growth rate
+  - For fast-growing cells like HEK293, check confluence after 18-20 hours
+  - For slow-growing primary cells, 48-72 hours may be required
+  - The protocol can be adapted for different flask sizes (T-75, T-175) by scaling the cell suspension volume
+  - While less precise than direct counting, this method is suitable for routine passaging and experiments where exact cell number is not critical
+---

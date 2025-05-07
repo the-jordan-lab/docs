@@ -1,0 +1,144 @@
+---
+# Protocol metadata
+id: PROT-0033
+name: Seeding 96-Well Plate Protocol
+version: 1.0
+description: Protocol for seeding cells in a 96-well plate format
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: cell-culture
+
+# Materials required
+materials:
+  - name: 96-well tissue culture plate
+    type: Clear for brightfield / black for fluorescence
+    preparation: Sterile
+  - name: Cell suspension
+    preparation: Freshly harvested and counted
+    concentration: Adjusted for desired cells/well
+  - name: Complete media
+    temperature: Pre-warmed to 37°C
+    storage: 4°C
+  - name: Sterile 25-mL reagent reservoir
+    type: Sterile, disposable
+  - name: 70% ethanol
+    use: Surface disinfection
+
+# Equipment required
+equipment:
+  - name: Multi-channel pipette
+    type: 8 or 12 channel, 50-200 μL
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: Pipette aid
+    range: For handling cell suspension volumes
+  - name: Hemocytometer or cell counter
+    use: For determining cell concentration
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare workspace"
+    details: "Sterilize all materials and working area with 70% ethanol in biosafety cabinet"
+  - step: 2
+    action: "Prepare experimental plan"
+    details: "Complete plate layout and cell number calculations before beginning seeding procedure"
+  - step: 3
+    action: "Open sterile plate"
+    details: "Unwrap 96-well tissue culture plate and place in biosafety cabinet"
+  - step: 4
+    action: "Calculate required volumes"
+    details: "For a full 96-well plate with 100 μL per well, prepare at least 10 mL of cell suspension"
+  - step: 5
+    action: "Prepare diluted cell suspension"
+    details: "Dilute 9 mL of cell suspension with 14 mL complete media to achieve desired cell concentration"
+  - step: 6
+    action: "Transfer to reservoir"
+    details: "Gently swirl to mix and pour into a sterile 25-mL reagent reservoir"
+  - step: 7
+    action: "Seed plate"
+    details: "Using a multi-channel pipette, seed 100 μL of cell suspension per well"
+  - step: 8
+    action: "Mix during seeding"
+    details: "Mix cell suspension periodically while seeding to ensure even cell distribution"
+  - step: 9
+    action: "Complete plate"
+    details: "Continue until all required wells are seeded according to the plate layout"
+  - step: 10
+    action: "Clean up"
+    details: "Aspirate leftover cell suspension and discard disposables appropriately"
+  - step: 11
+    action: "Incubate plate"
+    details: "Place the plate in the incubator at 37°C, 5% CO2 for the required attachment period"
+  - step: 12
+    action: "Document"
+    details: "Record plate layout, cell density, and seeding time in lab notebook"
+
+# Cell density guidelines
+cell_density_guidelines:
+  - cell_type: "HEK293"
+    density: "10,000-15,000 cells/well"
+    notes: "Fast-growing, adhere quickly"
+  - cell_type: "HepG2"
+    density: "15,000-20,000 cells/well"
+    notes: "Form clumps, mix well before seeding"
+  - cell_type: "Primary hepatocytes"
+    density: "20,000-40,000 cells/well"
+    notes: "Use collagen-coated plates"
+  - cell_type: "Fibroblasts"
+    density: "5,000-10,000 cells/well"
+    notes: "Spread widely, use lower density"
+  - cell_type: "MCF7"
+    density: "10,000-15,000 cells/well"
+    notes: "Medium growth rate"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Cell suspension homogeneity"
+    details: "Mix suspension frequently to prevent cell settling and ensure even distribution"
+  - parameter: "Seeding technique"
+    details: "Maintain consistent angle and speed with multi-channel pipette to ensure uniform volumes"
+  - parameter: "Edge effects"
+    details: "Consider filling outer wells with PBS for long-term experiments to minimize evaporation"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Uneven cell distribution"
+    solution: "Mix cell suspension more frequently; check pipette calibration; avoid bubbles when dispensing"
+  - problem: "Edge wells drying out"
+    solution: "Fill outer wells with sterile PBS or water; use humidified chamber in incubator"
+  - problem: "Cell clumping"
+    solution: "Triturate cell suspension gently before seeding; ensure complete dissociation during harvesting"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "Follow appropriate biosafety procedures for cell line being used"
+
+# Quality control
+quality_control:
+  - check: "Even seeding"
+    criteria: "Visually inspect plate under microscope for uniform cell distribution"
+  - check: "Cell density"
+    criteria: "Count cells in representative wells to verify target density was achieved"
+  - check: "Sterility"
+    criteria: "Include at least one well with media only to check for contamination"
+
+# References
+references:
+  - "Promega Corporation. (2018). Cell Culture Basics: Passage Number Effects in Cell Lines. Cell Notes, 15:2-5."
+  - "Freshney RI. (2016) Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 7th Edition."
+
+# Notes
+notes: |
+  - Plate type should be selected based on the planned assay (clear for brightfield, black for fluorescence)
+  - Always mix suspension frequently to ensure even cell distribution
+  - Consistent seeding technique is important for reproducible results
+  - For cell attachment assays, check attachment at 2-4 hours post-seeding
+  - For proliferation assays, cells typically need 24 hours to recover before treatment
+  - Consider using a repeater pipette for very large numbers of plates
+  - For high-throughput screening, automated cell dispensers can improve consistency
+---

@@ -1,0 +1,199 @@
+---
+# Protocol metadata
+id: PROT-0035
+name: YBX1 Knockdown mRNA Stability Assay
+version: 1.0
+description: Protocol for measuring mRNA stability of target genes after YBX1 knockdown using siRNA transfection and actinomycin D transcription inhibition
+author: Dr. Jim Jordan
+created: 2025-05-06
+last_updated: 2025-05-07
+category: molecular-biology
+
+# Materials required
+materials:
+  - name: siRNA targeting YBX1
+    concentration: 10 nM final
+    storage: -20°C
+    supplier: Recommended supplier
+  - name: siRNA negative control
+    concentration: 10 nM final
+    storage: -20°C
+    supplier: Recommended supplier
+  - name: Lipofectamine RNAiMAX
+    amount: 1.5 μL per well
+    storage: 4°C
+    supplier: Thermo Fisher Scientific
+  - name: Opti-MEM Reduced Serum Medium
+    storage: 4°C
+    supplier: Thermo Fisher Scientific
+  - name: 6-well cell culture plates
+    type: Tissue culture treated
+    preparation: Sterile
+  - name: Actinomycin D
+    concentration: 5 μg/mL final
+    storage: -20°C, protected from light
+    preparation: Stock in DMSO
+    hazards: Toxic, mutagen
+  - name: TRIzol reagent
+    storage: 4°C, protected from light
+    hazards: Contains phenol and guanidinium thiocyanate
+  - name: SuperScript III Reverse Transcription kit
+    storage: -20°C
+    supplier: Thermo Fisher Scientific
+  - name: qPCR primers for target genes
+    concentration: 10 μM stocks
+    storage: -20°C
+  - name: SYBR Green qPCR Master Mix
+    storage: -20°C, protected from light
+    supplier: Recommended supplier
+  - name: Complete cell culture medium
+    composition: DMEM with 10% FBS and 1% antibiotics
+    storage: 4°C
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+  - name: Centrifuge
+    type: Refrigerated, for microcentrifuge tubes
+  - name: Thermal cycler
+    use: For cDNA synthesis
+  - name: Real-time PCR system
+    use: For quantitative PCR analysis
+  - name: Microscope
+    type: Inverted, phase contrast
+  - name: -80°C freezer
+    use: For RNA sample storage
+  - name: Fume hood
+    use: For TRIzol handling
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Day 1: Seed cells"
+    details: "Seed cells in 6-well plates at 3 × 10^5 cells per well in complete media and incubate overnight"
+  - step: 2
+    action: "Day 2: Prepare siRNA transfection"
+    details: "For each transfection, dilute siRNA in 125 μL Opti-MEM and Lipofectamine RNAiMAX in 125 μL Opti-MEM; combine and incubate for 5 minutes"
+  - step: 3
+    action: "Day 2: Transfect cells"
+    details: "Add 250 μL siRNA-lipid complex to each well containing cells and 1.75 mL fresh complete media"
+  - step: 4
+    action: "Day 3: Verify knockdown efficiency"
+    details: "Collect cells from one well per condition and perform RT-qPCR or western blot to confirm YBX1 knockdown"
+  - step: 5
+    action: "Day 4: Collect t=0 samples"
+    details: "Extract RNA with TRIzol from one well per condition as baseline (t=0) before actinomycin D treatment"
+  - step: 6
+    action: "Day 4: Add actinomycin D"
+    details: "Add actinomycin D to remaining wells at 5 μg/mL final concentration"
+  - step: 7
+    action: "Day 4: Collect time course samples"
+    details: "Extract RNA with TRIzol at 1h, 2h, 4h, 6h, and 8h after actinomycin D addition"
+  - step: 8
+    action: "Day 5: RNA isolation"
+    details: "Complete RNA isolation from all collected samples following TRIzol manufacturer's protocol"
+  - step: 9
+    action: "Day 5: cDNA synthesis"
+    details: "Perform reverse transcription using SuperScript III kit with a mixture of random hexamers and oligo-dT primers"
+  - step: 10
+    action: "Day 6: qPCR setup"
+    details: "Prepare qPCR reactions with SYBR Green Master Mix for target genes and reference genes"
+  - step: 11
+    action: "Day 6: Run qPCR"
+    details: "Run qPCR with appropriate cycling conditions (typically 95°C 15s, 60°C 60s for 40 cycles)"
+  - step: 12
+    action: "Day 6: Data analysis"
+    details: "Calculate mRNA half-life by plotting relative mRNA levels on a semi-log scale versus time and determining the slope"
+
+# Experimental design
+experimental_design:
+  - condition: "YBX1 siRNA transfected cells"
+    purpose: "Test condition to examine effect of YBX1 depletion on mRNA stability"
+  - condition: "Negative control siRNA transfected cells"
+    purpose: "Control condition to establish baseline mRNA decay rates"
+  - timepoints: "0h, 1h, 2h, 4h, 6h, 8h post-actinomycin D"
+    purpose: "Time course to calculate half-life through regression analysis"
+  - replication: "Minimum three biological replicates recommended"
+    purpose: "Ensure statistical validity of results"
+
+# Target genes
+recommended_targets:
+  - gene: "Known YBX1 targets"
+    details: "Genes previously shown to interact with YBX1 protein"
+  - gene: "Genes with m6A or m5C modifications"
+    details: "YBX1 often interacts with methylated RNAs"
+  - gene: "Genes with reported post-transcriptional regulation"
+    details: "Particularly those with known AU-rich elements or other stability determinants"
+  - gene: "Reference genes"
+    details: "18S rRNA, GAPDH, or ACTB for normalization; select stable genes under actinomycin D treatment"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "siRNA knockdown efficiency"
+    details: "Verify >70% reduction in YBX1 mRNA levels before proceeding with stability assay"
+  - parameter: "Actinomycin D concentration"
+    details: "5 μg/mL is standard but may require optimization for specific cell types"
+  - parameter: "RNA integrity"
+    details: "Critical for accurate half-life measurements; verify with bioanalyzer if possible"
+  - parameter: "Time point selection"
+    details: "Adjust based on expected stability; very stable or unstable mRNAs may need modified time points"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Poor knockdown efficiency"
+    solution: "Optimize transfection conditions; try alternative siRNA sequences; increase siRNA concentration"
+  - problem: "Cell toxicity"
+    solution: "Reduce actinomycin D concentration; optimize cell density; reduce exposure time"
+  - problem: "No difference in stability between conditions"
+    solution: "Verify YBX1 knockdown; select different target genes; extend time course for stable mRNAs"
+  - problem: "High variability between replicates"
+    solution: "Standardize cell culture conditions; ensure consistent RNA extraction quality; use technical qPCR replicates"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, nitrile gloves required"
+  hazards: "Actinomycin D is toxic and mutagenic; TRIzol contains phenol; handle both in fume hood only"
+  disposal: "Dispose of actinomycin D and TRIzol waste according to institutional hazardous waste procedures"
+
+# Data analysis
+data_analysis:
+  - step: "Normalize qPCR data to reference gene(s) at each time point"
+  - step: "Express each time point relative to t=0 (set as 100% or 1.0)"
+  - step: "Transform data using natural logarithm (ln) of relative expression"
+  - step: "Plot ln(relative expression) versus time in hours"
+  - step: "Calculate linear regression slope (k)"
+  - step: "Calculate half-life using formula: t1/2 = ln(2)/|k|"
+  - step: "Compare half-lives between YBX1 knockdown and control conditions using statistical tests"
+
+# Quality control
+quality_control:
+  - check: "YBX1 knockdown verification"
+    criteria: ">70% reduction compared to control"
+  - check: "RNA integrity"
+    criteria: "RIN > 8 recommended for accurate measurements"
+  - check: "qPCR efficiency"
+    criteria: "90-110% efficiency for all primer pairs"
+  - check: "R² of decay curves"
+    criteria: "R² > 0.9 indicates good linear fit for half-life calculation"
+
+# References
+references:
+  - "Chen CY, et al. (2001) AU-rich element-mediated mRNA decay can occur independently of the miRNA machinery. Nature Structural & Molecular Biology 8:1121-1126"
+  - "Ross J. (1995) mRNA stability in mammalian cells. Microbiological Reviews 59(3):423-450"
+  - "Tani H, et al. (2012) Genome-wide determination of RNA stability reveals hundreds of short-lived noncoding transcripts in mammals. Genome Research 22(5):947-956"
+  - "Wei YY, et al. (2021) YBX1 binds to m6A-methylated mRNAs to promote their stability and translation. Nature Communications 12:1278"
+
+# Notes
+notes: |
+  - For optimal results, verify YBX1 knockdown efficiency before proceeding with actinomycin D treatment
+  - Use 18S rRNA or GAPDH as reference genes for normalization, but confirm their stability under your experimental conditions
+  - Target genes should include those known to be regulated post-transcriptionally, particularly those with m5C or m6A modifications
+  - The optimal actinomycin D concentration may vary by cell type; preliminary testing is recommended
+  - Actinomycin D is toxic; handle with care and dispose of properly
+  - For very stable mRNAs, time points may need to be extended beyond 8h
+  - Consider including a protein synthesis inhibitor control (e.g., cycloheximide) to distinguish direct vs indirect effects
+  - For more precise measurements, consider RNA-Seq for global mRNA stability profiling
+---

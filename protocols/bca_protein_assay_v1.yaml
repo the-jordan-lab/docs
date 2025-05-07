@@ -1,0 +1,159 @@
+---
+# Protocol metadata
+id: PROT-0010
+name: BCA Assay for Protein Abundance Determination
+version: 1.0
+description: Protocol for colorimetric detection and quantitation of total protein using bicinchoninic acid (BCA)
+author: Jordan Lab
+created: 2025-05-06
+last_updated: 2025-05-07
+category: protein-analysis
+
+# Materials required
+materials:
+  - name: BCA reagent A
+    storage: Room temperature or as specified by manufacturer
+  - name: BCA reagent B
+    storage: Room temperature or as specified by manufacturer
+  - name: BSA protein standard
+    concentration: 2 mg/mL
+    storage: 4°C
+  - name: Microplate
+    type: 96-well, clear bottom
+  - name: Protein samples (unknowns)
+    preparation: Keep on ice during handling
+  - name: Diluent buffer
+    notes: Use same buffer as protein samples
+
+# Equipment required
+equipment:
+  - name: Plate reader
+    settings: 562 nm absorbance measurement
+  - name: Pipettes and tips
+    range: 10-200 μL
+  - name: Incubator
+    temperature: 37°C
+
+# Standard preparation
+standards:
+  - vial: A
+    diluent: 0 µL
+    stock: 300 µL stock BSA
+    concentration: 2000 µg/mL
+  - vial: B
+    diluent: 125 µL
+    stock: 375 µL stock BSA
+    concentration: 1500 µg/mL
+  - vial: C
+    diluent: 325 µL
+    stock: 325 µL stock BSA
+    concentration: 1000 µg/mL
+  - vial: D
+    diluent: 175 µL
+    stock: 175 µL vial B dilution
+    concentration: 750 µg/mL
+  - vial: E
+    diluent: 325 µL
+    stock: 325 µL vial C dilution
+    concentration: 500 µg/mL
+  - vial: F
+    diluent: 325 µL
+    stock: 325 µL vial E dilution
+    concentration: 250 µg/mL
+  - vial: G
+    diluent: 325 µL
+    stock: 325 µL vial F dilution
+    concentration: 125 µg/mL
+  - vial: H
+    diluent: 400 µL
+    stock: 100 µL vial G dilution
+    concentration: 25 µg/mL
+  - vial: I
+    diluent: 400 µL
+    stock: 0 µL BSA
+    concentration: 0 µg/mL (Blank)
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Determine the number of standards and unknown samples to quantify"
+    details: "Plan for technical replicates (typically 2-3) for each standard and unknown"
+  - step: 2
+    action: "Calculate total Working Reagent (WR) volume"
+    details: "(# standards + # unknowns) × (# replicates) × (volume of WR per sample)"
+  - step: 3
+    action: "Prepare Working Reagent (WR)"
+    details: "Mix 50 parts BCA reagent A with 1 part BCA reagent B (50:1 ratio). Example: Combine 5 mL of reagent A with 0.1 mL of reagent B to prepare 5.1 mL WR"
+  - step: 4
+    action: "Pipette 10 µL of each standard or unknown sample replicate into a microplate well"
+    details: "Maintain consistent technique to minimize variability"
+  - step: 5
+    action: "Add 200 µL of the WR to each well"
+    details: "Mix thoroughly for 30 seconds using plate shaker or pipette"
+  - step: 6
+    action: "Incubate at 37°C for 30 minutes"
+    details: "Cover plate to prevent evaporation"
+  - step: 7
+    action: "Measure the absorbance at 562 nm on plate reader"
+    details: "Allow plate to cool to room temperature before measuring if needed"
+
+# Analysis
+analysis:
+  - step: 1
+    action: "Subtract the average 562 nm blank value from all other standards and unknown samples"
+    details: "This corrects for background absorbance"
+  - step: 2
+    action: "Plot standard curve"
+    details: "Graph blank-corrected 562 nm measurements vs. BSA concentration (µg/mL)"
+  - step: 3
+    action: "Calculate unknown protein concentrations"
+    details: "Use the standard curve to determine protein concentration of unknown samples"
+  - step: 4
+    action: "Apply dilution factor if applicable"
+    details: "Multiply calculated concentration by dilution factor to get original sample concentration"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Sample:WR ratio"
+    details: "Maintain consistent 1:20 ratio (10 μL sample to 200 μL WR) for accurate results"
+  - parameter: "Incubation time and temperature"
+    details: "Strictly adhere to 30 minutes at 37°C for reproducible results"
+  - parameter: "Standard curve fit"
+    details: "Use a four-parameter (quadratic) or best-fit curve instead of purely linear fit for best accuracy"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "High background in blank wells"
+    solution: "Ensure clean labware and high-quality reagents; check for contamination"
+  - problem: "Poor standard curve linearity"
+    solution: "Verify accurate pipetting technique and fresh standards"
+  - problem: "Samples out of range"
+    solution: "Dilute high-concentration samples and re-assay; increase volume for low-concentration samples"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "BCA reagents contain sodium hydroxide and sodium carbonate; avoid contact with skin and eyes"
+
+# Quality control
+quality_control:
+  - check: "R² value of standard curve"
+    criteria: "Should be > 0.98 for reliable quantitation"
+  - check: "Technical replicate consistency"
+    criteria: "CV < 10% between replicates"
+
+# References
+references:
+  - "Smith PK et al. (1985) Measurement of protein using bicinchoninic acid. Anal Biochem 150:76-85"
+  - "Thermo Scientific Pierce BCA Protein Assay Kit manual"
+
+# Notes
+notes: |
+  - Dilute standards in the same buffer used to collect your protein samples
+  - Wavelengths from 540-590 nm have been used successfully with this method
+  - Plate readers require greater sample:WR ratio than cuvette spectrophotometers
+  - Increasing incubation time (up to 2 hours) or ratio of sample volume to WR increases sensitivity
+  - This assay works on the biuret reaction principle: Cu+2 is reduced to Cu+1 by protein
+  - The Cu+1 is detected using BCA, forming a purple complex absorbing at 562 nm
+  - The assay is nearly linear for protein concentrations from 20-2000 µg/mL
+---

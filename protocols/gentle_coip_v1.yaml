@@ -1,0 +1,160 @@
+---
+# Protocol metadata
+id: PROT-0012
+name: Gentle Co-Immunoprecipitation Protocol
+version: 1.0
+description: A gentle co-immunoprecipitation protocol for preserving protein-protein interactions
+author: JM Jordan
+created: 2023-01-01
+last_updated: 2025-05-07
+category: protein-analysis
+
+# Materials required
+materials:
+  - name: Protein lysate
+    amount: 3600 μg per condition
+    preparation: Fresh or previously frozen
+  - name: RIPA buffer
+    preparation: With protease inhibitor tablets added fresh
+    storage: 4°C
+  - name: Antibody for immunoprecipitation
+    amount: 2 μg per reaction
+    storage: -20°C
+  - name: Protein A/G beads
+    preparation: 50% slurry in storage buffer
+    storage: 4°C
+  - name: PBS with 0.02% Tween
+    preparation: Filter-sterilized
+    storage: Room temperature
+  - name: Non-denaturing loading buffer
+    concentration: 1X
+    storage: -20°C
+  - name: LoBind tubes
+    type: Protein low-binding microcentrifuge tubes
+  - name: Liquid nitrogen
+    amount: Sufficient for snap-freezing samples
+
+# Equipment required
+equipment:
+  - name: Rotating mixer
+    temperature: 4°C and room temperature capable
+  - name: Refrigerated centrifuge
+    settings: Low speed (1000g)
+  - name: Magnetic rack
+    type: For bead separation
+  - name: 37°C heat block or water bath
+    use: For elution step
+  - name: -80°C freezer
+    use: Sample storage
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare protein lysate"
+    details: "Prepare a lysate solution with 3600 μg of protein for each condition (e.g., HFA and HFB)"
+  - step: 2
+    action: "Adjust lysate volume"
+    details: "Adjust each lysate to 1 mL total volume with RIPA buffer containing protease inhibitor tablets"
+  - step: 3
+    action: "Preclear lysate"
+    details: "Add 50 μL of 50% bead slurry to each tube of lysate and rotate at 4°C for 1 hour"
+  - step: 4
+    action: "Remove beads"
+    details: "Collect precleared lysate by centrifugation or magnetic separation"
+  - step: 5
+    action: "Aliquot lysate"
+    details: "Divide each precleared lysate into 3 tubes (6 tubes total) and adjust each to 1 mL with RIPA buffer with inhibitors"
+  - step: 6
+    action: "Add antibody"
+    details: "Add 2 μg of antibody to each tube"
+  - step: 7
+    action: "Incubate overnight"
+    details: "Rotate tubes overnight at 4°C to allow antibody binding"
+  - step: 8
+    action: "Continue incubation"
+    details: "Continue with room temperature rotation for 1 hour"
+  - step: 9
+    action: "Prepare beads"
+    details: "Wash 600 μL beads with PBS + 0.02% Tween and resuspend in 600 μL RIPA buffer with inhibitors"
+  - step: 10
+    action: "Add beads to samples"
+    details: "Add 100 μL of bead solution to each tube"
+  - step: 11
+    action: "Capture complexes"
+    details: "Rotate at room temperature for 1 hour to capture antibody-protein complexes"
+  - step: 12
+    action: "Wash beads"
+    details: "Wash beads 3X with 1 mL PBS + 0.02% Tween using gentle pipet mixing (no extended rotation)"
+  - step: 13
+    action: "Transfer beads"
+    details: "After final wash, resuspend beads in 200 μL PBS + 0.02% Tween and transfer to fresh LoBind tubes"
+  - step: 14
+    action: "Elute proteins"
+    details: "Add 30 μL 1X non-denaturing loading buffer and incubate at 37°C for 5 minutes"
+  - step: 15
+    action: "Collect eluate"
+    details: "Separate solution from beads into new LoBind tubes"
+  - step: 16
+    action: "Freeze samples"
+    details: "Snap freeze eluate in liquid nitrogen"
+  - step: 17
+    action: "Store samples"
+    details: "Store at -80°C until analysis"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Gentleness of handling"
+    details: "Avoid harsh mixing or vortexing to preserve protein-protein interactions"
+  - parameter: "Washing steps"
+    details: "Brief, gentle washes without extended rotation periods minimize disruption of complexes"
+  - parameter: "Temperature"
+    details: "Maintain 4°C during initial binding to reduce non-specific interactions"
+  - parameter: "Elution conditions"
+    details: "Use non-denaturing conditions and mild temperature (37°C vs 95°C)"
+
+# Controls
+controls:
+  - control: "IgG control"
+    purpose: "Use matched isotype IgG instead of specific antibody to identify non-specific binding"
+  - control: "Input sample"
+    purpose: "Save an aliquot of pre-IP lysate to verify presence of proteins in starting material"
+  - control: "Beads-only control"
+    purpose: "Beads without antibody to identify proteins binding directly to beads"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Low or no co-immunoprecipitated protein"
+    solution: "Increase lysate amount; reduce washing stringency; verify antibody efficacy; use crosslinking"
+  - problem: "High background"
+    solution: "Increase preclearance time; use more stringent wash buffer; validate antibody specificity"
+  - problem: "Degraded proteins"
+    solution: "Add additional protease inhibitors; work more quickly; keep samples cold"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "Liquid nitrogen causes freeze burns; handle with appropriate PPE and in well-ventilated area"
+
+# Downstream applications
+downstream_applications:
+  - name: "Western blotting"
+    preparation: "Add SDS sample buffer if needed; may need to optimize antibody to avoid IP antibody detection"
+  - name: "Mass spectrometry"
+    preparation: "Consider specific elution methods compatible with MS analysis"
+
+# References
+references:
+  - "Lin YC, et al. (2018) Optimization of a Co-Immunoprecipitation Protocol for the Detection of Weak Protein-Protein Interactions. PLoS ONE 13(10):e0206167"
+  - "Antrobus R & Borner GH. (2011) Improved elution conditions for native co-immunoprecipitation. PLoS ONE 6(3):e18218"
+
+# Notes
+notes: |
+  - This is a gentle protocol designed to preserve protein-protein interactions
+  - Uses minimal washing steps without extended rotations
+  - Includes preclearance step to reduce non-specific binding
+  - Remember to freeze Input and leftover samples
+  - For weaker interactions, consider chemical crosslinking before lysis
+  - Non-denaturing loading buffer preserves complexes for native gel electrophoresis
+  - Alternative elution methods include peptide competition or pH elution
+  - For subsequent SDS-PAGE analysis, an aliquot can be mixed with standard denaturing loading buffer
+---

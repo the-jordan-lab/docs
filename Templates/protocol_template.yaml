@@ -1,13 +1,68 @@
-name: Example Protocol Name
+---
+# Protocol metadata
 id: PROT-XXXX
+name: Example Protocol Name
 version: 1.0
 description: Protocol description goes here
 author: Your Name
 created: YYYY-MM-DD
+last_updated: YYYY-MM-DD
+category: protocol-category
+
+# Materials required
 materials:
-  - Material: Example Material (amount)
+  - name: Example Material
+    amount: XX unit
+    preparation: Brief preparation notes if applicable
+    storage: Storage conditions if applicable
+  - name: Example Reagent
+    concentration: XX unit
+    preparation: Brief preparation notes if applicable
+
+# Equipment required
+equipment:
+  - name: Example Equipment
+    settings: Relevant settings if applicable
+  - name: Example Instrument
+    calibration: Calibration requirements if applicable
+
+# Protocol steps
 steps:
-  - "Step 1: ..."
-  - "Step 2: ..."
+  - step: 1
+    action: "Description of first step"
+    details: "Additional details about performing this step"
+  - step: 2
+    action: "Description of second step"
+    details: "Additional details about performing this step"
+  - step: 3
+    action: "Description of third step"
+    details: "Additional details about performing this step"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Example critical parameter"
+    details: "Why this parameter is important and how to control it"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Common issue"
+    solution: "How to resolve this issue"
+
+# Safety considerations
+safety:
+  ppe: "Required personal protective equipment"
+  hazards: "Potential hazards and precautions"
+
+# Quality control
+quality_control:
+  - check: "QC checkpoint"
+    criteria: "Pass/fail criteria"
+
+# References
+references:
+  - "Reference citation or link to source material"
+
+# Notes
 notes: |
-  Additional notes or references. 
+  Any additional information, tips, or context that might be helpful.
+---

@@ -1,0 +1,147 @@
+---
+# Protocol metadata
+id: PROT-0011
+name: mRNA Stability Assay Protocol
+version: 1.0
+description: Protocol for measuring mRNA stability using siNC vs. siYbx1 with Actinomycin D treatment
+author: Jordan Lab
+created: 2025-05-06
+last_updated: 2025-05-07
+category: molecular-biology
+
+# Materials required
+materials:
+  - name: Actinomycin D
+    concentration: 5 μg/mL in media
+    storage: -20°C, protected from light
+    preparation: Dissolve in DMSO to make stock solution
+  - name: DMSO (control)
+    purity: Cell culture grade
+    storage: Room temperature
+  - name: Complete medium
+    type: Appropriate for cell type
+    temperature: 37°C pre-warmed
+  - name: PBS (ice-cold)
+    concentration: 1X, sterile
+    temperature: 4°C
+  - name: TRIzol or RLT buffer
+    storage: Room temperature (TRIzol) or 4°C (RLT)
+    notes: Choose based on downstream RNA isolation method
+
+# Equipment required
+equipment:
+  - name: Multi-channel pipette
+    type: 8 or 12 channel, 20-200 μL
+  - name: Cell culture plates
+    type: 96-well or 24-well plates
+  - name: Sample storage tubes
+    type: RNase-free microcentrifuge tubes
+  - name: Vacuum aspirator
+    settings: Low to medium suction
+  - name: -80°C freezer
+    use: Sample storage
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare Actinomycin D Medium"
+    details: "Make 5 µg/mL ActD in complete medium (~20 mL total for all ActD wells). Prepare just before treatment."
+  - step: 2
+    action: "Prepare DMSO-only control medium"
+    details: "Add equivalent volume of DMSO to complete medium (~5 mL total)"
+  - step: 3
+    action: "Remove old media from the plate"
+    details: "Use multi-channel vacuum aspirator for efficiency"
+  - step: 4
+    action: "Add treatment media"
+    details: "Using a multichannel pipet, rapidly add 100 µL of treatment media according to plate map"
+  - step: 5
+    action: "Immediately collect the 0 hr samples"
+    details: "These samples represent baseline mRNA levels before ActD treatment"
+  - step: 6
+    action: "Cell collection at all time points"
+    details: "Follow steps 7-10 for each time point collection"
+  - step: 7
+    action: "Aspirate medium"
+    details: "Quick removal of medium from wells"
+  - step: 8
+    action: "Wash with ice-cold PBS (optional)"
+    details: "Brief wash with 100 µL ice-cold PBS"
+  - step: 9
+    action: "Lyse cells"
+    details: "Add 50 µL TRIzol or RLT buffer directly to wells"
+  - step: 10
+    action: "Store samples"
+    details: "Transfer lysate immediately to labeled tubes/plate and store at -80°C"
+  - step: 11
+    action: "Repeat for each timepoint"
+    details: "Typical timepoints: 0, 1, 2, 4, 8 hours after ActD addition"
+
+# Experimental design
+experimental_design:
+  - condition: "siNC (negative control siRNA) + ActD"
+    purpose: "Control for normal mRNA degradation rates"
+  - condition: "siNC + DMSO"
+    purpose: "Control for vehicle effects"
+  - condition: "siYbx1 + ActD"
+    purpose: "Test effect of Ybx1 knockdown on mRNA stability"
+  - condition: "siYbx1 + DMSO"
+    purpose: "Control for siYbx1 effects independent of transcription inhibition"
+  - timepoints: [0h, 1h, 2h, 4h, 8h]
+    replicates: 3
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Time synchronization"
+    details: "Precise timing is critical for accurate half-life determination"
+  - parameter: "Temperature control"
+    details: "Keep PBS cold and work quickly to prevent RNA degradation"
+  - parameter: "ActD concentration"
+    details: "5 μg/mL is standard but may need optimization for some cell types"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "High variability between replicates"
+    solution: "Ensure consistent timing between wells and precise volume additions"
+  - problem: "RNA degradation"
+    solution: "Work quickly, keep samples cold, use RNase-free materials"
+  - problem: "Cell death before later timepoints"
+    solution: "May need to reduce ActD concentration for sensitive cell lines"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "Actinomycin D is toxic and potentially carcinogenic. Handle with care and dispose as hazardous waste."
+
+# Data analysis
+data_analysis:
+  - step: 1
+    action: "Extract and quantify RNA"
+    details: "Use standard RNA isolation protocol and quantify by qPCR"
+  - step: 2
+    action: "Calculate relative expression"
+    details: "Normalize target genes to housekeeping gene(s)"
+  - step: 3
+    action: "Plot decay curves"
+    details: "Plot log2 of normalized expression vs. time"
+  - step: 4
+    action: "Calculate half-life"
+    details: "Fit exponential decay curve: y = e^(-kt) where k is decay constant. t1/2 = ln(2)/k"
+  - step: 5
+    action: "Compare half-lives"
+    details: "Compare mRNA half-lives between siNC and siYbx1 conditions"
+
+# References
+references:
+  - "Ross J. (1995) mRNA stability in mammalian cells. Microbiol Rev. 59(3):423-450."
+  - "Chen CY, Shyu AB. (2011) Mechanisms of deadenylation-dependent decay. Wiley Interdiscip Rev RNA. 2(2):167-183."
+
+# Notes
+notes: |
+  - This protocol compares mRNA stability between control (siNC) and Ybx1 knockdown (siYbx1) conditions
+  - ActD concentration is 5 µg/mL, but may be optimized based on cell type
+  - Use multichannel pipettes to minimize time between treatments
+  - Aspirate and dispense solutions one column at a time to minimize delays
+  - Consider performing preliminary experiments to determine optimal timepoints for your specific mRNAs of interest
+  - Some very stable mRNAs may require longer timepoints (12-24h)
+---

@@ -1,0 +1,123 @@
+---
+# Protocol metadata
+id: PROT-0001
+name: Cell Staining Protocol
+version: 1.0
+description: Protocol for immunofluorescence staining of cells
+author: Alice Smith
+created: 2025-05-05
+last_updated: 2025-05-07
+category: microscopy
+
+# Materials required
+materials:
+  - name: Primary antibody (Anti-XYZ)
+    dilution: 1:500
+    storage: -20°C
+  - name: DAPI nuclear stain
+    concentration: 1 μg/mL
+    storage: 4°C, protected from light
+  - name: Paraformaldehyde (PFA)
+    concentration: 4% in PBS
+    storage: 4°C, prepare fresh if possible
+  - name: PBS (Phosphate Buffered Saline)
+    concentration: 1X
+    storage: Room temperature
+  - name: Mounting medium
+    type: Anti-fade
+    storage: 4°C
+
+# Equipment required
+equipment:
+  - name: Fluorescence microscope
+    settings: Appropriate filter sets for antibody fluorophores and DAPI
+  - name: Coverslips/chamber slides
+    type: Glass, tissue-culture treated
+  - name: Fine-tip forceps
+    use: Handling coverslips
+  - name: Humidified chamber
+    use: Antibody incubation
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Fix cells with 4% PFA"
+    details: "Incubate for 10 minutes at room temperature"
+  - step: 2
+    action: "Wash 3x with PBS"
+    details: "5 minutes per wash, gentle rocking"
+  - step: 3
+    action: "Permeabilize cells"
+    details: "Use 0.1% Triton X-100 in PBS for 5 minutes at room temperature"
+  - step: 4
+    action: "Block non-specific binding"
+    details: "Incubate with 3% BSA in PBS for 30 minutes at room temperature"
+  - step: 5
+    action: "Add primary antibody (Anti-XYZ)"
+    details: "Dilute 1:500 in blocking solution, incubate for 1 hour at room temperature or overnight at 4°C"
+  - step: 6
+    action: "Wash 3x with PBS"
+    details: "5 minutes per wash, gentle rocking"
+  - step: 7
+    action: "Add DAPI stain"
+    details: "Incubate for 5 minutes at room temperature, protected from light"
+  - step: 8
+    action: "Wash 2x with PBS"
+    details: "5 minutes per wash, gentle rocking"
+  - step: 9
+    action: "Mount and seal slides"
+    details: "Apply mounting medium, place coverslip, and seal edges with nail polish if needed"
+  - step: 10
+    action: "Image slides"
+    details: "Use appropriate filter sets and exposure times for each fluorophore"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Antibody dilution"
+    details: "Optimal dilution may vary by lot and application; validate before use"
+  - parameter: "Fixation time"
+    details: "Over-fixation can mask epitopes; under-fixation can compromise cell morphology"
+  - parameter: "Light exposure"
+    details: "Minimize exposure to light after fluorophore addition to prevent photobleaching"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "High background signal"
+    solution: "Increase blocking time, increase wash times, or reduce antibody concentration"
+  - problem: "Weak or no signal"
+    solution: "Check antibody viability, increase concentration, or optimize fixation method"
+  - problem: "Non-specific staining"
+    solution: "Increase blocking time/concentration, validate antibody specificity, add serum from secondary host"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "Paraformaldehyde is toxic; work in fume hood and dispose of waste properly"
+
+# Quality control
+quality_control:
+  - check: "Include negative control (no primary antibody)"
+    criteria: "Should show minimal background fluorescence"
+  - check: "Include positive control"
+    criteria: "Sample known to express target protein"
+
+# References
+references:
+  - "Donaldson JG. (2015) Immunofluorescence staining. Curr Protoc Cell Biol. 69:4.3.1-4.3.7"
+
+# Notes
+notes: |
+  - Ensure all reagents are at room temperature before starting.
+  - Use appropriate personal protective equipment (PPE) when handling chemicals.
+  - Adjust antibody dilution based on specific cell type and experimental conditions.
+  - Store unused antibodies at -20°C for long-term storage.
+  - Document any deviations from the protocol in the lab notebook.
+  - Always include a control sample for comparison.
+  - Dispose of all waste according to local regulations.
+  - Ensure that the microscope is calibrated and functioning properly before imaging.
+  - Record all imaging parameters for reproducibility.
+  - If using a different staining protocol, ensure compatibility with the antibodies used.
+  - For best results, use fresh reagents and avoid freeze-thaw cycles.
+  - If using multiple antibodies, ensure they are compatible and do not cross-react.
+  - If using a secondary antibody, ensure it is compatible with the primary antibody and the detection method.
+---

@@ -1,0 +1,132 @@
+---
+# Protocol metadata
+id: PROT-0023
+name: Counting Cells Manually Protocol
+version: 1.0
+description: Protocol for manual cell counting using a hemocytometer and trypan blue
+author: Lab Staff
+created: 2025-05-06
+last_updated: 2025-05-07
+category: cell-culture
+
+# Materials required
+materials:
+  - name: Cell suspension
+    preparation: Freshly harvested with trypsin/dissociation reagent
+    temperature: Room temperature
+  - name: Trypan Blue solution
+    concentration: 0.4% in PBS
+    storage: Room temperature
+  - name: Microcentrifuge tubes
+    type: 1.5 mL sterile
+  - name: Hemocytometer
+    type: Standard with coverslip
+  - name: PBS
+    concentration: 1X, sterile
+    use: Optional for dilution if cell concentration is too high
+
+# Equipment required
+equipment:
+  - name: Microscope
+    type: Inverted or upright with 10x objective
+  - name: Pipettes
+    range: 2-200 μL
+  - name: Calculator
+    use: For cell counting calculations
+  - name: Counter (optional)
+    use: Manual cell counter or clicker
+  - name: Tissue wipes
+    use: For cleaning hemocytometer
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare cell suspension"
+    details: "After harvesting cells with trypsin or other dissociation reagent, mix the cell suspension well by gentle pipetting"
+  - step: 2
+    action: "Sample the cell suspension"
+    details: "Transfer 10–20 μL of the cell suspension into a microcentrifuge tube"
+  - step: 3
+    action: "Add trypan blue"
+    details: "Add an equal volume of 0.4% Trypan Blue solution to the cell suspension and mix gently"
+  - step: 4
+    action: "Load hemocytometer"
+    details: "Apply 10 μL of the cell/trypan blue mixture to the edge of the coverslip on the hemocytometer chamber and allow to fill by capillary action"
+  - step: 5
+    action: "Wait for cells to settle"
+    details: "Allow cells to settle for 10-30 seconds before counting"
+  - step: 6
+    action: "Count cells"
+    details: "Count live cells (unstained, bright) and dead cells (blue-stained) in the four outer corner squares of the hemocytometer grid"
+  - step: 7
+    action: "Calculate cell concentration"
+    details: "Apply the formula: Cells/mL = Average count per square × Dilution factor × 10⁴"
+  - step: 8
+    action: "Calculate viability percentage"
+    details: "Viability (%) = [Live cell count ÷ (Live cell count + Dead cell count)] × 100"
+  - step: 9
+    action: "Calculate total viable cells"
+    details: "Total viable cells = Cell concentration (cells/mL) × Total volume of cell suspension (mL) × Viability (%)/100"
+
+# Calculation formulas
+calculations:
+  - calculation: "Cell concentration"
+    formula: "Cells/mL = Average count per corner square × Dilution factor × 10⁴"
+    example: "25 cells/square average × 2 (dilution) × 10⁴ = 5 × 10⁵ cells/mL"
+  - calculation: "Cell viability"
+    formula: "Viability (%) = [Live cell count ÷ (Live cell count + Dead cell count)] × 100"
+    example: "80 live cells ÷ (80 live + 20 dead) × 100 = 80% viability"
+  - calculation: "Total viable cells"
+    formula: "Total viable cells = Cells/mL × Total volume (mL) × (Viability % ÷ 100)"
+    example: "5 × 10⁵ cells/mL × 10 mL × 0.8 = 4 × 10⁶ total viable cells"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Cell mixing"
+    details: "Ensure thorough but gentle mixing to get a uniform suspension without damaging cells"
+  - parameter: "Counting area"
+    details: "Count cells touching the top and left lines of each corner square, but not the bottom or right lines"
+  - parameter: "Counting time"
+    details: "Count within 3-5 minutes of trypan blue addition; longer exposure can lead to false positives"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Too many cells to count"
+    solution: "Dilute sample further with PBS and repeat, adjusting dilution factor in calculations"
+  - problem: "Too few cells to count"
+    solution: "Concentrate sample by centrifugation and resuspend in smaller volume"
+  - problem: "Air bubbles in chamber"
+    solution: "Clean and dry hemocytometer and coverslip, then reload carefully"
+  - problem: "Uneven cell distribution"
+    solution: "Mix cell suspension more thoroughly before sampling"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat and gloves required"
+  hazards: "Trypan blue is potentially carcinogenic; handle with care and dispose of properly"
+
+# Quality control
+quality_control:
+  - check: "Cell number"
+    criteria: "Count at least 100 cells total for statistical reliability"
+  - check: "Chamber loading"
+    criteria: "Ensure chamber is not under- or overloaded; cells should be in a single plane"
+  - check: "Replicate counts"
+    criteria: "Count both chambers of hemocytometer; values should be within 10% of each other"
+
+# References
+references:
+  - "Strober W. (2015) Trypan Blue Exclusion Test of Cell Viability. Curr Protoc Immunol. 111:A3.B.1-A3.B.3"
+  - "Louis KS, Siegel AC. (2011) Cell viability analysis using trypan blue: manual and automated methods. Methods Mol Biol. 740:7-12"
+
+# Notes
+notes: |
+  - Trypan blue stains dead cells blue, while live cells remain unstained
+  - For accurate results, count at least 100 cells total
+  - Dilution factor must be accounted for in final calculations
+  - If cell clumps are present, they may indicate incomplete dissociation
+  - Hemocytometer and coverslip must be clean and free of scratches
+  - The hemocytometer chamber depth is 0.1 mm and each corner square has an area of 1 mm²
+  - The multiplier 10⁴ converts the count to cells per mL (1 cm³ = 1000 mm³ = 1 mL)
+  - For primary cells or delicate cell lines, consider automated counting methods
+---

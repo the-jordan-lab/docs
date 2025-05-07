@@ -1,0 +1,121 @@
+---
+# Protocol metadata
+id: PROT-0020
+name: Cleaning the Laminar Flow Hood Protocol
+version: 1.0
+description: Standard protocol for cleaning and shutting down a laminar flow hood after use
+author: Lab Staff
+created: 2025-05-06
+last_updated: 2025-05-07
+category: equipment-maintenance
+
+# Materials required
+materials:
+  - name: 70% ethanol
+    preparation: Freshly prepared or commercially available
+    storage: Flammable cabinet
+  - name: Paper towels
+    type: Lint-free, laboratory-grade
+  - name: Spray bottle
+    use: For ethanol application
+  - name: Biohazard waste container
+    use: For disposal of contaminated materials
+
+# Equipment required
+equipment:
+  - name: Laminar flow hood
+    type: Class II biosafety cabinet
+  - name: Gloves
+    type: Nitrile or latex
+  - name: Lab coat
+    use: Personal protective equipment
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Clear the work area"
+    details: "Remove all materials, reagents, and equipment from the hood"
+  - step: 2
+    action: "Return items to storage"
+    details: "Return all items to their original places; dispose of waste properly"
+  - step: 3
+    action: "Spray work surface"
+    details: "Spray all interior surfaces with 70% ethanol, including the back and side walls"
+  - step: 4
+    action: "Wipe surfaces"
+    details: "Wipe down all interior surfaces with paper towels in a front-to-back motion"
+  - step: 5
+    action: "Clean the sash"
+    details: "Spray and wipe the sash/glass shield on both sides"
+  - step: 6
+    action: "Final inspection"
+    details: "Ensure all surfaces are dry and no items remain in the cabinet"
+  - step: 7
+    action: "Lower the sash"
+    details: "Close the cabinet to the appropriate position according to manufacturer's guidelines"
+  - step: 8
+    action: "Activate UV light" 
+    details: "Turn on UV light if available (many cabinets activate this automatically when closed)"
+  - step: 9
+    action: "Turn off equipment"
+    details: "Turn off vacuum, microscope, and other associated equipment"
+  - step: 10
+    action: "Turn off room lights"
+    details: "Turn off lights when leaving the cell culture room if you are the last person"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Cleaning direction"
+    details: "Always wipe from clean to dirty areas (typically back to front) to avoid spreading contaminants"
+  - parameter: "Complete coverage"
+    details: "Ensure all surfaces that may have been contacted are thoroughly cleaned"
+  - parameter: "Appropriate disinfectant"
+    details: "70% ethanol is standard; for specific contaminants, follow institutional guidelines"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Persistent odor in hood"
+    solution: "Perform thorough cleaning; check for spills beneath work surface; notify lab manager if odor persists"
+  - problem: "Visible contamination"
+    solution: "Clean affected area immediately; if extensive, consult lab manager for decontamination protocol"
+  - problem: "UV light not functioning"
+    solution: "Report to lab manager; UV bulbs have limited lifespan and require periodic replacement"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat and gloves required"
+  hazards: "70% ethanol is flammable; ensure all sources of ignition are distant from working area"
+  waste: "Dispose of contaminated materials in appropriate biohazard container"
+  uv_safety: "Never look directly at UV light; ensure cabinet is fully closed before UV cycle begins"
+
+# Quality control
+quality_control:
+  - check: "Visual inspection"
+    criteria: "No visible debris, media spills, or residue should remain"
+  - check: "Airflow indicator"
+    criteria: "Verify proper airflow indicators before next use"
+
+# Maintenance schedule
+maintenance_schedule:
+  - frequency: "After each use"
+    action: "Surface cleaning with 70% ethanol"
+  - frequency: "Weekly"
+    action: "More thorough cleaning including work area under removable surfaces"
+  - frequency: "Annually"
+    action: "Professional certification and maintenance by qualified technician"
+
+# References
+references:
+  - "CDC/NIH. (2020) Biosafety in Microbiological and Biomedical Laboratories, 6th Edition"
+  - "World Health Organization. (2004) Laboratory Biosafety Manual, 3rd Edition"
+
+# Notes
+notes: |
+  - This protocol should be followed after every use of the laminar flow hood
+  - Ensures proper sterilization and extends the life of the equipment
+  - UV light exposure time should be at least 15-30 minutes for effective surface decontamination
+  - UV light does not penetrate dust or organic material, so physical cleaning must always precede UV sterilization
+  - Report any malfunction or damage to lab manager immediately
+  - Never use bleach in stainless steel biosafety cabinets unless specifically approved by manufacturer
+  - Leave blower running continuously in most biosafety cabinets; consult lab-specific policy
+---

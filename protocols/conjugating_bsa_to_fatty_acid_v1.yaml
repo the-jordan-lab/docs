@@ -1,0 +1,139 @@
+---
+# Protocol metadata
+id: PROT-0024
+name: Conjugating BSA to Fatty Acid Protocol
+version: 1.0
+description: Protocol for conjugating fatty acids to BSA for cell treatments
+author: Lab Staff
+created: 2025-05-06
+last_updated: 2025-05-07
+category: reagent-preparation
+
+# Materials required
+materials:
+  - name: Fatty acid–free BSA
+    supplier: Sigma, catalog #A6003
+    amount: 0.64 g
+    storage: 4°C
+  - name: NaCl
+    concentration: 5 M stock solution
+    storage: Room temperature
+  - name: NaHCO₃
+    amount: 13.6 mg
+    storage: Room temperature
+  - name: Distilled water
+    purity: Tissue culture grade
+  - name: Palmitic acid
+    supplier: Sigma, catalog #P5585-10G
+    amount: ~5 mg
+    storage: Room temperature
+    alternative: Oleic or arachidonic acid
+  - name: Wako NEFA-HR Assay Kit
+    use: For measuring fatty acid concentration
+    storage: As specified by manufacturer
+  - name: 2 mL microcentrifuge tube
+    type: Sterile, polypropylene
+
+# Equipment required
+equipment:
+  - name: Analytical balance
+    precision: 0.1 mg
+  - name: Pipettes/micropipettes
+    range: 10 μL to 1000 μL
+  - name: Incubator or water bath
+    temperatures: 65°C and 37°C
+  - name: Sterile 0.2 µm filter
+    type: Syringe filter
+  - name: Vortex mixer
+    settings: Medium speed
+  - name: pH meter (optional)
+    use: To verify pH of final solution
+
+# Solutions preparation
+solutions:
+  - name: 150 mM NaCl solution
+    preparation: "Dilute 60 μL of 5 M NaCl with 1940 μL water"
+    volume: 2 mL
+  - name: Saturated NaHCO₃ solution
+    preparation: "Dissolve 13.6 mg NaHCO₃ in 46 μL distilled water"
+    volume: 46 μL
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare BSA solution"
+    details: "Dissolve 0.64 g fatty acid-free BSA in 1.5 mL of 150 mM NaCl solution, then add water to reach 2 mL total volume (4.8 mM BSA final)"
+  - step: 2
+    action: "Prepare saturated NaHCO₃ solution"
+    details: "Dissolve 13.6 mg NaHCO₃ in 46 μL distilled water; warm at 65°C to ensure complete dissolution"
+  - step: 3
+    action: "Prepare fatty acid solution"
+    details: "Add approximately 5 mg palmitic acid (or equivalent amount for oleic or arachidonic acid) to the NaHCO₃ solution and incubate at 65°C for 2 minutes to form the sodium salt"
+  - step: 4
+    action: "Combine solutions"
+    details: "Transfer 1.6 mL of the BSA solution into the tube containing the fatty acid mixture"
+  - step: 5
+    action: "Incubate combined solution"
+    details: "Incubate at 37°C for 70 minutes with occasional gentle mixing to promote fatty acid binding to BSA"
+  - step: 6
+    action: "Filter solution"
+    details: "Filter the final mixture through a 0.2 μm filter to remove any undissolved particles"
+  - step: 7
+    action: "Measure fatty acid concentration"
+    details: "Use the Wako NEFA-HR assay to measure the fatty acid concentration (expected around 10 mM; roughly a 2:1 fatty acid to BSA molar ratio)"
+  - step: 8
+    action: "Store solution"
+    details: "Aliquot if needed and store at -20°C or 4°C depending on timeframe for use"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Fatty acid solubilization"
+    details: "Complete dissolution of fatty acids in NaHCO₃ is critical for proper complexation"
+  - parameter: "Temperature control"
+    details: "Maintain 65°C during solubilization and 37°C during complexation for optimal results"
+  - parameter: "BSA quality"
+    details: "Use fatty acid-free BSA to ensure accurate FA:BSA ratios"
+
+# Calculations
+calculations:
+  - calculation: "BSA molarity"
+    formula: "4.8 mM = 0.64 g ÷ 66,430 g/mol ÷ 0.002 L"
+  - calculation: "Expected FA:BSA ratio"
+    formula: "10 mM FA ÷ 4.8 mM BSA ≈ 2:1 ratio"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Fatty acid precipitation"
+    solution: "Ensure complete dissolution in NaHCO₃ before adding BSA; increase incubation time at 65°C"
+  - problem: "Low final concentration"
+    solution: "Verify fatty acid weight; extend binding incubation time; optimize NaHCO₃ concentration"
+  - problem: "Solution turbidity"
+    solution: "Filter solution multiple times; decrease fatty acid:BSA ratio"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat and gloves required"
+  hazards: "NaHCO₃ is irritating to eyes; use caution with hot water baths"
+
+# Quality control
+quality_control:
+  - check: "Fatty acid concentration"
+    criteria: "Should be approximately 10 mM when measured by NEFA-HR assay"
+  - check: "Solution clarity"
+    criteria: "Should be clear with no visible precipitate after filtration"
+
+# References
+references:
+  - "Alsabeeh N, et al. (2018) Protocols for the preparation of long-chain fatty acid/bovine serum albumin complexes for experimental studies. STAR Protoc. 1(1):100040"
+  - "Spector AA. (1975) Fatty acid binding to plasma albumin. J Lipid Res. 16(3):165-179"
+
+# Notes
+notes: |
+  - For 10 mM final fatty acid concentration, use approximately 5 mg of palmitic acid
+  - Can be adapted for oleic acid or arachidonic acid by substituting the appropriate fatty acid
+  - The 150 mM NaCl solution is prepared by diluting 60 μL of 5 M NaCl with 1940 μL water
+  - Expected molar ratio is approximately 2:1 (fatty acid to BSA)
+  - This small-scale protocol (2 mL) is designed for experimental optimization and can be scaled up as needed
+  - BSA-FA complexes are most stable when stored at -20°C but can be stored at 4°C for up to 1 week
+  - Solution pH should be approximately 7.4; adjust with NaOH if needed
+---

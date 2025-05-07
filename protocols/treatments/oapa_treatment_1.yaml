@@ -1,0 +1,60 @@
+---
+# Protocol metadata
+id: PROT-0011
+name: BSA-OAPA (1:1) Treatment Protocol 1
+version: 1.0
+description: Protocol for treating cells with BSA-conjugated oleic and palmitic acids (OAPA)
+author: JJ
+created: 2025-04-29
+last_updated: 2025-05-07
+category: cell-treatment
+
+# Treatment details
+treatment:
+  type: fatty-acid
+  ratio: "1:1 (OA:PA)"
+  total_concentration: 0.75 mM
+  duration: 24 hours
+  control: BSA-only treatment
+
+# Materials required
+materials:
+  - name: Oleic acid (OA)
+    concentration: 0.375 mM
+    preparation: BSA-conjugated
+  - name: Palmitic acid (PA)
+    concentration: 0.375 mM
+    preparation: BSA-conjugated
+  - name: Complete culture medium
+    notes: Use media appropriate for cell type
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare BSA-conjugated OA and PA mixture"
+    details: "Final concentration: 0.375 mM OA, 0.375 mM PA (0.75 mM total, 1:1 ratio)"
+  - step: 2
+    action: "Treat cells 24h after forward transfection"
+    details: "Ensure cells are at approximately 70% confluence before treatment"
+  - step: 3
+    action: "Incubate for 24h with treatment"
+    details: "Maintain standard culture conditions during incubation"
+  - step: 4
+    action: "Use BSA-only treatment as control"
+    details: "Ensure BSA concentration matches that used in fatty acid conjugation"
+
+# Experimental context
+experimental_notes:
+  - condition: "long siRNA"
+  - condition: "short treatment (24h)"
+  - condition: "high dose 1:1 ratio of OA:PA"
+  
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves and eye protection required"
+  hazards: "Avoid direct contact with concentrated fatty acids"
+
+# References
+references:
+  - "Internal protocol based on standard BSA-fatty acid conjugation methods"
+---

@@ -1,0 +1,112 @@
+---
+# Protocol metadata
+id: PROT-0031
+name: Preparation of Complete DMEM (High Glucose) Protocol
+version: 1.0
+description: Protocol for preparing complete DMEM high glucose culture medium with FBS and antibiotics
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: media-preparation
+
+# Materials required
+materials:
+  - name: DMEM high glucose medium
+    amount: 500 mL bottle
+    storage: 4°C
+    notes: Allow to warm to room temperature before use
+  - name: Fetal Bovine Serum (FBS)
+    amount: 50 mL (10% final)
+    storage: -20°C (stock), thaw at 4°C overnight
+    notes: Heat-inactivated if required by cell line
+  - name: Penicillin-Streptomycin (PS)
+    amount: 5 mL (1% final)
+    concentration: 100X stock solution
+    storage: -20°C
+  - name: Sterile 50-mL tube
+    type: Polypropylene
+    quantity: 1
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: Pipette controller
+    type: Electric or manual
+  - name: Serological pipettes
+    sizes: 5 mL, 10 mL, 25 mL
+  - name: Refrigerator
+    temperature: 4°C
+  - name: Marker or label maker
+    use: For labeling media bottles and tubes
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare workspace"
+    details: "Turn on biosafety cabinet, disinfect surfaces, and allow DMEM and supplements to reach room temperature"
+  - step: 2
+    action: "Prepare plain DMEM aliquot"
+    details: "Transfer ~51 mL of DMEM high glucose media into a sterile 50-mL tube and label as 'PLAIN DMEM'"
+  - step: 3
+    action: "Add FBS to main bottle"
+    details: "To the remaining 449 mL of media, add 50 mL Fetal Bovine Serum (FBS) for 10% final concentration"
+  - step: 4
+    action: "Add antibiotics to main bottle"
+    details: "Add 5 mL Penicillin-Streptomycin (PS) to the main bottle for 1% final concentration"
+  - step: 5
+    action: "Mix gently"
+    details: "Invert bottle several times to mix thoroughly without creating bubbles"
+  - step: 6
+    action: "Label bottle"
+    details: "Label the bottle with 'Complete DMEM (High Glucose)', date of preparation, and your initials"
+  - step: 7
+    action: "Storage"
+    details: "Store complete medium and plain DMEM at 4°C for up to 1 month"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Sterility"
+    details: "Maintain sterile technique throughout to prevent contamination"
+  - parameter: "FBS quality"
+    details: "Use high-quality, tested FBS batch to ensure consistent cell growth"
+  - parameter: "Temperature"
+    details: "Cold media can cause cellular stress; allow to warm before use with cells"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Medium contamination"
+    solution: "Check sterile technique, biosafety cabinet function, and supplement sterility"
+  - problem: "Cell growth issues"
+    solution: "Test different FBS batches; some cell lines may require additional supplements"
+  - problem: "Phenol red color change"
+    solution: "Check pH; yellowing indicates acidification which may suggest contamination"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat and gloves required"
+  hazards: "Low biohazard risk; follow institutional guidelines for handling cell culture materials"
+
+# Quality control
+quality_control:
+  - check: "Visual inspection"
+    criteria: "No cloudiness, particles, or contamination"
+  - check: "pH indicator (phenol red)"
+    criteria: "Should be red-pink color (neutral pH)"
+  - check: "Test on standard cell line"
+    criteria: "Expected growth rate and morphology"
+
+# References
+references:
+  - "Cell culture media manufacturer's recommendations"
+  - "Laboratory standard operating procedures for media preparation"
+
+# Notes
+notes: |
+  - This protocol creates both complete DMEM (with FBS and antibiotics) and plain DMEM
+  - Complete medium contains 10% FBS and 1% Penicillin-Streptomycin
+  - For sensitive cell lines, consider using lower antibiotic concentrations or antibiotic-free media
+  - Media shelf life is typically 1 month when stored at 4°C
+  - Consider aliquoting complete media to minimize contamination risk from repeated opening
+  - Some specialized applications may require additional supplements (e.g., L-glutamine, sodium pyruvate)
+---

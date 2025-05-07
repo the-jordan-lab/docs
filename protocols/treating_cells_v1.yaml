@@ -1,0 +1,133 @@
+---
+# Protocol metadata
+id: PROT-0034
+name: Treating Cells Protocol
+version: 1.0
+description: Protocol for treating cultured cells with control or treatment media
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: cell-culture
+
+# Materials required
+materials:
+  - name: Culture plate
+    type: 96-well, 24-well, or 6-well
+    preparation: Cells at appropriate confluence for treatment
+  - name: Control media
+    temperature: Pre-warmed to 37°C
+    storage: 4°C
+  - name: Treatment media
+    temperature: Pre-warmed to 37°C
+    storage: As appropriate for treatment compound
+  - name: PBS
+    temperature: Room temperature or 37°C
+    use: Optional for washing (compound-dependent)
+
+# Equipment required
+equipment:
+  - name: Thermal bead bath
+    temperature: 37°C
+    use: For warming media
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: Aspirator
+    type: Vacuum or manual
+  - name: Pipettes and sterile tips
+    range: Appropriate for plate format
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare treatment media"
+    details: "Prepare fresh treatment media with the compound of interest at desired concentration"
+  - step: 2
+    action: "Pre-warm media"
+    details: "Place control and treatment media in thermal bead bath at 37°C for at least 15 minutes"
+  - step: 3
+    action: "Remove plate from incubator"
+    details: "Transfer cell culture plate to biosafety cabinet"
+  - step: 4
+    action: "Aspirate old media"
+    details: "Carefully remove all existing media from wells without disrupting cell layer"
+  - step: 5
+    action: "Optional wash step"
+    details: "If needed, gently wash cells with PBS to remove residual media/serum"
+  - step: 6
+    action: "Add appropriate volume of media"
+    details: "Add pre-warmed control or treatment media according to plate format:
+              - 150 μL for 96-well plates
+              - 1 mL for 24-well plates
+              - 2 mL for 6-well plates"
+  - step: 7
+    action: "Return to incubator"
+    details: "Place plate back in incubator for the duration of the treatment period"
+  - step: 8
+    action: "Document treatment"
+    details: "Record treatment start time, concentration, and other relevant details in lab notebook"
+
+# Volume reference
+volume_reference:
+  - plate_type: "96-well"
+    media_volume: "100-200 μL (typically 150 μL)"
+  - plate_type: "48-well"
+    media_volume: "250-500 μL"
+  - plate_type: "24-well"
+    media_volume: "0.5-1.0 mL"
+  - plate_type: "12-well"
+    media_volume: "1.0-1.5 mL"
+  - plate_type: "6-well"
+    media_volume: "1.5-3.0 mL (typically 2 mL)"
+  - plate_type: "10 cm dish"
+    media_volume: "8-12 mL"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Media temperature"
+    details: "Cold media can shock cells; ensure proper warming to 37°C"
+  - parameter: "Treatment timing"
+    details: "Maintain consistent timing between wells to ensure comparable exposure times"
+  - parameter: "Media volume"
+    details: "Insufficient volume can lead to drying; excessive volume may dilute treatment effect"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Cell death after treatment"
+    solution: "Reduce treatment concentration; check solvent toxicity; verify media pH"
+  - problem: "No treatment effect"
+    solution: "Increase concentration or duration; verify compound stability; check for interference from media components"
+  - problem: "Uneven treatment effects"
+    details: "Ensure even distribution of treatment; mix gently if needed; check for edge effects"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "Follow appropriate handling procedures for treatment compounds (check MSDS)"
+  waste: "Dispose of treatment media according to institutional guidelines"
+
+# Quality control
+quality_control:
+  - check: "Vehicle control"
+    criteria: "Include wells with vehicle-only (solvent) treatment"
+  - check: "Positive control"
+    criteria: "If available, include wells with known effective compound"
+  - check: "Treatment timing"
+    criteria: "Record exact timing of treatment addition for accuracy"
+
+# References
+references:
+  - "Cell culture media manufacturer's recommendations"
+  - "Primary literature for specific treatments or compounds"
+
+# Notes
+notes: |
+  - Ensure media is warmed to appropriate temperature before adding to cells
+  - Media volume should be adjusted according to the plate format
+  - Duration of treatment will depend on the specific experiment
+  - For long-term treatments (>24 hours), consider refreshing treatment media
+  - Some treatments may require serum starvation prior to administration
+  - Document lot numbers of treatment compounds for reproducibility
+  - For volatile or light-sensitive compounds, take appropriate precautions
+---

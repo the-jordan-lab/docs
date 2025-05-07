@@ -1,0 +1,122 @@
+---
+# Protocol metadata
+id: PROT-0036
+name: Subculturing Cells Protocol
+version: 1.0
+description: Protocol for passaging and subculturing adherent cell lines
+author: Lab Staff
+created: 2025-05-07
+last_updated: 2025-05-07
+category: cell-culture
+
+# Materials required
+materials:
+  - name: Cell culture flask with cells
+    notes: 70-90% confluent
+  - name: PBS (Phosphate Buffered Saline)
+    concentration: 1X, sterile
+    temperature: Room temperature
+  - name: Tryp-LE or trypsin-EDTA
+    temperature: Pre-warmed to 37°C
+    storage: -20°C (stock), 4°C (working)
+  - name: Complete media
+    temperature: Pre-warmed to 37°C
+  - name: New culture flask
+    type: T25, T75, or T175 as needed
+  - name: 70% ethanol
+    preparation: Freshly prepared or commercially available
+    use: Surface disinfection
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+  - name: Centrifuge
+    settings: 200-300g for 5 minutes
+  - name: Aspiration system
+    type: Vacuum or manual
+  - name: Hemocytometer or cell counter (optional)
+    use: Cell counting if precise seeding is required
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare workstation"
+    details: "Turn on biosafety cabinet, sterilize surfaces and materials with 70% ethanol"
+  - step: 2
+    action: "Maintain sterile technique"
+    details: "Spray gloved hands with 70% ethanol after touching anything outside the hood"
+  - step: 3
+    action: "Aspirate old media"
+    details: "Carefully remove all media without disturbing cell layer"
+  - step: 4
+    action: "Wash cells with PBS"
+    details: "Add sufficient PBS to cover the cell layer, gently rock, then aspirate"
+  - step: 5
+    action: "Add dissociation reagent"
+    details: "Add 1 ml Tryp-LE per T25 flask (scale accordingly for larger flasks)"
+  - step: 6
+    action: "Incubate cells"
+    details: "Place in incubator for 5-10 minutes until cells detach"
+  - step: 7
+    action: "Check cell detachment"
+    details: "Observe under microscope to confirm cells are rounded and detached"
+  - step: 8
+    action: "Neutralize and collect cells"
+    details: "Add 9 ml complete media, pipette gently to dislodge and disperse cells"
+  - step: 9
+    action: "Seed new flask"
+    details: "Transfer 1 ml cell suspension to new flask containing 9 ml complete media (1:10 split ratio)"
+  - step: 10
+    action: "Label flask"
+    details: "Note cell line, passage number, date, and your initials"
+  - step: 11
+    action: "Incubate cells"
+    details: "Place in incubator at 37°C with 5% CO₂"
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Confluence level"
+    details: "Ideal passage at 70-90% confluence; overconfluent cells may exhibit altered properties"
+  - parameter: "Dissociation time"
+    details: "Excessive trypsinization can damage cells; insufficient time leads to poor detachment"
+  - parameter: "Split ratio"
+    details: "Adjust based on growth rate and experimental timeline (1:3 to 1:20 depending on cell line)"
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Cells not detaching"
+    solution: "Extend incubation time with dissociation reagent, tap flask gently, or try fresh trypsin"
+  - problem: "Cell clumping"
+    solution: "Pipette gently up and down to create single-cell suspension; use cell strainer if needed"
+  - problem: "Poor cell recovery/growth"
+    solution: "Check media quality, incubator conditions, and avoid over-trypsinization"
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and closed-toe shoes required"
+  hazards: "Handle biological materials according to biosafety level requirements"
+
+# Quality control
+quality_control:
+  - check: "Cell morphology"
+    criteria: "Cells should maintain typical morphology post-passage"
+  - check: "Growth rate"
+    criteria: "Consistent doubling time compared to historical data for the cell line"
+
+# References
+references:
+  - "Freshney RI. (2016) Culture of Animal Cells: A Manual of Basic Technique and Specialized Applications, 7th Edition"
+
+# Notes
+notes: |
+  - This protocol describes a 1:10 split ratio
+  - Incubation time with Tryp-LE may vary depending on cell line
+  - Maintain sterile technique throughout the procedure
+  - Consider counting cells for experiments requiring precise cell numbers
+  - Record passage number with each subculture
+  - Some cell lines may require specialized coating on flasks (collagen, poly-L-lysine, etc.)
+  - Check specific requirements for your cell line, as some may need different media or culture conditions
+---
