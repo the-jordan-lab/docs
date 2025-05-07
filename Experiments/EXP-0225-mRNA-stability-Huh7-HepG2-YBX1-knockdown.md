@@ -42,8 +42,9 @@ transfection:
   reagent: "Lipofectamine RNAiMAX"
   solution_1: "25 µL Opti-MEM + 1 µL Lipofectamine RNAiMAX per well"
   solution_2: "25 µL Opti-MEM + 1 µL of 10 µM siRNA per well"
-  final_volume_per_well: "50 µL transfection mix + 0.9 mL media"
+  final_volume_per_well: "50 µL transfection mix + 750 µL media + 200 µL cell suspension = 1 mL total"
   incubation_time: "5 min"
+  method: "Reverse transfection (siRNA complexes added before cells)"
 siRNA:
   - name: "siYBX1"
     concentration: "10 µM stock, 10 nM final"
@@ -75,14 +76,8 @@ instruments:
 
 # 1️⃣ Experiment Timeline & Execution
 
-## Day 1: 2025-05-07
-- [ ] Seed cells in 24-well plates (one plate per cell line):
-  - Huh7: 5 × 10⁴ cells / well
-  - HepG2: 6 × 10⁴ cells / well
-- [ ] Prepare plates and label wells according to condition map
-- [ ] Incubate O/N at 37°C + 5% CO₂
-
-## Day 2: 2025-05-08
+## Day 1: 2025-05-07 (Reverse Transfection)
+- [ ] Prepare 24-well plates and label according to condition map (one plate per cell line)
 - [ ] Prepare transfection master mixes for both plates (48 wells + 4 extra = 52 wells total):
 
   **Solution 1 (common for all wells in both plates):**
@@ -105,22 +100,27 @@ instruments:
   - For siCTRL wells: Mix 650 µL of Solution 1 with 650 µL of Solution 2B
   - Incubate combined solutions for 5 min at RT
 
-- [ ] Prepare cells for transfection:
-  - Aspirate spent medium from wells
-  - Add 0.9 mL fresh complete medium to each well (use appropriate media for each cell line)
+- [ ] Add 50 µL of transfection complexes to each appropriate well of empty 24-well plates
 
-- [ ] Add transfection complexes:
-  - Add 50 µL transfection complex to each appropriate well
-  - Gently rock plate to distribute complexes
+- [ ] Prepare cell suspensions from confluent flasks:
+  - Wash confluent flasks with 10 mL PBS
+  - Add 1 mL trypsin to each flask and incubate ~10 min until cells detach
+  - Quench with 9 mL complete media (use correct media for each cell line)
+  - Resulting cell suspension: approximately 10 mL from each confluent flask
+
+- [ ] Perform reverse transfection:
+  - Add 750 µL appropriate complete media to each well containing transfection complexes
+  - Add 200 µL of cell suspension from confluent flask to each well (total 1 mL per well)
+  - Gently rock plates to distribute cells and complexes
   - Return plates to 37°C + 5% CO₂ incubator
 
-## Day 3: 2025-05-09
+## Day 3: 2025-05-09 (48h post-transfection)
 - [ ] Collect one well from each condition for knockdown verification:
   - Extract RNA using TRIzol
   - RT-qPCR for YBX1 (vs control wells)
   - Confirm >70% knockdown
 
-## Day 4: 2025-05-10
+## Day 4: 2025-05-10 (72h post-transfection)
 - [ ] Preparation for actinomycin D treatment:
   - Label tubes for all timepoints
   - Thaw actinomycin D (protect from light)
