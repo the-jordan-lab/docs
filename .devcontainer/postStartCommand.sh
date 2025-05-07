@@ -8,12 +8,14 @@ echo "📦 Installing Python dependencies..."
 pip install -r requirements.txt
 
 # Set up GitHub CLI if available
+SETUP_NEEDED=false
 if command -v gh &> /dev/null; then
     echo "🔧 GitHub CLI found, checking authentication..."
     # This won't authenticate, but will show status and prompt user if needed
     gh auth status || echo "⚠️  GitHub CLI needs authentication. Run 'gh auth login' to set up."
 else
     echo "⚠️  GitHub CLI not found. Some features may not work properly."
+    SETUP_NEEDED=true
 fi
 
 # Ensure directories exist
@@ -23,6 +25,7 @@ mkdir -p Data/chroma_index
 if [ -z "$OPENAI_API_KEY" ]; then
     echo "⚠️  OPENAI_API_KEY environment variable not set. Smart-Fill will not work."
     echo "    Set it in your Codespace secrets or run 'export OPENAI_API_KEY=your-key'."
+    SETUP_NEEDED=true
 fi
 
 # Check Jupyter installation and dashboard dependencies
@@ -66,6 +69,13 @@ echo "🧪 LAB AGENT ENVIRONMENT READY 🧪"
 echo "Start using the lab agent by typing in the VS Code Chat window."
 echo "For a health check, run: python Agent/test_environment.py"
 echo "To view the Protocol Dashboard, open Analysis/protocol_dashboard.ipynb"
+
+# Point to setup guide if needed
+if [ "$SETUP_NEEDED" = true ]; then
+    echo ""
+    echo "⚠️ Environment issues detected. Please see ENVIRONMENT_SETUP.md for instructions"
+    echo "   on how to properly configure your environment."
+fi
 echo ""
 
 # Exit with success

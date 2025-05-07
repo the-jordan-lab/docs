@@ -9,6 +9,10 @@
     "jupyter.alwaysTrustNotebooks": true,
     "workbench.startupEditor": "none"
   },
+  "runArgs": ["--env-file", "${localWorkspaceFolder}/.env"],
+  "containerEnv": {
+    "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
+  },
   "postCreateCommand": "pip install -r requirements.txt && chmod +x .devcontainer/jupyter-setup.sh && .devcontainer/jupyter-setup.sh && chmod +x .devcontainer/windsurf-auth-setup.sh",
   "postStartCommand": "bash .devcontainer/postStartCommand.sh && WINDSURF_AUTH_TOKEN='eyJhbGciOiJSUzI1NiIsImtpZCI6IjU5MWYxNWRlZTg0OTUzNjZjOTgyZTA1MTMzYmNhOGYyNDg5ZWFjNzIiLCJ0eXAiOiJKV1QifQ.eyJwaWN0dXJlIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzE5NDMyOTQ4ND92PTQiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZXhhMi1mYjE3MCIsImF1ZCI6ImV4YTItZmIxNzAiLCJhdXRoX3RpbWUiOjE3NDY1NzA2ODAsInVzZXJfaWQiOiJNTVJZY3NVb3ZVaFNVc2RhMkhrd1J4UE5tTWQyIiwic3ViIjoiTU1SWWNzVW92VWhTVXNkYTJIa3dSeFBObU1kMiIsImlhdCI6MTc0NjU3MDY4MSwiZXhwIjoxNzQ2NTc0MjgxLCJlbWFpbCI6ImppbUBqb3JkYW5sYWIub3JnIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImdpdGh1Yi5jb20iOlsiMTk0MzI5NDg0Il0sImVtYWlsIjpbImppbUBqb3JkYW5sYWIub3JnIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ2l0aHViLmNvbSJ9fQ.kgY8pNERRK3d2weIc4eR0EI_JKfATIxE9b6ACKdQE1XVwU26_p07PGfvdWo4ty8oXjCdUdnUiprM1LKaT2yZPGnleOdeJtH31Ua1DNc7hNTEideMeTyZUAOXv6O1VJdXqpcRfjc5Q5JxEjJdj1cGdomFA1c_kn3VbGyL8BsAfH6Sg6q7fB4eRRQ5MlHPBDxQl7neHsdDVGhqGprRnWfJsOI0PJhsWC4jzSBM5HO3uFKOnl_9-BdGY_zN6j_uRcFXfHB3VxfSecinepjz3u5fdmEd71YpGJNRhGXYiM7pZBhETCvA9Ri-b1Jh74dsoAyPfmnDOdt0c0xBF2TmPEPgZA' .devcontainer/windsurf-auth-setup.sh && jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --NotebookApp.password='' --allow-root &",
   "extensions": [
