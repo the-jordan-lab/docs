@@ -1,17 +1,39 @@
-experiment_id: EXP-XXXX
-project: Example Project Name
-title: Example Experiment Title
-date: YYYY-MM-DD
-researcher: Your Name
-protocol: Example Protocol Name (v1.0)
-materials:
-  Material: Example Material (lot #)
-parameters:
-  Parameter1: value
-  Parameter2: value
-results:
-  images: ["Data/Images/example_image1.png"]
-  observations: "Example observations."
-status: planned
+experiment_id: EXP-YYYYMMDD
+aim: Brief description of experiment aim
+project: Project_Name
+researcher: username
+status: in_progress
+created: YYYY-MM-DD
+
+plate:
+  id: PLATE_ID
+  layout:
+    A1: {gene: "Example1", perturbation: "siRNA", day: 0}
+    A2: {gene: "Example2", perturbation: "siRNA", day: 0}
+    A3: {gene: "NTC", perturbation: "control", day: 0}
+
+tasks:               # one row per GitHub Issue
+  - id: 123          # GitHub Issue number
+    title: "Seed cells on plate"
+    status: open
+  - id: 124
+    title: "Transfect siRNA"
+    status: open
+
+sample_preparation:
+  method: Sample preparation method
+  date: YYYY-MM-DD
+
+downstream_application:
+  assay_type: qPCR
+  targets: ["Gene1", "Gene2", "Control"]
+  date: YYYY-MM-DD
+
+data:                # added automatically by record_data()
+  - path: Data/EXP-YYYYMMDD/example_data.csv
+    type: qPCR
+    sha256: abcdef1234567890
+    added: YYYY-MM-DD
+
 notes: |
   Additional notes or deviations from protocol.

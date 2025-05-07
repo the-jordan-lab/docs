@@ -8,6 +8,7 @@ This file serves as a robot table of contents for the repository. It lists the s
 - **ENVIRONMENT_SETUP.md**: Guide for setting up the development environment, including GitHub CLI and OpenAI API key configuration.
 - **ISSUES_LOG.md**: Logs all GitHub issues created, automatically updated by the Lab Agent.
 - **LAB_AGENT_GUIDE.md**: Detailed guide on how to use the Lab Agent, including examples and troubleshooting.
+- **README-multiblock-experiments.md**: No description available.
 - **README.md**: Main repository README with quick-start instructions and overview.
 - **TASKS.md**: Tracks ongoing lab and development tasks, automatically updated by the Lab Agent.
 - **branching_explainer.md**: No description available.
@@ -18,14 +19,14 @@ This file serves as a robot table of contents for the repository. It lists the s
 ## Additional Directories
 
 - **Agent/**: Contains the code for the AI agent integration, including the task-runner and hooks.
-- **Aims/**: Directory containing repository files.
 - **Analysis/**: Directory containing repository files.
-- **Cell-prep-forms/**: Directory containing repository files.
 - **Data/**: Storage for data outputs or references to data.
+- **Experiments/**: Records of individual experiments or lab sessions.
 - **Templates/**: Contains starter templates for various YAML structures.
 - **agent-case-studies/**: Directory containing repository files.
 - **cursor_env/**: Directory containing repository files.
 - **protocols/**: Directory containing repository files.
+- **random_scripts/**: Directory containing repository files.
 
 ---
 

@@ -24,10 +24,30 @@ _Note: This file is now automatically updated by the agent/task-runner. Tasks ar
 - [ ] Day 4 (May 9, 2025): Synthesize cDNA and perform qPCR
 - [ ] Submit final data to repository and link to experimental record
 
+### YBX1-CEBPA Co-Immunoprecipitation (EXP-0226)
+- [ ] Day 1 (May 8, 2025): Set up 3T3 cells
+  - [ ] Seed 3T3 cells in six 10 cm dishes
+  - [ ] Prepare stock solutions for adipogenic induction
+- [ ] Day 2 (May 9, 2025): Begin adipogenic treatment
+  - [ ] Prepare fresh adipogenic induction medium
+  - [ ] Treat cells with control or adipogenic medium
+- [ ] Day 3 (May 10, 2025): Harvest and process cells
+  - [ ] Collect cell lysates from all conditions
+  - [ ] Measure protein concentrations
+  - [ ] Set up antibody incubation for co-immunoprecipitation
+- [ ] Day 4 (May 11, 2025): Complete Co-IP and Western blotting
+  - [ ] Process IP samples with protein A/G beads
+  - [ ] Run SDS-PAGE gels and transfer to membranes
+  - [ ] Blot for protein interactions
+  - [ ] Image and quantify results
+- [ ] Analyze protein interaction data and prepare figures
+
 ### Materials and Resources
 - [ ] Confirm Actinomycin D stock availability
 - [ ] Ensure sufficient RNA extraction reagents are available
 - [ ] Check qPCR primer stocks for all target genes
+- [ ] Order YBX1 and C/EBPα antibodies for Co-IP
+- [ ] Verify Invitrogen gel and transfer system availability
 
 ## Development Tasks
 - [ ] Reorganize repository structure: convert "projects" to "aims" and "subprojects" to "projects" for better GitHub integration

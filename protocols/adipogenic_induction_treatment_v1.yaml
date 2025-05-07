@@ -1,0 +1,127 @@
+---
+# Protocol metadata
+id: PROT-0036
+name: Adipogenic Induction Treatment
+version: 1.0
+description: Protocol for inducing adipogenesis in preadipocyte cells using a combination of IBMX, dexamethasone, and insulin
+author: James M. Jordan
+created: 2025-05-07
+last_updated: 2025-05-07
+category: cell-treatment
+
+# Materials required
+materials:
+  - name: 3-Isobutyl-1-methylxanthine (IBMX)
+    concentration: 0.5 mM final
+    storage: -20°C
+    preparation: Dissolve in DMSO to make 500X stock (250 mM)
+    supplier: Sigma-Aldrich (I5879)
+  - name: Dexamethasone
+    concentration: 1 µM final
+    storage: -20°C
+    preparation: Dissolve in ethanol to make 1000X stock (1 mM)
+    supplier: Sigma-Aldrich (D4902)
+  - name: Insulin
+    concentration: 10 µg/mL final
+    storage: -20°C
+    preparation: Dissolve in acidified water (pH 4.5) to make 1000X stock (10 mg/mL)
+    supplier: Sigma-Aldrich (I6634)
+  - name: DMEM high glucose
+    storage: 4°C
+    supplier: Gibco
+  - name: Fetal Bovine Serum (FBS)
+    concentration: 10% final
+    storage: -20°C (aliquots)
+    supplier: Gibco
+  - name: Penicillin-Streptomycin
+    concentration: 1% final
+    storage: -20°C
+    supplier: Gibco
+  - name: Complete growth medium
+    composition: DMEM + 10% FBS + 1% Pen-Strep
+    storage: 4°C
+
+# Equipment required
+equipment:
+  - name: Biosafety cabinet
+    certification: Class II
+  - name: CO2 incubator
+    settings: 37°C, 5% CO2, humidified
+  - name: Water bath
+    settings: 37°C
+  - name: Serological pipettes
+    sizes: 5 mL, 10 mL, 25 mL
+  - name: Micropipettes
+    sizes: P1000, P200, P20
+
+# Protocol steps
+steps:
+  - step: 1
+    action: "Prepare complete growth medium"
+    details: "To 500 mL DMEM high glucose, add 50 mL FBS and 5 mL Pen-Strep. Mix well and warm to 37°C before use."
+  - step: 2
+    action: "Thaw induction reagent stocks"
+    details: "Remove IBMX, dexamethasone, and insulin stock solutions from -20°C and thaw at room temperature. Protect from light."
+  - step: 3
+    action: "Prepare adipogenic induction medium (AIM)"
+    details: "To complete growth medium, add IBMX (final 0.5 mM), dexamethasone (final 1 µM), and insulin (final 10 µg/mL). Mix thoroughly but gently by inverting."
+  - step: 4
+    action: "Warm media"
+    details: "Warm both complete growth medium (control) and adipogenic induction medium to 37°C before adding to cells."
+  - step: 5
+    action: "Aspirate existing medium from cells"
+    details: "Using a sterile aspirator, carefully remove all existing medium from the cell culture vessel."
+  - step: 6
+    action: "Add fresh medium"
+    details: "Add appropriate volume of either complete growth medium (control) or adipogenic induction medium to the cells."
+  - step: 7
+    action: "Return cells to incubator"
+    details: "Place cell culture vessels in 37°C, 5% CO2 incubator."
+  - step: 8
+    action: "Maintain treatment"
+    details: "For standard protocol, maintain cells in adipogenic induction medium for 3 days, then switch to insulin-only medium (10 µg/mL insulin in complete medium) for additional 4-11 days."
+
+# Critical parameters
+critical_parameters:
+  - parameter: "Cell confluence"
+    details: "Cells should be at 100% confluence at the time of induction. Post-confluent cells (2 days after reaching confluence) often yield better differentiation."
+  - parameter: "Reagent concentration"
+    details: "IBMX (0.5 mM), dexamethasone (1 µM), and insulin (10 µg/mL) concentrations are critical. Prepare fresh stocks if uncertain about stability."
+  - parameter: "Media change frequency"
+    details: "After the initial 3-day induction period, change to insulin-only medium and then change medium every 2-3 days for optimal differentiation."
+
+# Troubleshooting
+troubleshooting:
+  - problem: "Poor differentiation"
+    solution: "Ensure cells were 100% confluent before induction; check reagent quality and concentrations; extend post-confluent period to 2 days before induction."
+  - problem: "Cell detachment"
+    solution: "Handle cells gently during media changes; ensure plate surface is appropriate for adipocyte culture; consider using collagen-coated plates."
+  - problem: "Contamination"
+    solution: "Use sterile technique; check medium and reagents for contamination; consider adding additional antibiotics."
+
+# Safety considerations
+safety:
+  ppe: "Lab coat, gloves, and eye protection required"
+  hazards: "DMSO (IBMX solvent) can enhance skin penetration of other chemicals; dexamethasone is a synthetic glucocorticoid with potential health effects."
+  disposal: "Dispose of media and solutions according to institutional guidelines for biological waste."
+
+# Expected outcomes
+expected_outcomes:
+  - outcome: "3T3-L1 cells should begin showing lipid droplet formation within 3-5 days"
+  - outcome: "Maximum differentiation typically reached by day 8-10"
+  - outcome: "Adipogenic marker genes (PPARγ, C/EBPα, FABP4, etc.) upregulated within 1-2 days"
+  - outcome: "Early adipogenic transcription factors (C/EBPβ, C/EBPδ) upregulated within hours"
+
+# References
+references:
+  - "Zebisch K, et al. (2012) Protocol for effective differentiation of 3T3-L1 cells to adipocytes. Anal Biochem. 425(1):88-90."
+  - "Green H, Kehinde O. (1975) An established preadipose cell line and its differentiation in culture II. Factors affecting the adipose conversion. Cell. 5(1):19-27."
+  - "Rubin CS, et al. (1978) Development of hormone receptors and hormonal responsiveness in vitro. Insulin receptors and insulin sensitivity in the preadipocyte and adipocyte forms of 3T3-L1 cells. J Biol Chem. 253(20):7570-7578."
+
+# Notes
+notes: |
+  - This protocol is optimized for 3T3-L1 cells but can be adapted for other preadipocyte cell lines or primary cells.
+  - Cell response to adipogenic induction can vary between passages, so consistency in culture conditions is important.
+  - For experiment termination at 24h post-induction, cells will only show early adipogenic markers (C/EBPβ, C/EBPδ) but not mature adipocyte phenotype.
+  - YBX1 has been reported to interact with C/EBPα during early adipogenesis as part of transcriptional regulation.
+--- 
