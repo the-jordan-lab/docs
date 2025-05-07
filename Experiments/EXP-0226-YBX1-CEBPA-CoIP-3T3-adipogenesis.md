@@ -46,29 +46,32 @@ cell_lysis:
 co_immunoprecipitation:
   antibodies:
     - name: "Anti-YBX1"
-      amount: "5 µg per IP"
-      supplier: "Cell Signaling Technology (#4202)"
+      amount: "2 µL of 1:1000 dilution per IP"
+      supplier: "Abcam (ab268094)"
     - name: "Anti-C/EBPα"
-      amount: "5 µg per IP"
-      supplier: "Cell Signaling Technology (#8178)"
-    - name: "Normal Rabbit IgG (control)"
-      amount: "5 µg per IP"
-      supplier: "Cell Signaling Technology (#2729)"
-  beads: "Protein A/G magnetic beads"
+      amount: "2 µL of 1:1000 dilution per IP"
+      supplier: "Abcam (AB317442)"
+    - name: "Normal Mouse IgG (control)"
+      amount: "2 µL of 1:1000 dilution per IP"
+      supplier: "Cell Signaling Technology (#5415)"
+  beads: "Protein A/G beads (NEB S1430 and S1425 mixed 1:1)"
   volume: "30 µL per IP"
   binding: "Overnight at 4°C with rotation"
+  ip_wash_buffer: "PBS + 0.02% Tween-20"
+  elution_buffer: "Non-denaturing elution buffer, 20 µL per sample"
 western_blot:
-  gel: "Invitrogen NuPAGE 4-12% Bis-Tris"
+  gel: "Invitrogen NuPAGE 4-12% Bis-Tris mini gels (15-well)"
   transfer: "iBlot 3 Dry Blotting System (P0 program, 7 min)"
   antibody_detection: "iBind 3 Western System"
+  ibind_protocol: "2 µL of 1:1000 primary antibody dilution per 2 mL iBind solution per mini gel"
   primary_antibodies:
     - name: "Anti-YBX1"
       dilution: "1:1000"
-      supplier: "Cell Signaling Technology (#4202)"
+      supplier: "Abcam (ab268094)"
     - name: "Anti-C/EBPα"
       dilution: "1:1000"
-      supplier: "Cell Signaling Technology (#8178)"
-  secondary_antibody: "Anti-rabbit HRP, 1:5000"
+      supplier: "Abcam (AB317442)"
+  secondary_antibody: "Anti-mouse HRP, 1:5000"
   imaging: "ChemiDoc Imaging System"
 instruments:
   - name: "Invitrogen iBlot 3"
@@ -105,41 +108,111 @@ instruments:
   - [ ] Incubate 30 min on ice with occasional vortexing
   - [ ] Centrifuge at 14,000 × g for 15 min at 4°C
   - [ ] Transfer supernatant to new tubes
-- [ ] Measure protein concentration using BCA assay
+
+### BCA Protein Assay Procedure
+- [ ] Prepare BSA standards (0, 0.125, 0.25, 0.5, 1, 2 mg/mL) in the same buffer as samples
+- [ ] Dilute samples 1:5 in RIPA buffer (5 µL sample + 20 µL buffer)
+  - **CRITICAL INPUT: Researcher must record total lysate volume before dilution for each sample!**
+  - **CRITICAL INPUT: Researcher must record dilution factor used for BCA assay!**
+- [ ] Add 200 µL BCA working reagent (50:1, Reagent A:B) to 10 µL of each standard/sample in a 96-well plate
+- [ ] Incubate plate at 37°C for 30 minutes
+- [ ] Measure absorbance at 562 nm
+- [ ] Generate standard curve by plotting absorbance vs. known BSA concentrations
+- [ ] Calculate protein concentration of each sample using the standard curve equation
+- [ ] Adjust for dilution factor: Final concentration = Measured concentration × Dilution factor
+
+### Sample Preparation for Co-Immunoprecipitation
 - [ ] Prepare samples for co-immunoprecipitation:
   - [ ] 500 µg protein per IP reaction
-  - [ ] 3 IPs per condition (YBX1, CEBPA, IgG control)
-- [ ] Add antibodies to lysates (5 µg each):
-  - [ ] Anti-YBX1
+  - [ ] 2 samples per condition (control and adipogenesis induction)
+  - [ ] 2 IPs per sample (YBX1 pull-down and CEBPA pull-down)
+- [ ] Preclear lysates with 50% beads:
+  - [ ] Add 20 µL of 50% Protein A/G beads (NEB S1430 and S1425 mixed 1:1) to each lysate
+  - [ ] Incubate at 4°C with rotation for 1 hour
+  - [ ] Centrifuge at 2,500 × g for 5 minutes or place on magnetic stand
+  - [ ] Transfer precleared supernatant to new tubes
+- [ ] Add antibodies to precleared lysates (2 µL of 1:1000 dilution each):
+  - [ ] Anti-YBX1 
   - [ ] Anti-C/EBPα
-  - [ ] Normal Rabbit IgG (control)
+  - [ ] Normal Mouse IgG (control)
 - [ ] Incubate overnight at 4°C with rotation
 
 ## Day 4: 2025-05-11
-- [ ] Add 30 µL Protein A/G magnetic beads to each IP sample
-- [ ] Incubate 3 hours at 4°C with rotation
-- [ ] Wash beads 5× with IP wash buffer
-- [ ] Elute proteins with 50 µL 1× Laemmli buffer at 95°C for 5 min
-- [ ] Load samples on Invitrogen NuPAGE 4-12% Bis-Tris gels:
+- [ ] Add 30 µL Protein A/G beads (NEB S1430 and S1425 mixed 1:1) to each IP sample
+- [ ] Incubate overnight at 4°C with thermomixing at 400 rpm
+- [ ] Wash beads 4× with IP wash buffer (PBS + 0.02% Tween-20):
+  - [ ] Add 500 µL wash buffer to each sample
+  - [ ] Invert tubes several times or mix gently
+  - [ ] Place on magnetic stand to separate beads
+  - [ ] Remove supernatant carefully without disturbing beads
+  - [ ] Repeat 3 more times (4 washes total)
+- [ ] Elute proteins with non-denaturing elution:
+  - [ ] Add 20 µL non-denaturing elution buffer to each sample
+  - [ ] Incubate at 37°C with rotation for 5 minutes
+  - [ ] Place tubes on magnetic stand to separate beads
+  - [ ] **IMPORTANT: Carefully collect supernatant without disturbing beads**
+  - [ ] **WARNING: DO NOT load any beads into the gel - they will interfere with migration!**
+- [ ] Load samples on Invitrogen NuPAGE 4-12% Bis-Tris mini gels (2 gels):
   - [ ] Input (10% of lysate)
-  - [ ] IP samples (YBX1, CEBPA, IgG for each condition)
+  - [ ] IP samples
+  - [ ] Gel 1: YBX1 pull-down probed with anti-CEBPA
+  - [ ] Gel 2: CEBPA pull-down probed with anti-YBX1
 - [ ] Run gels at 150V for 1 hour
 - [ ] Transfer to PVDF membranes using iBlot 3 (P0 program, 7 min)
-- [ ] Process membranes on iBind 3 with appropriate antibodies:
-  - [ ] YBX1 pull-down: blot with anti-CEBPA
-  - [ ] CEBPA pull-down: blot with anti-YBX1
+- [ ] Process membranes on iBind 3:
+  - [ ] Prepare iBind solution: 2 µL of 1:1000 primary antibody dilution per 2 mL iBind solution per mini gel
+  - [ ] Gel 1: Probe with anti-CEBPA antibody
+  - [ ] Gel 2: Probe with anti-YBX1 antibody
 - [ ] Image blots on ChemiDoc system
 - [ ] Quantify band intensity using ImageJ
 
+## Gel Loading Instructions (15-well gels)
+
+### Gel 1: YBX1 Pull-Down (Probed with anti-CEBPA)
+Loading order for 15-well gel:
+1. Protein ladder
+2. IgG PD - Control condition (no adipogenic induction)
+3. IgG PD - Adipogenic induction
+4. YBX1 PD - Control condition (no adipogenic induction)
+5. YBX1 PD - Adipogenic induction
+6. Protein ladder
+7. Input - Control condition (no adipogenic induction)
+8. Input - Adipogenic induction
+9. Protein ladder
+10. Leftover - IgG PD Control
+11. Leftover - IgG PD Adipogenic
+12. Leftover - YBX1 PD Control
+13. Leftover - YBX1 PD Adipogenic
+14. Empty
+15. Empty
+
+### Gel 2: CEBPA Pull-Down (Probed with anti-YBX1)
+Loading order for 15-well gel:
+1. Protein ladder
+2. IgG PD - Control condition (no adipogenic induction)
+3. IgG PD - Adipogenic induction
+4. CEBPA PD - Control condition (no adipogenic induction)
+5. CEBPA PD - Adipogenic induction
+6. Protein ladder
+7. Input - Control condition (no adipogenic induction)
+8. Input - Adipogenic induction
+9. Protein ladder
+10. Leftover - IgG PD Control
+11. Leftover - IgG PD Adipogenic
+12. Leftover - CEBPA PD Control
+13. Leftover - CEBPA PD Adipogenic
+14. Empty
+15. Empty
+
 # 2️⃣ Raw Data & Resources
-_Place files in `Data/EXP-0226/raw/` and list/link them here._
+
+**IMPORTANT: All raw data files MUST be placed in the directory `Data/EXP-0226/raw/` and listed in the table below!**
 
 | Filename | Description | Date Added |
 |----------|-------------|------------|
-| `BCA_protein_assay.xlsx` | Protein concentration measurements | 2025-05-10 |
-| `YBX1_pulldown_blots.tif` | YBX1 IP probed with anti-CEBPA | 2025-05-11 |
-| `CEBPA_pulldown_blots.tif` | CEBPA IP probed with anti-YBX1 | 2025-05-11 |
-| `input_controls.tif` | Input samples for both conditions | 2025-05-11 |
+| `BCA_protein_assay.xlsx` | Protein concentration measurements and standard curve | 2025-05-10 |
+| `YBX1_pulldown_blots.tif` | YBX1 IP probed with anti-CEBPA (includes input samples) | 2025-05-11 |
+| `CEBPA_pulldown_blots.tif` | CEBPA IP probed with anti-YBX1 (includes input samples) | 2025-05-11 |
 
 # 3️⃣ Results & Analysis
 

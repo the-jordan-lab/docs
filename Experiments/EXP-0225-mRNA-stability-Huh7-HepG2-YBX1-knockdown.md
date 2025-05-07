@@ -22,28 +22,34 @@ cell_lines:
   - name: "HepG2"
     media: "DMEM/F-12 + 10% FBS + antibiotics"
     passage: "P3-P8"
-plate_format: "24-well"
+plate_format: "24-well (2 plates: one for each cell line)"
 condition_map: |
-  A1-A6: Huh7 + siYBX1
-  B1-B6: Huh7 + siCTRL
-  C1-C6: HepG2 + siYBX1
-  D1-D6: HepG2 + siCTRL
-replicates: 6
+  Huh7 plate:
+  - 12 wells siYBX1 (3 replicates × 4 timepoints after ActD)
+  - 12 wells siCTRL (3 replicates × 4 timepoints after ActD)
+  - Extra wells for t=0 and knockdown verification
+  
+  HepG2 plate:
+  - 12 wells siYBX1 (3 replicates × 4 timepoints after ActD)
+  - 12 wells siCTRL (3 replicates × 4 timepoints after ActD)
+  - Extra wells for t=0 and knockdown verification
+replicates: 3
 ---
 
 ---
 # REAGENTS & INSTRUMENT SETTINGS
 transfection:
   reagent: "Lipofectamine RNAiMAX"
-  siRNA_volume_per_well: "1 µL"
-  complex_volume: "52 µL"
+  solution_1: "25 µL Opti-MEM + 1 µL Lipofectamine RNAiMAX per well"
+  solution_2: "25 µL Opti-MEM + 1 µL of 10 µM siRNA per well"
+  final_volume_per_well: "50 µL transfection mix + 0.9 mL media"
   incubation_time: "5 min"
 siRNA:
   - name: "siYBX1"
-    concentration: "10 nM final"
+    concentration: "10 µM stock, 10 nM final"
     supplier: "Dharmacon"
   - name: "siCTRL (non-targeting)"
-    concentration: "10 nM final"
+    concentration: "10 µM stock, 10 nM final"
     supplier: "Dharmacon"
 actinomycin_D:
   concentration: "5 µg/mL"
@@ -70,22 +76,43 @@ instruments:
 # 1️⃣ Experiment Timeline & Execution
 
 ## Day 1: 2025-05-07
-- [ ] Seed cells in 24-well plates:
+- [ ] Seed cells in 24-well plates (one plate per cell line):
   - Huh7: 5 × 10⁴ cells / well
   - HepG2: 6 × 10⁴ cells / well
 - [ ] Prepare plates and label wells according to condition map
 - [ ] Incubate O/N at 37°C + 5% CO₂
 
 ## Day 2: 2025-05-08
-- [ ] Prepare siRNA transfection:
-  - Solution A: siRNA in Opti-MEM (26 µL per well)
-  - Solution B: RNAiMAX in Opti-MEM (26 µL per well)
-  - Combine A+B, incubate 5 min at RT
-- [ ] Aspirate spent medium from wells
-- [ ] Add 0.9 mL fresh complete medium to each well
-- [ ] Add 52 µL transfection complex to appropriate wells
-- [ ] Gently rock plate to distribute complexes
-- [ ] Return plates to 37°C + 5% CO₂ incubator
+- [ ] Prepare transfection master mixes for both plates (48 wells + 4 extra = 52 wells total):
+
+  **Solution 1 (common for all wells in both plates):**
+  - 1300 µL Opti-MEM (25 µL × 52 wells)
+  - 52 µL Lipofectamine RNAiMAX (1 µL × 52 wells)
+  - Mix gently and incubate 5 min at RT
+  
+  **Solution 2A (siYBX1 for both cell lines):**
+  - 650 µL Opti-MEM (25 µL × 26 wells)
+  - 26 µL siYBX1 (10 µM stock) (1 µL × 26 wells)
+  - Mix gently
+  
+  **Solution 2B (siCTRL for both cell lines):**
+  - 650 µL Opti-MEM (25 µL × 26 wells)
+  - 26 µL siCTRL (10 µM stock) (1 µL × 26 wells)
+  - Mix gently
+
+- [ ] Combine Solution 1 and Solution 2 to prepare transfection complexes:
+  - For siYBX1 wells: Mix 650 µL of Solution 1 with 650 µL of Solution 2A
+  - For siCTRL wells: Mix 650 µL of Solution 1 with 650 µL of Solution 2B
+  - Incubate combined solutions for 5 min at RT
+
+- [ ] Prepare cells for transfection:
+  - Aspirate spent medium from wells
+  - Add 0.9 mL fresh complete medium to each well (use appropriate media for each cell line)
+
+- [ ] Add transfection complexes:
+  - Add 50 µL transfection complex to each appropriate well
+  - Gently rock plate to distribute complexes
+  - Return plates to 37°C + 5% CO₂ incubator
 
 ## Day 3: 2025-05-09
 - [ ] Collect one well from each condition for knockdown verification:
