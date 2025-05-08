@@ -1,7 +1,7 @@
 import os
 import yaml
 import logging
-from typing import Dict, Any
+from typing import Dict, Any, List
 import shutil
 from datetime import datetime
 import chromadb
@@ -162,6 +162,193 @@ class AgentTaskRunner:
         if "cell_line" in args:
             self._update_user_profile(researcher, "frequent_cell_lines", args["cell_line"])
         self._update_user_profile(researcher, "recent_experiments", filename)
+        
+        # Extract tasks from experiment and prepare for issue creation
+        if args.get("tasks"):
+            self.extract_tasks_and_preview(filename, template)
+
+    def extract_tasks_and_preview(self, experiment_filename: str, experiment_data: Dict[str, Any]):
+        """
+        Extract tasks from an experiment and preview them before creating GitHub issues.
+        
+        Args:
+            experiment_filename: The filename of the experiment YAML
+            experiment_data: The experiment data dictionary
+        """
+        tasks = experiment_data.get("tasks", [])
+        if not tasks:
+            self.logger.info(f"No tasks found in experiment {experiment_filename}")
+            return
+            
+        # Get other relevant experiment metadata
+        experiment_id = experiment_data.get("experiment_id", experiment_filename)
+        title = experiment_data.get("title", "Untitled Experiment")
+        assignees = experiment_data.get("assignees", {})
+        
+        # Format tasks with assignees for preview
+        preview_tasks = []
+        for i, task in enumerate(tasks):
+            task_description = task.get("description", "No description")
+            task_assignee = task.get("assignee")
+            assignee_username = assignees.get(task_assignee, "unassigned") if task_assignee else "unassigned"
+            
+            preview_tasks.append({
+                "id": i + 1,
+                "description": task_description,
+                "assignee": assignee_username,
+                "due_date": task.get("due_date", "No due date"),
+                "experiment_id": experiment_id
+            })
+        
+        # Log the preview
+        self.logger.info(f"Preview of tasks for experiment {experiment_id}:")
+        for task in preview_tasks:
+            self.logger.info(f"Task #{task['id']}: {task['description']} (Assignee: {task['assignee']}, Due: {task['due_date']})")
+            
+        # Store the preview for confirmation
+        self._store_task_preview(experiment_id, preview_tasks)
+        
+        # Create a GitHub issue for task preview confirmation
+        preview_body = f"Experiment: {title} ({experiment_id})\n\n"
+        preview_body += "The following tasks will be created as GitHub issues:\n\n"
+        for task in preview_tasks:
+            preview_body += f"- #{task['id']}: {task['description']} (Assignee: {task['assignee']}, Due: {task['due_date']})\n"
+        preview_body += "\nTo confirm and create these issues, please comment 'confirm' on this issue."
+        
+        self.handle_open_issue({
+            "title": f"Task Preview for {experiment_id}: {title}",
+            "body": preview_body,
+            "labels": ["task-preview"]
+        })
+
+    def _store_task_preview(self, experiment_id: str, tasks: List[Dict[str, Any]]):
+        """
+        Store task preview data for later confirmation.
+        
+        Args:
+            experiment_id: The experiment identifier
+            tasks: List of task dictionaries
+        """
+        preview_path = os.path.join("Data", "task_previews")
+        os.makedirs(preview_path, exist_ok=True)
+        
+        preview_file = os.path.join(preview_path, f"{experiment_id}_task_preview.json")
+        with open(preview_file, "w") as f:
+            json.dump(tasks, f, indent=2)
+            
+        self.logger.info(f"Stored task preview at {preview_file}")
+
+    def handle_confirm_tasks(self, args: Dict[str, Any]):
+        """
+        Create GitHub issues from previously previewed tasks.
+        
+        Args:
+            args: Dictionary with experiment_id to confirm tasks for
+        """
+        experiment_id = args.get("experiment_id")
+        if not experiment_id:
+            self.logger.error("Missing experiment_id for confirm_tasks.")
+            return
+            
+        preview_file = os.path.join("Data", "task_previews", f"{experiment_id}_task_preview.json")
+        if not os.path.exists(preview_file):
+            self.logger.error(f"No task preview found for experiment {experiment_id}")
+            return
+            
+        with open(preview_file, "r") as f:
+            tasks = json.load(f)
+            
+        for task in tasks:
+            issue_title = f"[{experiment_id}] Task #{task['id']}: {task['description']}"
+            issue_body = f"Experiment: {experiment_id}\n"
+            issue_body += f"Description: {task['description']}\n"
+            issue_body += f"Due Date: {task.get('due_date', 'Not specified')}\n\n"
+            issue_body += f"This task is part of experiment {experiment_id}."
+            
+            # Create the issue
+            self.handle_open_issue({
+                "title": issue_title,
+                "body": issue_body,
+                "assignee": task.get("assignee"),
+                "labels": ["experiment-task", experiment_id]
+            })
+            
+            # Mark as created in TASKS.md
+            self.add_task_to_tasks_md(task['description'], experiment_id)
+            
+        # Remove the preview file after creating issues
+        os.remove(preview_file)
+        self.logger.info(f"Created {len(tasks)} GitHub issues for experiment {experiment_id}")
+        
+        # Update the experiment YAML to indicate tasks were created
+        self.update_experiment_tasks_status(experiment_id)
+
+    def add_task_to_tasks_md(self, task_description: str, experiment_id: str):
+        """
+        Add a task entry to TASKS.md.
+        
+        Args:
+            task_description: Description of the task
+            experiment_id: ID of the experiment the task belongs to
+        """
+        if not os.path.exists("TASKS.md"):
+            with open("TASKS.md", "w") as f:
+                f.write("# Lab Tasks\n\n")
+                
+        with open("TASKS.md", "r") as f:
+            lines = f.readlines()
+            
+        # Find the Lab Tasks section or create it
+        lab_tasks_index = -1
+        for i, line in enumerate(lines):
+            if line.strip() == "# Lab Tasks" or line.strip() == "## Lab Tasks":
+                lab_tasks_index = i
+                break
+                
+        if lab_tasks_index == -1:
+            lines.append("\n## Lab Tasks\n\n")
+            lab_tasks_index = len(lines) - 3
+            
+        # Add the new task after the Lab Tasks heading
+        task_line = f"- [ ] {task_description} ({experiment_id})\n"
+        lines.insert(lab_tasks_index + 2, task_line)
+        
+        with open("TASKS.md", "w") as f:
+            f.writelines(lines)
+            
+        self.logger.info(f"Added task to TASKS.md: {task_description}")
+
+    def update_experiment_tasks_status(self, experiment_id: str):
+        """
+        Update the experiment YAML file to indicate tasks were created.
+        
+        Args:
+            experiment_id: ID of the experiment
+        """
+        # Find experiment file
+        exp_dir = "Experiments"
+        exp_file = None
+        for fname in os.listdir(exp_dir):
+            if experiment_id in fname:
+                exp_file = os.path.join(exp_dir, fname)
+                break
+                
+        if not exp_file or not os.path.exists(exp_file):
+            self.logger.error(f"Experiment file not found for id: {experiment_id}")
+            return
+            
+        # Update the experiment YAML
+        with open(exp_file, "r") as f:
+            exp = yaml.safe_load(f)
+            
+        if "tasks" in exp:
+            for task in exp["tasks"]:
+                task["github_issue_created"] = True
+                
+        with open(exp_file, "w") as f:
+            yaml.dump(exp, f, sort_keys=False)
+            
+        self.logger.info(f"Updated experiment {experiment_id} to mark tasks as created")
 
     def handle_update_experiment(self, args: Dict[str, Any]):
         """
@@ -204,6 +391,12 @@ class AgentTaskRunner:
         self.append_changelog(f"Updated experiment {experiment_id}: {list(updates.keys())}")
         # Optionally update tasks
         self.mark_task_done_for_experiment(experiment_id)
+        
+        # If tasks have been added or modified, handle task preview
+        if "tasks" in updates and updates["tasks"]:
+            with open(exp_file, "r") as f:
+                updated_exp = yaml.safe_load(f)
+            self.extract_tasks_and_preview(experiment_id, updated_exp)
 
     def append_changelog(self, entry: str):
         with open("CHANGELOG.md", "a") as f:
@@ -303,16 +496,50 @@ class AgentTaskRunner:
     def handle_open_issue(self, args: Dict[str, Any]):
         """
         Handle opening a GitHub issue via CLI (gh).
-        Args should include: title (str), body (str)
+        Args should include: title (str), body (str), assignee (str, optional), labels (list, optional)
         """
         title = args.get("title", "Lab Agent Issue")
         body = args.get("body", "Created by lab agent.")
+        assignee = args.get("assignee")
+        labels = args.get("labels", [])
+        
+        # Build the command
         cmd = f'gh issue create --title "{title}" --body "{body}"'
+        
+        # Add assignee if provided
+        if assignee and assignee != "unassigned":
+            cmd += f' --assignee "{assignee}"'
+            
+        # Add labels if provided
+        if labels:
+            label_str = ",".join(labels)
+            cmd += f' --label "{label_str}"'
+        
         result = os.system(cmd)
         if result == 0:
             self.logger.info(f"Opened GitHub issue: {title}")
+            # Add to ISSUES_LOG.md
+            self._add_to_issues_log(title, assignee)
         else:
             self.logger.error(f"Failed to open GitHub issue: {title}")
+
+    def _add_to_issues_log(self, title: str, assignee: str = None):
+        """
+        Add an entry to ISSUES_LOG.md
+        
+        Args:
+            title: Issue title
+            assignee: GitHub username of assignee (optional)
+        """
+        if not os.path.exists("ISSUES_LOG.md"):
+            with open("ISSUES_LOG.md", "w") as f:
+                f.write("# GitHub Issues Log\n\n")
+                
+        with open("ISSUES_LOG.md", "a") as f:
+            entry = f"- {datetime.now().strftime('%Y-%m-%d %H:%M')}: {title}"
+            if assignee and assignee != "unassigned":
+                entry += f" (Assigned to: {assignee})"
+            f.write(entry + "\n")
 
     def handle_open_pr(self, args: Dict[str, Any]):
         """

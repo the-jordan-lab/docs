@@ -29,6 +29,7 @@ condition_map: |
   C1-C6: CELL_LINE2 + TREATMENT1
   D1-D6: CELL_LINE2 + TREATMENT2
 replicates: 6
+sample_location: "-80°C freezer, rack X-X-X-X"
 ---
 
 ---

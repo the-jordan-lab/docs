@@ -4,6 +4,7 @@ project: Project_Name
 researcher: username
 status: in_progress
 created: YYYY-MM-DD
+sample_location: "-80°C freezer, rack X-X-X-X"
 
 plate:
   id: PLATE_ID

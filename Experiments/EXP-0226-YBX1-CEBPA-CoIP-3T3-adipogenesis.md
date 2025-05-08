@@ -6,6 +6,7 @@ date: 2025-05-08
 researchers:
   - james-m-jordan
   - linda-onsei
+  - SanjanaC
 protocol_id: PROT-0036
 protocol_name: "Adipogenic Induction Treatment"
 status: planned  # planned | in-progress | completed | failed
@@ -24,6 +25,7 @@ condition_map: |
   Dish 1-3: 3T3 + Control medium (24h)
   Dish 4-6: 3T3 + Adipogenic induction medium (24h)
 replicates: 3
+sample_location: "-80°C freezer, rack 1-1-4-A"
 ---
 
 ---
@@ -250,7 +252,7 @@ Analysis script: `Analysis/EXP-0226_CoIP_quantification.R`
 _To be completed after experiment_
 
 ## Comparison to Previous Iteration
-_Compare results with first iteration of this experiment_
+_Compare results with first iteration of this experiment (EXP-0224)_
 
 ## Relation to Project Goals
 This experiment directly addresses our hypothesis that YBX1 and C/EBPα physically interact during early adipogenesis. By comparing 3T3 cells with and without adipogenic stimulation, we can determine if this interaction is enhanced during the early stages of adipocyte differentiation (24h post-induction).
@@ -267,11 +269,11 @@ _Check boxes when complete. These can auto-update TASKS.md._
 # 6️⃣ Team Discussion
 _Use this section for team comments, suggestions, and feedback._
 
-> **james-m-jordan (2025-05-07):** This is the second iteration of this experiment. In the first iteration (EXP-0218), we saw a weak interaction in control conditions that was strongly enhanced after adipogenic stimulation. Let's make sure our lysis conditions are optimal for capturing these interactions.
+> **james-m-jordan (2025-05-07):** This is the second iteration of this experiment. In the first iteration (EXP-0224), we saw a weak interaction in control conditions that was strongly enhanced after adipogenic stimulation. Let's make sure our lysis conditions are optimal for capturing these interactions.
 
 > **linda-onsei (2025-05-07):** Should we also check protein levels by straight Western blot? I'm wondering if the increased interaction is partly due to increased expression of either protein.
 
 # 7️⃣ References & Related Experiments
 - Related protocol: [Adipogenic Induction Treatment](Protocols/adipogenic_induction_treatment_v1.yaml)
-- Previous experiment: [EXP-0218](Experiments/EXP-0218_YBX1_CEBPA_interaction_3T3.md)
+- Previous experiment: [EXP-0224](Experiments/EXP-0224-YBX1-CEBPA-CoIP-3T3-adipogenesis.md)
 - Literature: Girard J, et al. (2018) YBX1 interacts with C/EBP transcription factors to regulate adipogenesis. Cell Reports 25:788-801. 
