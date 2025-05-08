@@ -14,6 +14,7 @@ This file serves as a robot table of contents for the repository. It lists the s
 ## Additional Directories
 
 - **agent/**: Directory containing repository files.
+- **aims_files/**: Directory containing repository files.
 - **analysis/**: Directory containing repository files.
 - **building_labagent/**: Directory containing repository files.
 - **cursor_env/**: Directory containing repository files.
