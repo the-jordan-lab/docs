@@ -47,6 +47,23 @@ export OPENAI_API_KEY="your-openai-api-key"
 3. Add `.env` to your `.gitignore` to prevent accidentally committing your API key
 4. Rebuild your container
 
+## Environment Variables
+
+### Setting up .env file
+
+The development environment requires a `.env` file in the root directory of the repository. This file is not included in Git (it's gitignored) because it may contain sensitive information.
+
+**Before starting a codespace:**
+
+1. Create a `.env` file in the root directory
+2. The file can be empty if you don't need any environment variables
+3. If you need to use OpenAI API features, add your key like this:
+   ```
+   OPENAI_API_KEY=your_api_key_here
+   ```
+
+**Note:** Without a `.env` file (even an empty one), the codespace environment will fail to start.
+
 ## Verifying Your Setup
 
 After completing these steps, you can verify your setup by running:

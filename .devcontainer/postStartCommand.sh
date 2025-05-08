@@ -63,6 +63,12 @@ cat > /workspaces/docs/README.ipynb << EOL
 }
 EOL
 
+# Create an empty .env file if it doesn't exist
+if [ ! -f /workspaces/docs/.env ]; then
+  echo "# Auto-generated .env file" > /workspaces/docs/.env
+  echo "Creating empty .env file because none was found."
+fi
+
 # Display welcome message
 echo ""
 echo "🧪 LAB AGENT ENVIRONMENT READY 🧪"

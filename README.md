@@ -7,6 +7,7 @@
 Welcome to the Lab Codespace! This environment is pre-configured for you. Just follow these steps:
 
 ## 🚀 1. Open the Codespace
+
 - Click "Code" > "Codespaces" > "Create codespace on main" (or your assigned branch).
 
 ## ⏳ 2. Wait for Setup
