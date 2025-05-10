@@ -13,17 +13,17 @@ This file serves as a robot table of contents for the repository. It lists the s
 
 ## Additional Directories
 
-- **agent/**: Contains the code for the AI agent integration, including the task-runner and hooks.
+- **agent/**: Directory containing repository files.
 - **aims_files/**: Directory containing repository files.
-- **analysis/**: Directory containing repository files and analysis code.
+- **analysis/**: Directory containing repository files.
 - **building_labagent/**: Directory containing repository files.
-- **cursor_env/**: Directory containing Python environment files.
-- **data/**: Directory containing experimental data files organized by experiment ID.
-- **experiments/**: Records of individual experiments or lab sessions.
+- **cursor_env/**: Directory containing repository files.
+- **data/**: Directory containing repository files.
+- **experiments/**: Directory containing repository files.
 - **guides/**: Directory containing repository files.
 - **protocols/**: Directory containing repository files.
 - **random_scripts/**: Directory containing repository files.
-- **templates/**: Contains starter templates for various YAML structures.
+- **templates/**: Directory containing repository files.
 
 ---
 
